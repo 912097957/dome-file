@@ -1,0 +1,435 @@
+body {
+    background-color: #f3f5f7;
+    height: 3000px;
+}
+
+/* banner部分 */
+.banner {
+    height: 420px;
+    background-color: #1c036c;
+}
+
+.inner {
+    height: 420px;
+    position: relative;
+}
+
+.inner li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+/* 侧边导航部分 */
+.subnav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 420px;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.subnav li {
+    width: 190px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 14px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.subnav a {
+    display: block;
+    font-size: 14px;
+    color: #fff;
+}
+
+.subnav li span {
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+.subnav a:hover {
+    color: #00b4ff;
+}
+
+.subnav a:hover span {
+    color: #00b4ff;
+}
+
+/* 切换按钮 */
+.circle {
+    width: 175px;
+    height: 23px;
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translate(-50%, 0);
+}
+
+.circle i {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background: rgba(255, 255, 255, .4);
+    border-radius: 6px;
+    margin: 5px 5px;
+    cursor: pointer;
+}
+
+.circle i:hover {
+    width: 20px;
+    background-color: #fff;
+    transition: all 0.5s;
+}
+
+/* 课程表部分 */
+.timebook {
+    width: 230px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    background-color: #fff;
+}
+
+.timebook dt {
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    background-color: #9bceea;
+}
+
+.timebook dd {
+    height: 65px;
+    width: 195px;
+    padding: 10px 0;
+    margin-left: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.timebook .da {
+    font-size: 14px;
+    color: #4e4e4e;
+}
+
+.timebook .dd {
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.timebook dd:hover .da,
+.timebook dd:hover .dd {
+    text-decoration: underline;
+    color: #00a4ff;
+}
+
+.timebook .btn {
+    width: 195px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+    text-align: center;
+    padding: 0;
+}
+
+.timebook .btn {
+    margin-top: -1px;
+}
+
+.timebook .btn a {
+    font-weight: 700;
+    line-height: 37px;
+    color: #00a4ff;
+    font-size: 16px;
+}
+
+/* banner部分结束 */
+/* 精品推荐 */
+.Recom {
+    height: 60px;
+    margin-top: 8px;
+    padding: 20px 15px 0;
+    background-color: #fff;
+    box-shadow: 0 1px 12px rgba(0, 0, 0, .4);
+}
+
+.Recom strong {
+    float: left;
+    margin-right: 30px;
+}
+
+.Recom strong {
+    font-size: 16px;
+    color: #00a4ff;
+}
+
+.Recom a {
+    font-size: 16px;
+    color: #050505;
+    float: left;
+    margin: 0 35px;
+}
+
+.Recom a:hover {
+    text-decoration: underline;
+    color: #f10415;
+}
+
+.Recom span {
+    width: 1px;
+    height: 15px;
+    display: block;
+    float: left;
+    background-color: #ccc;
+    margin: 6px 10px;
+}
+
+.Recom a:last-child {
+    color: #00a4ff;
+    font-size: 14px;
+    float: right;
+    margin-right: 0;
+}
+
+/* 精品内容开始 */
+.bou_hd {
+    height: 75px;
+}
+
+.bou_hd h4 {
+    display: inline-block;
+    line-height: 75px;
+    font-size: 18px;
+    color: #494949;
+    font-weight: normal;
+}
+
+.bou_hd a {
+    float: right;
+    font-size: 12px;
+    color: #ccc;
+    margin-right: 20px;
+    margin-top: 40px;
+}
+
+.bou_bd li {
+    float: left;
+    width: 230px;
+    height: 270px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    transition: all 0.5s;
+    background-color: #fff;
+}
+
+
+.bou_bd li {
+    position: relative;
+}
+.bou_bd li .pos {
+    position: absolute;
+    top: 5;
+    right: -3px;
+    width: 30px;
+    height: 20px;
+}
+.bou_bd li:nth-child(5n) {
+    background-color: #fff;
+}
+
+.bou_bd li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.bou_bd img {
+    width: 100%;
+    height: 152px;
+    vertical-align: middle;
+}
+
+.bou_bd div {
+    padding: 25px 25px 0;
+}
+
+.bou_bd h5 {
+    height: 42px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+
+.bou_bd span {
+    display: inline-block;
+}
+
+.red {
+    color: #ff7c2d;
+}
+
+.Digital {
+    color: #666;
+}
+
+.bou_bd p {
+    margin-top: 20px;
+}
+
+.dian {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #666;
+    vertical-align: middle;
+    margin: 0 8px;
+}
+
+.bou_bd li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, .4);
+}
+
+.bou_hd .hot {
+    display: inline-block;
+    width: 345px;
+    vertical-align: middle;
+    margin-left: 350px;
+}
+
+.bou_hd .hot a {
+    float: left;
+    margin: 0 20px;
+    font-size: 16px;
+    color: #868686;
+}
+
+.bou_hd .hot a:hover {
+    color: #00a4ff;
+    text-decoration: underline;
+}
+
+/* 入门部分 */
+.data_l {
+    width: 230px;
+    height: 390px;
+    float: left;
+    margin-right: 12px;
+}
+
+.data_l img {
+    height: 100%;
+    vertical-align: middle;
+}
+
+.data_r {
+    width: 955px;
+    height: 390px;
+    float: right;
+}
+
+.data_r .top {
+    margin-bottom: 20px;
+}
+
+.data_r .bou_bd li {
+    width: 227px;
+    height: 270px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 0;
+}
+
+.data_r .bou_bd li:nth-child(4) {
+    margin-right: 0;
+    float: right;
+}
+
+.bou_cd .fl {
+    margin-right: 0;
+}
+
+.butt {
+    margin-bottom: 40px;
+}
+
+.content {
+    color: #00a4ff !important;
+}
+
+/* footer开始 */
+footer {
+    height: 500px;
+    background-color: #fff;
+}
+
+.footer_inner {
+    height: 180px;
+    padding: 30px 0 0 20px;
+}
+
+.inner_l {
+    width: 660px;
+    float: left;
+}
+
+.inner_l img {
+    display: block;
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer_inner .inner_l p {
+    color: #666;
+    line-height: 20px;
+}
+
+.inner_l a {
+    display: block;
+    width: 120px;
+    height: 35px;
+    font-size: 16px;
+    color: #00a4ff;
+    text-align: center;
+    line-height: 35px;
+    border: 1px solid #00a4ff;
+    margin-top: 15px;
+}
+
+.inner_l a:hover {
+    text-decoration: underline;
+}
+
+.inner_r {
+    float: left;
+    overflow: hidden;
+}
+
+.inner_r dl {
+    float: left;
+    margin-right: 115px;
+}
+
+.inner_r dl:nth-child(3) {
+    margin-right: 0;
+}
+
+.inner_r dl dt {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.inner_r dd a {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.inner_r dd a:hover{
+    text-decoration: underline;
+}

@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*  css3 盒子模型 */
+}
+@font-face {
+    font-family: 'iconfont';
+    src: url('../fonts/iconfont.eot');
+    src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/iconfont.woff2') format('woff2'),
+        url('../fonts/iconfont.woff') format('woff'),
+        url('../fonts/iconfont.ttf') format('truetype'),
+        url('../fonts/iconfont.svg#iconfont') format('svg');
+        font-style: normal;
+        font-weight: normal;
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 14px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #fff;
+}
+
+header,
+blockquote,
+body,
+button,
+dd,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+input,
+legend,
+li,
+ol,
+p,
+pre,
+td,
+textarea,
+th,
+ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: middle;
+    outline: none;
+}
+
+em,
+i {
+    font-style: normal;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: #050505;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #c81623;
+}
+
+button,
+input {
+    font-family: Microsoft YaHei, tahoma, arial, Hiragino Sans GB, \\5b8b\4f53, sans-serif;
+    border: none;
+    outline: none;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    background-color: #fff;
+    font: 12px/1.5 Microsoft YaHei, tahoma, arial, Hiragino Sans GB, \\5b8b\4f53, sans-serif;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* 版心 */
+.w {
+    width: 1200px;
+    margin: auto;
+}
+/* 头部开始 */
+header {
+    width: 1600px;
+    height: 100px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+.logo {
+    width: 192px;
+    height: 42px;
+    float: left;
+}
+.logo a {
+    display: block;
+    width: 195px;
+    height: 42px;
+    background: url(../image/logo.jpg);
+    /* 使文字超出并隐藏 */
+    text-indent: -75px;
+    overflow: hidden;
+}
+nav {
+    float: left;
+    margin-left: 35px;
+}
+nav ul li {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 25px;
+}
+nav li a {
+    display: block;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    padding: 0 10px;
+
+}
+nav li a:hover {
+    border-bottom: 2px solid #00a4ff;
+}
+.search {
+    width: 410px;
+    height: 40px;
+    float: left;
+    margin-left: 145px;
+}
+.search input {
+    width: 360px;
+    height: 40px;
+    border: 1px solid  #00a4ff;
+    outline: none;
+    color: #bfbfbf;
+    font-size: 14px;
+    padding-left: 10px;
+}
+.search button {
+    background-color: #00a4ff;
+    width: 50px;
+    height: 40px;
+    background: url(../image/fa-search.png) no-repeat center rgb(0, 164, 255);
+}
+.personal {
+    float: right;
+    height: 40px;
+    line-height: 40px;
+}
+.personal dt, dd {
+    float: left;
+}
+.personal dd {
+    font-size: 14px;
+    color: #666;
+}
+.personal dd s {
+    display: inline-block;
+    width: 14px;
+    height: 16px;
+    background: url(../image/ld.png) no-repeat;
+    vertical-align: middle;
+    position: relative;
+    margin: 0 30px;
+}
+
+.personal dd s::after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+}
+.personal span img {
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: all 0.5s;
+}
+.personal span img:hover {
+    transform: rotate(180deg);
+}
+/* 头部结束 */
