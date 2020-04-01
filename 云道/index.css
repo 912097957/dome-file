@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #fafafa;
+    height: 3000px;
+}
+ul,
+li {
+    list-style: none;
+    float: left;
+}
+/* 顶部导航栏 */
+.header {
+    height: 100px;
+    background-color: #fff;
+}
+.inner {
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+    line-height: 100px;
+}
+.logo {
+    float: left;
+}
+.nav {
+    float: right;
+}
+.nav ul {
+    overflow: hidden;
+}
+.nav li {
+    float: left;
+    margin: 0 20px;
+}
+.nav li a {
+    color: #333;
+    text-decoration: none;
+}
+.nav li a:hover {
+    color: #2288f6;
+}
+/* banner区域 */
+.banner {
+    height: 620px;
+    background: url(image/banner.jpg) no-repeat top center;
+    position: relative;
+}
+.banner .buttom ul {
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    margin-left: -33px;
+}
+.banner .buttom  li {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 5px;
+    float: left;
+}
+
+/* 服务模块开始 */
+.service {
+    margin: 64px auto 0;
+    width: 1050px;
+}
+.service_hd {
+    width: 900px;
+    border-top: 1px solid #ccc;
+    margin: 15px auto 0;
+}
+.service_hd h3 {
+    width: 167px;
+    height: 46px;
+    margin: -15px auto 0;
+}
+.service_hd p {
+    font-size: 12px;
+    width: 830px;
+    color: #666;
+    line-height: 26px;
+    text-align: center;
+    margin: 28px auto 0;
+}
+.service_bd {
+    width: 1050px;
+    background-color: #fafafa;
+    margin-top: 50px;
+}
+.service_bd div {
+    width: 318px;
+    height: 510px;
+    float: left;
+    border: 1px solid #e7e8e9;
+}
+.service_bd .yinxiao {
+    margin: 0 45px;
+}
+.service_bd img {
+    width: 248px;
+    height: 174px;
+    padding-top: 26px;
+    display: block;
+    margin: 0 auto;
+}
+.service_bd h4 {
+    font-size: 18px;
+    font-weight: normal;
+    color: #333;
+    text-align: center;
+    margin-top: 30px;
+}
+.service_bd p {
+    font-size: 12px;
+    color: #666;
+    line-height: 26px;
+    width: 210px;
+    height: 105px;
+    margin: 20px auto 0;
+}
+.service_bd a {
+    display: block;
+    width: 150px;
+    height: 38px;
+    border: 1px solid #ff9412;
+    text-align: center;
+    line-height: 38px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #ff9412;
+    border-radius: 5px 5px;
+    margin: 53px auto 0;
+}
+.service_bd a:hover{
+    color: #fff;
+    background-color: #ff9412;
+}
+.clearfix:after {
+    content: "";
+    height: 0;
+    display: block;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix:before,.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *z-index: 1;
+}
+/* 服务模块结束 */
+/* 案例模块开始 */
+.case {
+    width: 1050px;
+    margin: 124px auto 0;
+}
+.case_head {
+    width: 900px;
+    border-top: 1px solid #ccc;
+    margin: 15px auto 0;
+}
+.case .case_head h3 {
+    width: 167px;
+    height: 46px;
+    margin: -15px auto 0;
+}
+.case_dd {
+    width: 1050px;
+    margin: 45px auto 0;
+}
+.case_dd ul li {
+    width: 324px;
+    height: 210px;
+    float: left;
+    position: relative;
+}
+.case_dd .two {
+    margin: 0 39px 0;
+}
+.case_dd li img {
+    width: 324px;
+    height: 210px;
+}
+.case_dd .masg {
+    width: 324px;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    line-height: 45px;
+}
+.mar {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    display: none;
+    background: rgba(0, 0, 0, 0.3) url(image/fdj.png) no-repeat center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.case_dd li:hover .mar {
+    display: block;
+}
+.case_dd ul {
+    position: relative;
+}
+
+ ul .left, .right {
+    width: 60px;
+    height: 60px;
+    background-color: #e6e6e6;
+    border-radius: 50% 50%;
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    font-size: 60px;
+    text-decoration: none;
+    color: #fff;
+    line-height: 51px;
+    text-align: center;
+}
+.left {
+    left: -85px;
+}
+.right {
+    right: -85px;
+}
+.case_dd ul > a:hover {
+    background-color: #57a9ef;
+}
+/* 案例模块结束 */
+/* 合作模块开始 */
+.clcase {
+    width: 1050px;
+    margin: 124px auto 0;
+}
+.clcase_hd {
+    width: 900px;
+    border-top: 1px solid #ccc;
+    margin: 15px auto 0;
+}
+.clcase .clcase_hd h3 {
+    width: 167px;
+    height: 46px;
+    margin: -15px auto 0;
+}
+.clcase_dd {
+    width: 1050px;
+    margin: 50px auto 0;
+}
+
+.clcase_dd li {
+    width: 208px;
+    height: 85px;
+    float: left;
+    border-right: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+}
+.clcase_dd li img {
+    width: 110px;
+    height: 50px;
+    margin: 18px 50px;
+}
+.clcase_dd .li_end {
+    border-right: none;
+}
+.clcase_dd .end li {
+    border-bottom: none;
+}
+/* 合作模块结束 */
+/* footer模块开始 */
+.footer {
+    height: 170px;
+    margin-top: 200px;
+    background-color: #212425;
+    position: relative;
+}
+.footer .about ul {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -290px;
+}
+.footer .about a {
+    margin: auto 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #f0f1f1;
+}
+.footer .about li {
+    text-align: center;
+    font-size: 14px;
+    color: #7e7e7e;
+}
+.footer li a:hover {
+    text-decoration: underline;
+    color: #2288F6 ;
+}
+.beian {
+    width: 503px;
+    height: 16px;
+    color: #888;
+    font-size: 14px;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    margin-left: -265px;
+    line-height: 16px;
+}
