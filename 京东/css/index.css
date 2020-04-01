@@ -1,0 +1,395 @@
+/* 京东首页 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.w {
+    width: 1190px;
+    margin: auto;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.jd {
+    height: 480px;
+    position: relative;
+}
+
+.main-into {
+    position: relative;
+    z-index: 1;
+}
+
+.banner {
+    height: 480px;
+    background: url(../images/bg.png) no-repeat top center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.banner a {
+    display: block;
+    height: 100%;
+}
+
+/* 版心内容 */
+.main-1 {
+    width: 190px;
+    height: 465px;
+    background-color: pink;
+    float: left;
+    background-color: #6E6568;
+    padding-top: 15px;
+}
+
+.main-1 li {
+    padding-left: 10px;
+    height: 28px;
+    line-height: 28px;
+}
+
+.main-1 li:hover {
+    background-color: #999395;
+}
+
+.main-1 li a {
+    color: #fff;
+    font-size: 16px;
+}
+
+.main-1 li a:hover {
+    color: #c81623;
+}
+
+.main-1 li span {
+    font-size: 12px;
+    color: #fff;
+}
+
+.main-2 {
+    width: 790px;
+    height: 480px;
+    float: left;
+    margin-left: 10px;
+}
+
+.main-hd {
+    height: 340px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.main-hd ul li a {
+    display: inline-block;
+}
+
+.main-bd div {
+    width: 390px;
+    height: 130px;
+    float: left;
+}
+
+.firstPic {
+    margin-right: 10px;
+}
+
+.main-bd img {
+    width: 100%;
+}
+
+.arr-l,
+.arr-r {
+    width: 30px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    background: rgba(0, 0, 0, 0.3);
+    font-size: 30px;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+}
+
+.arr-l {
+    left: 0;
+    border-radius: 0 15px 15px 0;
+}
+
+.arr-r {
+    right: 0;
+    border-radius: 15px 0px 0px 15px;
+}
+
+.main-hd ol {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    width: 180px;
+    height: 20px;
+    margin-left: -90px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.main-hd ol li {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    float: left;
+    margin: 4px 5px;
+    cursor: pointer;
+}
+
+.main-hd .current {
+    background-color: #f10215;
+}
+
+.main-3 {
+    width: 190px;
+    height: 480px;
+    float: right;
+}
+
+.main-3 a {
+    font-size: 12px;
+    color: #747474;
+}
+
+.user {
+    height: 94px;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 15px 0;
+}
+
+.user-info {
+    height: 40px;
+    padding-left: 54px;
+    font-size: 12px;
+    color: #666;
+    line-height: 22px;
+    position: relative;
+}
+
+.user-info a {
+    font-size: 12px;
+    color: #333;
+}
+
+.info-img {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.info-img img {
+    width: 100%;
+}
+
+.user-info a:hover {
+    color: #f10215;
+}
+
+.user-earn {
+    margin-top: 16px;
+}
+
+.user-earn a {
+    width: 70px;
+    height: 25px;
+    border-radius: 13px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 12px;
+    color: #fff;
+    display: inline-block;
+    background-color: #f10215;
+}
+
+.user-earn .puls {
+    background-color: #363634;
+    color: #e5d790;
+    margin-left: 5px;
+}
+
+.user-earn .fuli:hover {
+    background-color: #c81623;
+}
+
+.user-earn .puls:hover {
+    background-color: #c81623;
+    color: #fff;
+}
+
+.news {
+    height: 149px;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 15px 0;
+}
+
+.tab-hd {
+    padding: 3px 0;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+.tab-hd a {
+    margin: 0 5px;
+}
+
+.cuxiao {
+    border-right: 1px solid #ccc;
+    padding: 0 5px;
+}
+
+.news .more {
+    position: absolute;
+    top: 7px;
+    right: 0;
+    font-size: 12px;
+}
+
+.line {
+    width: 35px;
+    height: 2px;
+    background-color: #F10215;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+
+.tab-bd {
+    margin-top: 10px;
+    color: #666;
+}
+
+.tab-bd li {
+    height: 26px;
+    line-height: 23px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tab-bd li span {
+    color: #e1251b;
+    display: inline-block;
+    background-color: rgba(225, 37, 27, .08);
+    padding: 1px;
+    margin-right: 3px;
+    border-radius: 5px;
+}
+.dd-two {
+    display: none;
+}
+.gongao:hover .dd-two{
+    display: block;
+}
+.tab-bd li a:hover {
+    color: #c81623;
+    text-decoration: underline;
+}
+
+.jd-service {
+    height: 209px;
+    overflow: hidden;
+}
+
+.jd-service ul {
+    width: 195px;
+}
+
+.jd-service li {
+    width: 47px;
+    height: 69px;
+    float: left;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.jd-service li a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.jd-service li i {
+    display: block;
+    height: 24px;
+    width: 24px;
+    margin: 15px auto 8px;
+    background: url(../images/sprite_fs@1x.png) no-repeat;
+}
+
+.jd-service li a:hover {
+    color: #f10215;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.jd-service li p {
+    text-align: center;
+}
+
+.jd-service li .ico2 {
+    background-position: -43px 0;
+}
+
+.jd-service li .ico3 {
+    background-position: -88px 0;
+}
+
+.jd-service li .ico4 {
+    background-position: -133px 0;
+}
+
+.jd-service li .ico5 {
+    background-position: 0 -43px;
+}
+
+.jd-service li .ico6 {
+    background-position: 0 -88px;
+}
+
+.jd-service li .ico7 {
+    background-position: -43px -43px;
+}
+
+.jd-service li .ico8 {
+    background-position: -43px -84px;
+}
+
+.jd-service li .ico9 {
+    background-position: -132px -88px;
+}
+
+.jd-service li .ico10 {
+    background-position: -131px -45px;
+}
+
+.jd-service li .ico11 {
+    background-position: -87px -46px;
+}
+
+.jd-service li .ico12 {
+    background-position: -88px -87px;
+}
+
+/* 版心内容结束*/
