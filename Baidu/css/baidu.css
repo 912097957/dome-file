@@ -1,0 +1,42 @@
+body {
+    text-align: center;
+    font-size: 13px;
+}
+div {
+    display: block;
+}
+.img {
+    padding-top: 100px;
+}
+.nav {
+    height: 40px;
+    font-weight: 700;
+}
+.lj1 {
+    height: 100px;
+    padding: 10px;
+}
+.te {
+    height: 50px
+}
+.lj2 {
+    height: 100px;
+}
+.bd {
+    height: 20px;
+}
+.ft {
+    color: rgb(148, 143, 143);
+}
+.bt1 {
+    width: 500px;
+    height: 35px;
+}
+.bt2 {
+    width: 80px;
+    height: 41px;
+    font-weight: 700;
+}
+.bt2:hover{
+    background-color: skyblue;
+}
