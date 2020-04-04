@@ -3,7 +3,20 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?hrstq9');
+    src: url('../fonts/icomoon.eot?hrstq9#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?hrstq9') format('truetype'),
+        url('../fonts/icomoon.woff?hrstq9') format('woff'),
+        url('../fonts/icomoon.svg?hrstq9#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
 body {
+    box-sizing: border-box;
     height: 2000px;
 }
 
@@ -37,7 +50,6 @@ ul {
     border: 0;
 }
 
-
 li {
     list-style: none;
 }
@@ -55,3 +67,167 @@ img {
     width: 1160px;
     margin: 0 auto;
 }
+
+/* header部分 */
+.header_box {
+    height: 680px;
+    position: relative;
+}
+
+nav {
+    height: 80px;
+    position: relative;
+}
+
+nav a {
+    display: block;
+}
+
+nav h1 a {
+    width: 95px;
+    height: 80px;
+    background: url(../images/logo.png) no-repeat center;
+    text-indent: -999px;
+    overflow: hidden;
+}
+
+nav ul {
+    position: absolute;
+    top: 0;
+    right: 100px;
+    width: 580px;
+    display: flex;
+
+}
+
+nav ul li {
+    height: 80px;
+    flex: 1;
+}
+
+/* nav主页字体颜色 */
+.white {
+    color: #fff;
+}
+
+nav li a {
+    height: 100%;
+    line-height: 80px;
+    color: #c8c8c8;
+    position: relative;
+
+}
+
+.dropdown::after {
+    content: "\ea51";
+    font-family: "icomoon";
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 15px;
+    height: 15px;
+    margin-top: -11px;
+    font-size: 22px;
+    line-height: 15px;
+}
+
+nav li a:hover {
+    color: #fff;
+}
+
+/* footer开始 */
+
+footer {
+    height: 365px;
+    background-color: #22212f;
+}
+
+footer .link_init {
+    box-sizing: border-box;
+    height: 325px;
+    padding: 55px 60px 0;
+    position: relative;
+}
+
+footer .link_init::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    background: url(../images/bottomline.png) no-repeat;
+    left: 0;
+    bottom: 0;
+}
+
+.erweima {
+    float: left;
+    width: 290px;
+    height: 250px;
+    border-right: 1px solid #666;
+}
+
+.erweima .tell {
+    width: 208px;
+    height: 43px;
+    margin: 0 auto;
+    background: url(../images/tell_03.jpg) no-repeat;
+}
+
+.erweima .pic {
+    height: 159px;
+    width: 159px;
+    margin: 15px auto 0;
+    background: url(../images/er.jpg) no-repeat;
+}
+
+.erweima p {
+    text-align: center;
+    font-size: 12px;
+    color: #cecece;
+    margin-top: 10px;
+}
+
+.link {
+    float: right;
+    width: 700px;
+    height: 250px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.link dl {
+    float: left;
+}
+
+.link dl:nth-child(n+2) {
+    margin-left: 140px;
+}
+
+.link dt {
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.link dd {
+    margin-top: 15px;
+}
+
+.link a {
+    display: inline;
+    color: #b6b2b2;
+    font-size: 12px;
+}
+
+.link a:hover {
+    color: #ff7200;
+}
+
+.coypu {
+    text-align: center;
+    color: #b6b2b2;
+    font-size: 12px;
+    padding-top: 10px;
+}
+
+/* footer结束 */

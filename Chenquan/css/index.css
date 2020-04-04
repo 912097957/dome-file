@@ -1,19 +1,4 @@
-/* header开始 */
-@font-face {
-    font-family: 'icomoon';
-    src: url('../fonts/icomoon.eot?hrstq9');
-    src: url('../fonts/icomoon.eot?hrstq9#iefix') format('embedded-opentype'),
-        url('../fonts/icomoon.ttf?hrstq9') format('truetype'),
-        url('../fonts/icomoon.woff?hrstq9') format('woff'),
-        url('../fonts/icomoon.svg?hrstq9#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-body {
-    box-sizing: border-box;
-}
-
+/* 首页头部 */
 header {
     height: 680px;
     background: url(../images/banner.jpg) no-repeat top center;
@@ -23,69 +8,6 @@ header {
     height: 680px;
     position: relative;
 }
-
-nav {
-    height: 80px;
-    position: relative;
-}
-
-nav a {
-    display: block;
-}
-
-nav h1 a {
-    width: 95px;
-    height: 80px;
-    background: url(../images/logo.png) no-repeat center;
-    text-indent: -999px;
-    overflow: hidden;
-}
-
-nav ul {
-    position: absolute;
-    top: 0;
-    right: 100px;
-    width: 580px;
-    display: flex;
-
-}
-
-nav ul li {
-    height: 80px;
-    flex: 1;
-}
-
-.white {
-    color: #fff;
-}
-
-nav li a {
-    height: 100%;
-    line-height: 80px;
-    color: #c8c8c8;
-    position: relative;
-
-}
-
-
-.dropdown::after {
-    content: "\ea51";
-    font-family: "icomoon";
-    position: absolute;
-    top: 50%;
-    right: 30px;
-    width: 15px;
-    height: 15px;
-    margin-top: -11px;
-    font-size: 22px;
-    line-height: 15px;
-}
-
-
-nav li:nth-child(n+2) a:hover {
-    color: #fff;
-}
-
 
 header .switch {
     position: absolute;
@@ -108,8 +30,7 @@ header .switch {
 }
 
 /* header结束 */
-
-/* section start */
+/* section 开始 */
 
 section .more {
     box-sizing: border-box;
@@ -323,7 +244,6 @@ a {
 }
 
 /* section结束 */
-
 /* 行业开始 */
 
 .industry {
@@ -353,7 +273,110 @@ a {
     box-shadow: 0px 0px 8px -4px rgba(0, 0, 0, 0.5);
 }
 
-.bottom_nav div:hover {
+.bottom_nav div a {
+    width: 100%;
+    height: 100%;
+    color: black;
+}
+
+.bottom_nav div:hover a {
     color: #fff;
+    border-radius: 25px;
     background-color: #FF7200;
 }
+
+.bottom_text {
+    width: 1060px;
+    margin: 100px auto 0;
+    position: relative;
+}
+
+.bottom_text div {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 350px;
+    height: 390px;
+    padding: 80px 40px 0;
+    background-color: #fff;
+    transition: all .5s;
+    box-shadow: 0px 0px 17px -7px rgba(0, 0, 0, 0.3);
+}
+
+.bottom_text span {
+    display: block;
+    width: 218px;
+    height: 55px;
+    margin: 0 auto;
+}
+
+.liantong span {
+    background: url(../images/lt.png) no-repeat;
+
+}
+
+.yinglian span {
+    background: url(../images/y.png) no-repeat;
+}
+
+.tengxun span {
+    background: url(../images/t.png) no-repeat;
+}
+
+.bottom_text p {
+    text-indent: 2em;
+    margin-top: 40px;
+    font-size: 12px;
+    color: #333333;
+    line-height: 30px;
+}
+
+.bottom_text i {
+    display: block;
+    width: 80px;
+    margin: 65px auto 0;
+    border-bottom: 2px solid #FF7200;
+    display: none;
+}
+
+.bottom_text div:hover {
+    transform: scale(1.3, 1.3);
+}
+
+.bottom_text div:hover i {
+    display: block;
+}
+
+.bottom_text em {
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+}
+
+.bottom_text .left {
+    left: -120px;
+    margin-top: -26px;
+    background: url(../images/ll.jpg);
+}
+
+.bottom_text .right {
+    right: -120px;
+    margin-top: -26px;
+    background: url(../images/rr.jpg);
+}
+
+/* 行业结束 */
+/* bottom_banner 结束 */
+
+.bottom_banner a {
+    width: 100%;
+    height: 100%;
+}
+
+.bottom_banner {
+    height: 330px;
+    background: url(../images/bottombanner.jpg) no-repeat top center;
+}
+
+/* bottom_banner 结束 */
