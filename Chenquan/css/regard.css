@@ -1,0 +1,173 @@
+/* 导航颜色按需修改 */
+nav h1 a {
+    background: url(../images/logo2_03.jpg) no-repeat center;
+}
+
+.color {
+    color: #ff7200;
+}
+
+nav li a {
+    color: #999;
+}
+
+nav li a:hover {
+    color: #ff7200;
+}
+
+.banner {
+    height: 250px;
+    background: url(../images/banner3.jpg) no-repeat top center;
+}
+
+/* 关于部分 */
+.regard {
+    margin-top: 80px;
+    height: 650px;
+    position: relative;
+}
+
+.regard div {
+    border-radius: 5px;
+}
+
+.regard h2 {
+    margin: 0 auto;
+    width: 130px;
+    margin-bottom: 60px;
+}
+
+.regard .image {
+    width: 615px;
+    height: 390px;
+    background: url(../images/about.jpg) no-repeat center;
+}
+
+.regard .text {
+    width: 625px;
+    height: 400px;
+    padding: 50px 55px 0;
+    background-color: #fff;
+    position: absolute;
+    top: 145px;
+    right: -60px;
+}
+
+.regard .text h4 {
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    font-size: 24px;
+    color: #ff7200;
+    border-bottom: 2px solid #ff7200;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+}
+
+.regard .text p {
+    color: #666;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 1px;
+}
+
+/* 证书部分 */
+
+.honor {
+    background-color: #fff;
+    padding: 100px;
+}
+
+.honor h2 {
+    text-align: center;
+    margin-bottom: 75px;
+}
+
+.honor_image li {
+    float: left;
+    width: 290px;
+    height: 345px;
+    overflow: hidden;
+}
+
+.honor_image img {
+    width: 260px;
+    margin: auto;
+    transition: all 1s;
+}
+
+.honor_image p {
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    margin-top: 30px;
+}
+
+.honor_image li:hover img {
+    transform: scale(1.2);
+}
+
+/* 联系我们 */
+
+.map_tell {
+    position: relative;
+    height: 500px;
+}
+
+.map_tell .map {
+    width: 850px;
+    height: 500px;
+    background: url(../images/map.jpg) no-repeat top right;
+    position: absolute;
+    top: 0;
+    left: -350px;
+}
+
+.map_tell .tell {
+    box-sizing: border-box;
+    width: 500px;
+    height: 500px;
+    padding-top: 75px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.tell h2 {
+    margin-bottom: 55px;
+}
+
+.tell div {
+    height: 55px;
+    margin-bottom: 40px;
+}
+
+.tell span {
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    margin-right: 20px;
+    vertical-align: top;
+}
+
+.tell .add span {
+    background: url(../images/dizhi.png) no-repeat center;
+
+}
+
+.tell .coop span {
+    background: url(../images/lianxi.png) no-repeat center;
+
+}
+
+.tell .service span {
+    background: url(../images/lianxi_03.png) no-repeat center;
+
+}
+
+.tell i {
+    display: inline-block;
+    color: #666;
+    font-size: 18px;
+    line-height: 28px;
+}

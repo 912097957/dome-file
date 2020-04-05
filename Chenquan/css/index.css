@@ -9,12 +9,33 @@ header {
     position: relative;
 }
 
+/* 主页nav字体颜色 */
+
+.color {
+    color: #fff;
+}
+
+nav li a {
+    color: #c8c8c8;
+}
+
+nav li a:hover {
+    color: #fff;
+}
+
+/* 首页banner */
+
 header .switch {
     position: absolute;
     left: 50%;
     bottom: 85px;
     margin-left: -50px;
 }
+
+nav h1 a {
+    background: url(../images/logo.png) no-repeat center;
+}
+
 
 .switch li {
     width: 40px;
@@ -265,6 +286,7 @@ a {
 
 .bottom_nav div {
     flex: 1;
+    font-size: 0;
     margin: 0 7px;
     border-radius: 25px;
     text-align: center;
@@ -277,6 +299,7 @@ a {
     width: 100%;
     height: 100%;
     color: black;
+    font-size: 16px;
 }
 
 .bottom_nav div:hover a {

@@ -1,0 +1,116 @@
+/* 导航颜色按需修改 */
+nav h1 a {
+    background: url(../images/logo2_03.jpg) no-repeat center;
+}
+
+.color {
+    color: #ff7200;
+}
+
+nav li a {
+    color: #999;
+}
+
+nav li a:hover {
+    color: #ff7200;
+}
+
+.banner {
+    height: 200px;
+    background: url(../images/banner16.jpg) no-repeat center;
+}
+
+/* 文章部分 */
+.main {
+    margin-top: 60px;
+    font-size: 14px;
+}
+
+.main a {
+    color: #ccc;
+}
+
+.main span {
+    color: #666;
+}
+
+.main_hd {
+    height: 130px;
+    font-size: 0;
+    margin-top: 65px;
+    text-align: center;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+.main_hd h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+    letter-spacing: 5px;
+    color: #333;
+}
+
+.main_hd em {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.main_hd i {
+    width: 35px;
+    height: 3px;
+    background-color: #ff7200;
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    margin-left: -17px;
+}
+
+/* 文章主体 */
+.main_bd {
+    width: 775px;
+    margin: 0 auto;
+}
+
+.main_bd p {
+    text-indent: 2em;
+    color: #666666;
+    line-height: 30px;
+    margin-top: 50px;
+}
+
+.main_bd img {
+    display: block;
+    width: 705px;
+    height: 410px;
+    margin: 30px auto 0;
+    object-fit: cover;
+}
+
+.main_bd .bottom_text {
+    margin-bottom: 80px;
+}
+
+.bottom_nav {
+    display: flex;
+    height: 70px;
+}
+
+.bottom_nav a {
+    display: block;
+    flex: 1;
+    font-size: 14px;
+}
+
+.bottom_nav a:nth-child(1) {
+    color: #333;
+}
+
+.bottom_nav a:nth-child(2) {
+    color: #ff7200;
+    text-align: right;
+}
+
+.bottom_nav a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,136 @@
+/* 导航颜色按需修改 */
+nav h1 a {
+    background: url(../images/logo2_03.jpg) no-repeat center;
+}
+
+.color {
+    color: #ff7200;
+}
+
+nav li a {
+    color: #999;
+}
+
+nav li a:hover {
+    color: #ff7200;
+}
+
+.banner {
+    height: 200px;
+    background: url(../images/banner16.jpg) no-repeat center;
+}
+
+/* 主题部分 */
+
+body {
+    background-color: #fcfcfc;
+}
+
+.main_box {
+    margin: 80px auto 60px;
+}
+
+.main_box li {
+    float: left;
+    width: 373px;
+    height: 328px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.2);
+}
+
+.main_box a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.main_box img {
+    display: block;
+    width: 100%;
+    height: 220px;
+}
+
+.main_box .text,
+.time {
+    padding-left: 20px;
+}
+
+.main_box .text {
+    margin: 20px 0 27px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+}
+
+.main_box .time {
+    display: block;
+    font-size: 14px;
+    color: #666;
+}
+
+.main_box ul li:hover p {
+    color: #ff7200;
+}
+
+.main_box ul li {
+    margin-left: 20px;
+}
+
+.main_box li:nth-child(1) {
+    margin-left: 0;
+}
+
+.main_box ul li:nth-child(4) {
+    margin-left: 0;
+}
+
+.main_box ul li:nth-child(7) {
+    margin-left: 0;
+
+}
+
+.main_box ul li:nth-child(n+4) {
+    margin-top: 60px;
+}
+
+/* 底部切换按钮 */
+
+.switch {
+    width: 320px;
+    height: 40px;
+    margin: 0 auto 60px;
+}
+
+.switch a {
+    display: block;
+    float: left;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #666;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.switch a:first-child {
+    background: url(../images/ll.jpg) no-repeat center;
+    background-size: 70%;
+    margin-right: 15px;
+}
+
+.switch a:last-child {
+    background: url(../images/rr.jpg) no-repeat center;
+    background-size: 70%;
+    margin-left: 15px;
+}
+
+.switch a:hover {
+    color: #fff;
+    background-color: #ff6c00;
+}
+
+.switch a:first-child,
+.switch a:last-child:hover {
+    background-color: #fff;
+}
