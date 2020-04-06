@@ -1,0 +1,76 @@
+/* 导航颜色按需修改 */
+nav h1 a {
+    background: url(../images/logo2_03.jpg) no-repeat center;
+}
+
+.color {
+    color: #ff7200;
+}
+
+nav li a {
+    color: #999;
+}
+
+nav li a:hover {
+    color: #ff7200;
+}
+
+body {
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.banner {
+    height: 350px;
+    background: url(../images/hangyebanner_02.jpg) no-repeat center;
+}
+
+/* 案例展示部分 */
+
+.case {
+    margin-bottom: 100px;
+}
+
+.case .case_inner {
+    height: 555px;
+    margin-top: 100px;
+}
+
+.case img {
+    display: block;
+    width: 430px;
+    height: 555px;
+    float: left;
+}
+
+.case .text {
+    width: 650px;
+    float: right;
+    padding: 20px 0 0 25px;
+}
+
+.case .text h3 {
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    color: #ff7200;
+    background-color: #f8f8f8;
+}
+
+.case .text h5 {
+    height: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    color: #666;
+    border-left: 3px solid #ff7200;
+    padding-left: 15px;
+    margin-top: 60px;
+}
+
+.case .text p {
+    font-size: 14px;
+    color: #666;
+    line-height: 25px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}

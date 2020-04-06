@@ -1,0 +1,145 @@
+/* 导航颜色按需修改 */
+nav h1 a {
+    background: url(../images/logo2_03.jpg) no-repeat center;
+}
+
+.color {
+    color: #ff7200;
+}
+
+nav li a {
+    color: #999;
+}
+
+nav li a:hover {
+    color: #ff7200;
+}
+
+.banner {
+    height: 380px;
+    background: url(../images/gongyiin_02.jpg) no-repeat center;
+}
+
+html,
+body {
+    background-color: #fff !important;
+}
+
+/* 入驻内容开始 */
+
+.inter {
+    margin-bottom: 130px;
+}
+
+.inter h3 {
+    text-align: center;
+    font-size: 30px;
+    color: #333;
+    margin: 90px 0;
+}
+
+.inter .inter_inner {
+    width: 920px;
+    height: 185px;
+    margin: 0 auto;
+}
+
+.inter .inter_inner div {
+    float: left;
+    width: 130px;
+    height: 185px;
+}
+
+.inter .inter_inner span {
+    display: block;
+    width: 130px;
+    height: 130px;
+}
+
+.inter .inter_inner p {
+    font-size: 20px;
+    line-height: 29px;
+    color: #333;
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+.inter .inter_inner i {
+    float: left;
+    display: block;
+    width: 65px;
+    height: 130px;
+    margin: 0 34px;
+}
+
+.inter_inner .icon_box1 {
+    background: url(../images/z1.png) no-repeat center;
+}
+
+.inter_inner .icon_box2 {
+    background: url(../images/z2.png) no-repeat center;
+}
+
+.inter_inner .icon_box3 {
+    background: url(../images/z3.png) no-repeat center;
+}
+
+.inter_inner .icon_box4 {
+    background: url(../images/z4.png) no-repeat center;
+}
+
+.inter_inner .icon {
+    background: url(../images/z5.png) no-repeat center;
+}
+
+/* 底部bannner及入form表单 */
+
+.bottom_banner {
+    height: 580px;
+    background: url(../images/bo.jpg) no-repeat center;
+    background-size: 100%;
+}
+
+.from_inner {
+    width: 495px;
+    height: 580px;
+    padding-top: 45px;
+    box-sizing: border-box;
+}
+
+.from_inner h2 {
+    font-size: 30px;
+    color: #333;
+    border-left: 2px solid #000;
+    padding-left: 30px;
+    margin-bottom: 45px;
+}
+
+.from_inner input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 60px;
+    outline: none;
+    border: 1px solid #ccc;
+    margin-top: 30px;
+    padding-left: 20px;
+    font-size: 16px;
+    color: #666;
+}
+
+.from_inner button {
+    width: 200px;
+    height: 50px;
+}
+
+.bottom_banner .from_inner .tijiao {
+    width: 150px;
+    height: 40px;
+    padding: 0;
+    color: #fff;
+    margin-top: 50px;
+    border-radius: 20px;
+    background-color: #ff7200;
+}
