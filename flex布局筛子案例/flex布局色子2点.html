@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            padding: 10px;
+            margin: 200px auto;
+            border-radius: 10px;
+            box-sizing: border-box;
+            background-color: #fff;
+            box-shadow: inset 0 0 0px 10px rgba(0, 0, 0, 0.1);
+ 
+            /* 双色子 */
+            /* 默认是随后排列 */
+        
+            /* 设置X轴各行之间留有空白  一个左一个右 中间留白 类似float的左浮动和右浮动*/
+            /* justify-content: space-between; */
+
+            /* 设置Y轴个列之间上下排列中间留白 */
+            /* 首先设置排列方向 */
+            /* 然后中间留白 */
+            /* flex-direction: column;
+            justify-content: space-between; */
+
+            /* 设置Y轴排列中间留白并X居中对齐*/
+            /* flex-direction: column;
+            justify-content: space-between;
+            align-self: center; */
+            
+            /* 设置Y轴排列中间留白并X轴靠右 */
+            /* flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+             */
+            
+            /* 设置上下左右斜向对齐 */
+            justify-content: space-between;
+            /* 选择第二个在右下角 */
+        }
+
+        /* 用选择器单独选第二个点出来定位置 */
+        /* align-self是纵向排列时用来是单独定义子项x轴的位置 */
+        div span:nth-child(2) {
+            align-self: flex-end;
+        }
+
+        span {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>
