@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    if-else语句: 如果  主要是判断
+    
+    语法: if(表达式){
+        代码块1
+    }else{
+        代码块2
+    }
+
+    浏览器弹窗输入用 prompt() 方法
+    <script>
+        // 需求: 用户输入年龄, 成年返回"可以看电影", 否则返回"不可以看电影"
+            // var age = prompt("请您输入年龄");//弹窗:输入年龄  先var一个变量来接受弹窗输入的数据
+            // console.log(age);  //打印出的是字符串类型的,需要计算,所以需要转换为Number类型
+            // var age = parseInt(age);//var一个变量接受转换好的数据
+            // 简写:
+            // var age = parseInt(prompt("请您输入年龄")); //简写,把弹窗输入的内容转为数字类型
+            // console.log(age);
+            // if (age >= 18) {
+            //     console.log("你可以看电影了");
+            // } else {
+            //     alert("你不可以看电影");
+            // }
+
+        // 需求: 找到两个数字中得最大值并输出
+            // var num = 10;
+            // var sum = 20;
+            // if (num > sum) {
+            //     console.log(num);
+            // } else {
+            //     console.log(sum);
+            // }
+
+        // 需求: 判断一个用户输入的数字是奇数还是偶数
+            var num = parseInt(prompt("请输入一个数字"));
+            if (num % 2 == 0) {
+                console.log("偶数");
+            } else {
+                console.log("奇数");
+            }
+
+        // 两个分支,最终打印结果只有一个,if如果这个不符合,else那么输出另一个
+
+    </script>
+</body>
+</html>

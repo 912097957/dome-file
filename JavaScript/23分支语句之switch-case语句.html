@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    switch-case语句是分支语句下的多分支语句
+    语法:
+    var = 变量;
+    switch(表达式或者变量名) {
+        case (值1):代码1;break;
+        case (值2):代码1;break;
+        case (值3):代码1;break;
+        case (值4):代码1;break;
+        多个case....
+        default:代码5;
+    }
+
+    执行过程: 
+    获取表达式的值,和值1比较,如果一样则执行代码1,遇到break就跳出语句,后面的代码不执行
+    如果表达式的值和值1不一样,则和值2比较,如果相同则执行代码2,遇到break就跳出语句,后面的代码不执行
+    如果表达式的值和值2不一样,则和值3比较,.....类推
+
+    值得注意的是:Js是区分大小写的,存入变量的值如果是字符串类型字母也是区分大小写的
+
+    <script>
+        var jiBie = String(prompt("请输入等级(区分大小写)"));//获取用户输入的值并转换为字符串
+            switch (jiBie) {
+                case "A": console.log("合格:90到100之间"); break;
+                case "B": console.log("合格:80到90之间"); break;
+                case "C": console.log("合格:70到80之间"); break;
+                case "D": console.log("不合格:60到70之间"); break;
+                case "E": console.log("不合格:50到60之间"); break;
+                case "F": console.log("不合格:00到50之间"); break;
+                 default: console.log("请正确输入等级");
+            }
+    </script>
+</body>
+</html>
