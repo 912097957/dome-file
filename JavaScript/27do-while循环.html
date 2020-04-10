@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    语法: do{ 循环体 }while(条件); 执行过程:先执行次循环体,再判断条件是否成立,不成立则跳出循环,如果成立,则继续执行循环体,然后再判断
+    <script>
+        // 输出10次: "哈哈我又变帅了"
+        // var i = 0;//计时器
+        // do {
+        //     console.log("我帅吗"+i);//循环体
+        //     i++;
+        // } while (i < 10);//判断条件
+    </script>
+    <script>
+        //问用户:你觉得我帅吗,提示用户输入Y和N,如果是N就一直问,如果是Y就停止并提示您真有眼光
+        //  do {
+        //     var result = prompt("您觉得我帅吗?y/n");  //用户的输入存进这个变量
+        //  } while (result != "y");   //用户输入如果不是Y 判定结果成立为true,则继续循环,是Y,判定结果为false,则跳出循环
+        //  alert("您真有眼光");
+    </script>
+    <script>
+        //求100以内能被3整除的数的总和
+        var sum = 0; //储存总和
+        var i = 0; //计数器
+        while (i <= 100) {
+            if (i % 3 == 0) {
+                sum += i;
+            }
+            i++;
+        }
+        console.log(sum);
+    </script>
+</body>
+</html>

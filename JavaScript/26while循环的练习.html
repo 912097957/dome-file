@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 找出0到100之间所有数的和
+        // var sum = 0;
+        // var i=0;
+        // while (i<=100){
+        //     sum+=i;   
+        //     i++;
+        // }
+        // console.log("和等于:"+sum);
+    </script>
+    <script>
+        //找出1到100之间偶数的和
+        // var sum = 0;
+        //     var i = 0;
+        //     while (i <= 100) {
+        //         if (i % 2 == 0) {
+        //             sum += i;
+        //         }
+        //         i++;
+        //     }
+        //     console.log("和等于:" + sum);
+    </script>
+    <script>
+        //求出0到100之间所有奇数的和
+        // var sum = 0;
+        //     var i = 0;
+        //     while (i <= 100) {
+        //         if (i % 2 != 0) {
+        //             sum += i;
+        //         }
+        //         i++;
+        //     }
+        //     console.log("和等于:" + sum);
+    </script>
+    <script>
+        //求出0到100之间能被7整除的数
+        // var i = 0;
+        // while (i <= 100) {
+        //     if (i % 7 == 0) {
+        //         console.log(i);
+        //     }
+        //     i++;
+        // }
+    </script>
+    <script>
+        // 登录界面提示
+        var userName = prompt("请输入账号");
+        var userPwd = prompt("请输入密码");
+        while (userName != "abc" || userPwd != "123") {
+            alert("输入错误,请重新输入");
+            userName = prompt("请输入账号"); //变量重新赋值
+            userPwd = prompt("请输入密码"); //变量重新赋值
+        }
+        console.log("登录成功")
+    </script>
+</body>
+</html>
