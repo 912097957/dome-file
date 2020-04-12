@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+	<script>
+		//求100以内所有数的乘积
+		// var sum = 0;
+		// for (var i = 1; i <= 100; i++) {
+		// 	document.write("<br>");
+		// 	for (var j = 1; j <= i; j++) {
+		// 		sum = i * j;
+		// 		document.write(j + "*" + i + "=" + i * j);
+		// 		document.write("<br>");
+		// 	}
+		// }
+	</script>
+	<script>
+		//求100以内所有奇数的和
+		// var sum = 0;
+		// for (var i = 0; i <= 100; i++) {
+		// 	if (i % 2 != 0) {
+		// 		sum += i;
+		// 	}
+		// }
+		// console.log(sum);
+	</script>
+	<script>
+		// var sum =0 ;
+		// for (var i = 0; i <= 100 ; i++) {
+		// 	if (i % 3 == 0) {
+		// 		sum += i;
+		// 	}
+		// }
+		// console.log(sum);
+	</script>
+	<script>
+		//求100之内能被7整除的数的总和
+		// var sum = 0;
+		// var num = 0;
+		// for (var i = 1; i <= 100; i++) {
+		// 	if (i % 7 == 0) {
+		// 		sum += i;
+		// 	}
+		// }
+		// console.log(sum);
+	</script>
+	<script>
+		var money = 10000;
+		var rate = 0.003;
+		for (var i = 1; i <= 5; i++) { //第一年开始
+			money = money + money * rate; //每年的本金等于本金+率利
+		}
+		document.write(money);
+	</script>
+	<script>
+		//求斐波那契数列
+		var num1 = 1;	//第一个月
+		var num2 = 1;	//第二个月
+		var sum = 0;	//第N个月
+		for (var i = 3; i <= 12; i++) {
+			sum = num1 + num2;
+			num1 = num2;
+			num2 = sum;
+		}
+		console.log(sum);
+	</script>
+</head>
+<body>
+</body>
+</html>

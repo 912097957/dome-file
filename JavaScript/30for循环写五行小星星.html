@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍"/>
+	<meta name="Keywords" content="关键字"/>
+	<title>Document</title>
+</head>
+<body>
+	<!-- 记住:变量名不能重复 -->
+	<!-- document.write 是窗口输出 -->
+	<script>
+		for (var j = 0; j < 5; j++ ){	//控制显示行数
+			for (var i = 0; i < 5; i++) {	//控制一行有几个小星星
+				document.write("☆");
+			}
+			document.write("<br/>");	//输出换行
+		}
+	</script>
+	<!-- 输出一个三角形 -->
+	<script>
+		for (var i = 0 ;i <= 2; i++) {	//控制显示的行数
+			for (var j = 0; j <= i ; j++) {	//里面的j等于i是没增加一颗星星就换行
+				document.write("☆");
+			}
+			document.write("<br/>");
+		}
+	</script>
+</body>
+</html>
