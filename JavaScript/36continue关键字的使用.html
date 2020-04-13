@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+	<script>
+		//continue 关键字:会直接开始下一步循环
+		// var i = 0;
+		// while (i <= 10) {
+		// 	console.log("我好帅");
+		// 	//continue; //直接开始下一次循环;
+		// 	i++;
+		// }
+	</script>
+	<script>
+		// 求100到200之间的奇数和奇数的和  用continue
+		// var sum = 0; //储和
+		// var i = 100; //从100开始
+		// while (i <= 200) {
+		// 	if (i % 2 == 0) {	//判断是否能被2整除
+		// 		i++;	
+		// 		continue;	//如果能被2整除则加1后直接再次循环,如果是偶数,则跳过
+		// 	}
+		// 	sum += i;	//计算总和
+		// 	i ++; 
+		// }
+		// console.log(sum);
+	</script>
+	<script>
+		// 找出100到200之内个位数不是3的数
+		// var sum = 0;
+		// for (var i = 100; i <= 200; i++) {
+		// 	if (i % 10 == 3){	//如果i除以10余3的话就证明这个数的个位数是3
+		// 		i++;	
+		// 		continue;	//跳过这个数加1再次循环查找
+		// 	}
+		// 	sum += i;
+		// 	i ++;
+		// }
+		// console.log(sum);
+	</script>
+	<script>
+		var sum = 0;
+		for (var i = 1; i <= 10; i++) {
+			if (i % 10 == 3) {
+				i ++;
+				continue;
+			}
+			sum += i;
+			i ++;
+			console.log(sum);
+		}
+	</script>
+</head>
+<body>
+</body>
+</html>
