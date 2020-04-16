@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+	<script>
+		//提示用户输入班级人数,求出总和,平均值,最大值,最小值
+		var renShu = parseInt(prompt("请输入班级人数")); //提示用户输入班级总人数
+		var result = []; //定义一个空数组
+		for (var i = 0; i < renShu; i++) { // 将每一位同学的成绩储存进数组
+			result[result.length] = parseInt(prompt("请输入第" + (i + 1) + "位同学成绩"));
+		}
+		var sum = 0; //总成绩
+		var avg = 0 //平均值
+		var mix = result[0]; //最高分,先假设这个数组第一个元素是最大值
+		var min = result[0]; //最低分,先假设这个数组第一个元素是最小值
+		for (var i = 0; i < result.length; i++) { //遍历这个数组
+			sum += result[i]; //和等于每个元素相加
+			avg = sum / renShu; //平均值等于总分除以人数
+			if (mix < result[i]) { //判断最大值
+				mix = result[i];
+			}
+			if (min > result[i]) { //判断最小值
+				min = result[i];
+			}
+		}
+		document.write("成绩为:" + result);
+		document.write("<br>");
+		document.write("总和:" + sum);
+		document.write("<br>");
+		document.write("平均值:" + avg);
+		document.write("<br>");
+		document.write("最大值:" + mix);
+		document.write("<br>");
+		document.write("最小值:" + min);
+	</script>
+</head>
+<body>
+</body>
+</html>

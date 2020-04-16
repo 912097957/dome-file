@@ -47,6 +47,7 @@
 		}
 		console.log("最大值:" + max);
 	</script>
+
 	<script>
 		//求数组中的最小值
 		var arr4 = [1234, 3423, 51234, 52, 2342, 25626];
@@ -67,6 +68,7 @@
 		}
 		console.log(min);
 	</script>
+
 	<script>
 		//倒序遍历数组
 		var arr5 = [23, 342, 243, 24, 5, 6, 45, 75, 54];
@@ -92,7 +94,39 @@
 		}
 		console.log(namely[0] + str); //再把原数组的第一位拼接到数组前面
 	</script>
-	
+
+	<script>
+		//把数组重新放进一个新数组里
+		var arr = [12, 34, 5, 0, 57, 0, 57, 5, 56];
+		var arr1 = [];
+		for (var i = 0; i <= arr.length - 1; i++) {
+			if (arr[i] != 0) {
+				arr1[arr1.length] = arr[i]; //把新数组的长度当做下标,数组的长度是可以改变的
+			}
+		}
+		console.log(arr1);
+	</script>
+
+	<script>
+		//倒序遍历一个数组并打印出来
+		var arr = [12, 34, 5, 0, 57, 0, 57, 5, 56];
+		var newArray = [];
+		for (var i = arr.length - 1; i >= 0; i--) {
+			newArray[newArray.length] = arr[i];
+		}
+		console.log(newArray);
+	</script>
+
+	<script>
+		//反转数组:把数组中的位置调换过来
+		var arr = [10, 20, 30, 40, 50, 60];
+		for (var i = 0; i < arr.length / 2; i++) { //控住循环的次数
+			var temp = arr[i]; //把这个数组元素放进一个临时变量中
+			arr[i] = arr[arr.length - 1 - i]; //把下标第一位的元素放进第一位
+			arr[arr.length - 1 - i] = temp; //再把存在零时变量的值放进最后一位
+		}
+		console.log(arr);
+	</script>
 </head>
 <body>
 </body>

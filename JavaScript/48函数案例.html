@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+	<script>
+		function f1() {
+			console.log("空尼句哇"); //执行了
+			return 100; // 返回了
+		}
+		var result = f1(); //定义一个变量来接受返回值
+		console.log(result);
+		// 可以直接调用并接收
+		console.log(f1()); //或者直接调用然后接收并输出
+
+		//如果这样输出
+		console.log(f1); //输出结果是f1函数的代码
+	</script>
+
+	<script>
+		// 获取任意两个数字的和
+		function getSum(x, y) {
+			return x + y;
+		}
+		console.log(getSum(10, 20)); //这里是调用函数并打印返回的值
+
+		//获取1到100之间的总和
+		function geteverySum() {
+			var sum = 0; //定义一个变量来接收这个循环的总和
+			for (var i = 1; i <= 100; i++) {
+				sum += i;
+			}
+			return sum;
+		}
+		console.log(geteverySum());
+
+		//求1到n之间的总和(这个n是用户传入的值)
+		function geteverySum(n) {
+			var sum = 0; //定义一个变量来接收这个循环的总和
+			for (var i = 1; i <= n; i++) {
+				sum += i;
+			}
+			return sum;
+		}
+		console.log(geteverySum(10000));
+
+		//求n到m之间所有数字的和
+		function geteverySum1(n, m) {
+			var sum = 0; //定义一个变量来接收这个循环的总和
+			for (var i = n; i <= m; i++) {
+				sum += i;
+			}
+			return sum;
+		}
+		console.log(geteverySum1(1, 100));
+	</script>
+	<script>
+		//求圆的面积
+		//数学公式 Math.PI
+		// console.log(Math.PI);
+		function getS(r) {
+			return Math.PI * (r * r);
+
+		}
+		console.log(parseInt(getS(5))); //输出整数
+	</script>
+	<script>
+		//判断一个数是否是质数
+	</script>
+</head>
+<body>
+</body>
+</html>
