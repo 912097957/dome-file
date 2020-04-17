@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍"/>
+	<meta name="Keywords" content="关键字"/>
+	<title>Document</title>
+</head>
+<body>
+	break:在循环中遇到这个关键字,则立即跳出循环
+	continue:在循环中遇到这个关键字则直接开始下次循环
+	数组:储存一组有序的数据,数据类型可以不一样
+	数组的作用:一次性存储多个数据
+	数组元素:数组中存储的每个数据,叫做数组元素,	存储了5个数据,就是有5个元素
+	数组的长度:数组元素的个数叫数组的长度----数组.length  //arr.length 数组的长度可以改变
+	数组索引:存储数据元素的编号,从0开始,到数组的长度-1结束
+	索引是用来存储和读取数组元素的
+	遍历数组:通过循环的方式找到数组的某个数据
+	  
+
+	数组的定义方式:
+	1.通过构造构造函数的方式定义:
+		var 数组名 = new Array();  // Array[]就是构造函数,空数组
+		var 数组名 = new Array(长度);  // 设置数组初试的长度,长度是可以改变的
+		var 数组名 = new Array(值1,值2,值3...);  // 定义数组并设置元素的值
+ 
+	2.通过字面量的方式定义数组
+		var 数组名 = [值1,值2,值3...];  //通过字面量的方式定义数组,并设置元素
+
+
+	数组的遍历:
+		var arr = [1,2,3,4];
+		for (var i = 0 ; i - 数组名.length; i++){
+
+		}
+
+	函数:把一些重复的代码封装起来,在需要的时候直接调用这个函数
+	函数的作用:代码的重用
+	函数的定义:
+	function 函数名(形参){
+		函数体
+	} 
+	函数调用:
+	函数名 ();
+
+	形参和实参:
+	形参:函数定义的时候函数名后面小括号里的变量就是参数,可以不写var
+	实参:函数调用的时候函数名小括号传入的变量或者值,都是实参
+	返回值:函数中如果有return,那么这个函数就有返回值
+	如果函数中没有return,那么这个函数就没有返回值
+	如果函数中有return,但是后面什么内容都没有,这个函数没有明确返回值
+	如果一个函数没有明确的返回值,如果函数调用了并且接受了,那么结果为undefined
+	如果直接输出这个函数名字,那么是这个函数的代码
+
+	function f1(){
+		 
+	}
+	这是一个无参数的函数
+
+	function f1(x,y){
+
+	}
+	这是一个有参数无返回值的函数
+
+	 function f1(){
+		 return 100;
+	 }
+	 这是一个无参数有返回值的函数
+
+	 function f1(x,y){
+		 return x+y;
+	 }
+	 这是有个有参数有返回值的参数(用的最多)
+</body>
+</html>

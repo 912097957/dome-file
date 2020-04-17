@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+	<script>
+		var arr = [23, 432, 523, 52, 56, 64, 746, 746];
+		for (var j = 0; j < arr.length; j++) {
+			for (var i = 0; i < arr.length; i++) {
+				if (arr[i] > arr[i + 1]) {
+					var temp = arr[i];
+					arr[i] = arr[i + 1];
+					arr[i + 1] = temp;
+				}
+			}
+		}
+		console.log(arr);
+	</script>
+</head>
+<body>
+</body>
+</html>
