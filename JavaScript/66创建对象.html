@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+	<script>
+		//创建对象的三种方式:
+		// 1.调用系统的构造函数创建对象  	
+		// var 变量名 = new Object();  //Object 是系统的构造函数
+		// 实例化对象
+		var obj = new Object();
+		// 对象有特征---属性和行为----方法
+		// 添加属性: 对象.名字=值;
+		obj.name = "小苏";
+		obj.age = 18;
+		obj.sex = "女";
+
+		//添加方法: 对象.名字=函数;
+		obj.eat = function () {
+			console.log("我喜欢吃油炸榴莲");
+		};
+		obj.play = function () {
+			console.log("我喜欢玩飞机");
+		};
+
+		console.log(obj.name); //获取并输出属性;
+		console.log(obj.age); //获取并输出;
+		console.log(obj.sex); //获取并输出;
+
+		// 方法的调用
+		obj.eat(); //调用吃
+		obj.play(); //调用玩
+
+		// 2.自定义构造函数创建对象
+
+
+		// 3.字面量方式创建对象
+	</script>
+
+</head>
+
+<body>
+</body>
+
+</html>
