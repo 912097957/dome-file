@@ -2,13 +2,100 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="author" content="Tom shelby"/>
+	<meta name="author" content="Tom shelby" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-	<meta name="description" content="网站介绍"/>
-	<meta name="Keywords" content="关键字"/>
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
 	<title>Document</title>
 	<script>
-		
+		/*
+		如何获取该变量(对象)是不是属于什么类型的
+		语法:
+		变量 instanceof 类型的名字 -------> 返回的结果是布尔类型.true就是这种类型,false就不是这种类型
+
+		// 在当前对象的方法中是可以访问当前这个对象的属性的值得
+		// 在当前的对象方法中,可以使用this关键字代表当前的对象
+
+		*/
+		var person = new Object();
+		person.name = "小明";
+		person.age = 18;
+		// 在当前对象的方法中是可以访问当前这个对象的属性的值得
+		person.sayHi = function () {
+			console.log("嗨我是小明,今年" + this.age + "岁了");
+		};
+
+		var stu = new Object();
+		stu.name = "学生";
+		stu.age = 18;
+		// 在当前对象的方法中是可以访问当前这个对象的属性的值得
+		stu.eat = function () {
+			// 在当前的对象方法中,可以使用this关键字代表当前的对象
+			console.log("我喜欢吃雪糕,今年" + this.age + "岁了");
+		};
+
+		var dog = new Object();
+		stu.name = "哮天犬";
+		stu.age = 18;
+		// 在当前对象的方法中是可以访问当前这个对象的属性的值得
+		stu.eas = function () {
+			console.log("大骨头");
+		};
+
+		// 在当前对象的方法中是可以访问当前这个对象的属性的值得
+		person.sayHi();
+		stu.eat();
+
+		// 验证这个变量是不是这个类型的
+		// console.log(person instanceof person);
+		// console.log(person instanceof Object);
+		// 结论:对象不能分辨出是什么类型的
+	</script>
+	<script>
+		// ☆(重点)如何一次性创建多个对象:
+		// 把创建对象的代码封装在一个函数中,然后
+		// function createObject() {
+		// 	var obj = new Object(); //创建一个对象
+		// 	obj.name = "小红"; //添加一个属性
+		// 	obj.age = 18;
+		// 	obj.sayHi = function () { //添加一个方法
+		// 		console.log("大家好,我叫" + this.name + "," + "我今年:" + this.age + "了");
+		// 	};
+		// 	return obj; //返回这个对象
+		// };
+		// // 创建一个人的对象
+		// var per1 = createObject(); //调用这个函数并接收返回值,此时per1是一个对象
+		// per1.sayHi();
+
+		// // 再创建一个人的对象:就把这个对象调用一次
+		// var per2 = createObject();
+		// per1.sayHi();
+
+		// 过程:创建一个函数,在函数里创建一个对象,添加属性,添加方法,最后返回这个对象,定义一个变量接受这个对象,此时这个变量就是一个对象,然后就可以调用对象的方法
+
+		// ----------------------------------------------------
+
+		// 每当调用一次函数就创建一个对象所以我们可以这样写:用函数传参的方式
+		function createObject(name, age) { //传参
+			var obj = new Object();
+			// 类似于在这里创建两个变量接收传进来的参数
+			// var name = "";
+			// var age = 18;
+			obj.name = name;
+			obj.age = age;
+			obj.sayHi = function () { //添加一个方法
+				console.log("大家好,我叫" + this.name + "," + "我今年:" + this.age + "了");
+			};
+			return obj; //返回这个对象
+		};
+		// 创建一个人的对象
+		var per1 = createObject("小芳", 18); //定义参数传进去并接收
+		per1.sayHi();
+		// 创建另一个人的对象
+		var per2 = createObject("小红", 20); //定义参数传进去并接收
+		per2.sayHi();
+
+		//这样就实现了工厂模式创建不同对象
 	</script>
 </head>
 <body>

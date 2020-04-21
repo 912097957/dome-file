@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+	<script>
+		/*
+		用自定义构造函数创建对象做了几件事
+		1.在内存中开辟空间(申请一块空闲的空间),储存创建的新的对象
+		2.把this设置为当前对象
+		3.设置对象的属性和方法的值
+		4.把this这个对象返回
+		*/
+
+		function Person(name, age, sex) { //自定义构造函数
+			this.name = name;
+			this.age = age;
+			this.sex = sex;
+			this.sayHi = function () {
+				console.log("我是" + this.name + "," + "我今年" + this.age + "了," + "我是" + this.sex + "生哦");
+			};
+		};
+		// 创建对象
+		var per = new Person("小红", 29, "女");
+		console.log(per.name);
+		console.log(per.age);
+		console.log(per.sex);
+		per.sayHi();
+	</script>
+</head>
+<body>
+</body>
+</html>
