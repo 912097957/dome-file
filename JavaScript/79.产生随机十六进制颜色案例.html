@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			height: 731px;
+		}
+
+		div {
+			width: 100%;
+			height: 100%;
+			background-color: pink;
+		}
+	</style>
+	<script>
+		// 案例: 产生一个随机十六进制的颜色
+		function gitColor() { //定义一个函数产生返回值
+			var str = "#"; //定义一个数组接收循环里返回的拼接字符串
+			var arr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
+			for (var i = 0; i < 6; i++) {
+				var num = parseInt(Math.random() * 16); //产生的随机数作为上面数组的下标使用
+				str += arr[num]; //拼接进数组
+			}
+			return str;
+		}
+		console.log(gitColor());
+		window.onload = function () {
+			document.getElementById("dv").style.backgroundColor = gitColor();
+		}
+	</script>
+</head>
+<body>
+	<div id="dv"></div>
+</body>
+</html>
