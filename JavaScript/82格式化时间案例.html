@@ -26,14 +26,14 @@
 			var hours = time.getHours();
 			//获取分钟
 			var minute = time.getMinutes();
-			minute = minute < 10 ? "0" + minute : minute;
 			//获取秒
 			var seconds = time.getSeconds();
-
+			
 			month = month < 10 ? "0" + month : month;
 			day = day < 10 ? "0" + day : day;
 			hours = hours < 10 ? "0" + hours : hours;
 			seconds = seconds < 10 ? "0" + seconds : seconds;
+			minute = minute < 10 ? "0" + minute : minute;
 
 			return year + "年" + month + "月" + day + "日" + hours + ":" + minute + ":" + seconds;
 		}

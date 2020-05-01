@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		alert("第1题:查找一个给定元素在数组中的某个位置 1~5 ");
+
+		function getSeek(item) {
+			var arr = [1, 2, 3, 4, 5];
+			if (isNaN(item)) {
+				return alert("请您输入正确数字!");
+			} else {
+				if (arr.indexOf(item) == -1) {
+					return alert(arr.indexOf(item) + "   该数值不存在!");
+				} else {
+					return alert("该数字在数组索引的第" + arr.indexOf(item) + "位!");
+				};
+			};
+		}
+		getSeek(Number(prompt("请您输入要查找的数字!")));
+	</script>
+</body>
+</html>
