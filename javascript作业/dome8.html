@@ -8,12 +8,10 @@
 </head>
 <body>
 	<script>
-		alert("第5题:给指定数组末尾添加指定值,返回新数组");
+		alert("第8题:删除数组第一个元素，并返回新的数组");
 		var arr = [1, 2, 3, 4, 5];
-		var key = Number(prompt("请输入要添加的数值(数字类型)!"));
 		var newArr = arr.slice(0, arr.length);
-		newArr.push(key);
-		console.log("本次添加的值为: " + key);
+		newArr.shift();
 		console.log("原数组" + arr);
 		console.log("新数组" + newArr);
 	</script>

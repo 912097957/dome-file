@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		alert("第10题:在数组arr的index处添加元素item,结果返回新的数组");
+		var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+		var arr2 = arr.slice(0, arr.length);
+		var item = prompt("请输入插入的值!");
+		if (!isNaN(item)) {
+			item = Number(item);
+		};
+		var index = Number(prompt("请输入要插入的位置!"));
+		arr2.splice(index, 0, item);
+		console.log(arr2);
+	</script>
+</body>
+</html>
