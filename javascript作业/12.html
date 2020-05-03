@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 找出数组 arr 中重复出现过的元素
+		function getNewArr(arr) {
+			var repeatNum = [];
+			var obj = {};
+			for (var i = 0; i < arr.length; i++) {
+				var key = arr[i];
+				if (obj[key]) {
+					obj[key]++;
+				} else {
+					obj[key] = 1;
+				};
+			};
+			for (var key in obj) {
+				if (obj[key] > 1) {
+					repeatNum.push(Number(key));
+				};
+			};
+			return repeatNum;
+		};
+		var arr = [1, 2, 3, 4, 3];
+		console.log(getNewArr(arr));
+	</script>
+</body>
+</html>

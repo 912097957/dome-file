@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 移除数组 arr 中的所有值与 item 相等的元素,不要直接修改数组 arr，结果返回新的数组
+		function getNewArr(arr, item) {
+			var newArr = [];
+			for (var i in arr) {
+				if (arr[i] != item) {
+					newArr.push(arr[i]);
+				};
+			};
+			return newArr;
+		};
+		var arr = [1, 2, 3, 4, 5, 2, 4, 2, 4];
+		console.log(getNewArr(arr, 4));
+	</script>
+</body>
+</html>

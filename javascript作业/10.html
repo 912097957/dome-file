@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 在数组 arr 的 index 处添加元素 item。不要直接修改数组 arr，结果返回新的数组
+		function getNewArr(arr, index, item) {
+			var newArr = arr.slice(0, arr.length);
+			newArr.splice(index, 0, item);
+			return newArr;
+		};
+		var arr = [1, 2, 3, 4];
+		console.log(getNewArr(arr, 2, "z"));
+	</script>
+</body>
+</html>

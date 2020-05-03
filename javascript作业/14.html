@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 在数组 arr 中，查找值与 item 相等的元素出现的所有位置
+		function getPinFan(arr, item) {
+			var newArr = [];
+			for (var i in arr) {
+				if (arr[i] == item) {
+					newArr.push(Number(i));
+				}
+			};
+			return newArr;
+		};
+		var arr = ["a", "b", "c", "a", "d", "e", ];
+		console.log(getPinFan(arr, "a"));
+	</script>
+</body>
+</html>

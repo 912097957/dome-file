@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 请修复给定的 js 代码中，函数定义存在的问题
+		function functionS(flag) {
+			if (flag) {
+				var getValue = function getValue() {
+					return 'a';
+				};
+			} else {
+				var getValue = function getValue() {
+					return 'b';
+				};
+			};
+			return getValue(); //返回的是函数调用的结果
+		};
+		console.log(functionS(true));
+	</script>
+</body>
+</html>

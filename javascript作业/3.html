@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 移除数组arr中的所有值与item相等的元素,结果返回新的数组
+		function clearItem(arr, item) {
+			var newArray = [];
+			for (const i in arr) {
+				if (arr[i] != item) {
+					newArray.push(arr[i]);
+				};
+			};
+			return newArray;
+		};
+		var arr = [1, 2, 3, 4, 2];
+		console.log(clearItem(arr, 1));
+	</script>
+</body>
+</html>

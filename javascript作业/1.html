@@ -8,12 +8,18 @@
 </head>
 <body>
 	<script>
-		alert("第6题:删除给定数组最后一位元素,返回新数组");
+		// 找出元素item在给定数组arr中的位置
+		function indexOf(arr, item) {
+			for (var i in arr) {
+				if (arr[i] == item) {
+					return i;
+				};
+			};
+			return -1;
+		};
 		var arr = [1, 2, 3, 4, 5];
-		var newArr = arr.slice(0, arr.length);
-		newArr.pop();
-		console.log("原数组" + arr);
-		console.log("新数组" + newArr);
+		var num = 2;
+		console.log(indexOf(arr, num));
 	</script>
 </body>
 </html>

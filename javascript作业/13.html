@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 为数组 arr 中的每个元素求二次方,不要直接修改数组 arr，结果返回新的数组
+		function getPinFan(arr) {
+			var newArr = [];
+			for (var i in arr) {
+				newArr.push(arr[i] * arr[i]);
+			};
+			return newArr;
+		};
+		var arr = [2, 3, 4, 5];
+		console.log(getPinFan(arr));
+	</script>
+</body>
+</html>

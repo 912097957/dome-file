@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 在数组arr末尾添加元素item,不要直接修改数组arr,结果返回新的数组
+		function setNewArry(arr, item) {
+			var newArr = arr.slice(0, arr.length);
+			newArr.push(item);
+			return newArr;
+		};
+		var arr = [1, 2, 3, 4];
+		console.log(setNewArry(arr, 10));
+	</script>
+</body>
+</html>

@@ -8,12 +8,14 @@
 </head>
 <body>
 	<script>
-		alert("第8题:删除数组第一个元素，并返回新的数组");
+		// 删除数组arr最后一个元素,不要直接修改数组arr,结果返回新的数组
+		function getNewArr(arr, item) {
+			var newArr = arr.splice(0, arr.length);
+			newArr.pop();
+			return newArr;
+		};
 		var arr = [1, 2, 3, 4, 5];
-		var newArr = arr.slice(0, arr.length);
-		newArr.shift();
-		console.log("原数组" + arr);
-		console.log("新数组" + newArr);
+		console.log(getNewArr(arr));
 	</script>
 </body>
 </html>
