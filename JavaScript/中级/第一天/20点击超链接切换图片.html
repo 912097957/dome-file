@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+</head>
+<body>
+	<a href="images/2.jpg" id="ak"><img src="images/2-small.jpg" alt="" id="im"></a>
+	<script>
+		document.getElementById("im").onclick = function () {
+			this.src = document.getElementById("ak").href;
+			if (document.getElementById("im").src != "images/2-small.jpg") {
+				document.getElementById("im").onclick = function () {
+					this.src = "images/2-small.jpg";
+					return false;
+				};
+			};
+			return false;
+		};
+	</script>
+</body>
+</html>

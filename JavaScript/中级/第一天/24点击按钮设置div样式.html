@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+	<script src="common.js"></script>
+</head>
+<body>
+	<input type="button" id="btn" value="点击设置">
+	<div id="dv"></div>
+	<script>
+		//点击按钮设置div的宽高背景
+
+		//凡是css中这个属性是由多个单词拼成的,在js代码操作DOM的时候,把杠干掉,后面的单词首字母大写
+
+		my$("btn").onclick = function () {
+			my$("dv").style.width = "300px";
+			my$("dv").style.height = "300px";
+			my$("dv").style.backgroundColor = "hotpink";
+		};
+	</script>
+</body>
+</html>

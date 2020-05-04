@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="点击按钮" onclick="f1()">
+	<script>
+		// 没有做到分离
+		function f1() {
+			alert("我被点了");
+		};
+	</script>
+	<input type="button" value="开始分离" id="btn">
+	<script>
+		// html标签中的id属性中储存的值是唯一的
+		// 从文档中找到id值为btn的这个标签(元素) 
+
+		function f2() {
+			alert("开始分离代码!");
+		};
+		// document.getElementById("id属性的值");	===>返回的是一个元素对象
+		var btnObj = document.getElementById("btn");
+		// 为按钮注册事件
+		btnObj.onclick = f2; //不加括号
+	</script>
+	<input type="button" value="开始分离" id="btn1">
+	<script>
+		//最终版本
+		//根据id属性的值从整个文档中获取到这个元素(标签)
+		// 为这个元素添加点击事件
+		document.getElementById("btn1").onclick = function () {
+			alert("这真是太好了!");
+		};
+	</script>
+</body>
+</html>

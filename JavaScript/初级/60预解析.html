@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+	<script>
+		//预解析:在执行之前会把变量声明和函数声明提升到作用域链最顶端并赋值undefined
+
+		// var num; //下面在打印的时候相当于在这里声明一个变量但是没有赋值,没有赋值的变量值默认为undefined
+		// console.log(num);
+		// var num = 10;
+
+		//f1(); //这里同理:如果把函数调用放在上面,函数在调用时会把函数声明提升到作用域的顶端,并默认赋值undefined
+		// function f1() {
+		// 	//var num; //下面打印时相当于在这块作用域声明了一个变量num,并赋值undefined
+		// 	console.log(num);
+		// 	var num = 15;
+		// }
+		//f1(); //这里输出的是undefined,因为相当于在打印之前声明了一个num但没有赋值,然后默认赋值undefined
+	</script>
+
+	<script>
+		// function f1() {
+		// 	console.log("小苏好帅啊");
+		// }
+		// f1();
+
+		// function f1() {
+		// 	console.log("我才是最帅的");
+		// }
+		// f1();
+
+		// 调用结果为"我才是最帅的"
+		// 为何?
+		// 函数在执行会提升,第一个函数不用提升,之后会把第二个f1函数提升,会覆盖掉第一个函数
+	</script>
+
+	<script>
+		// var num = 20;
+		// function f2() {
+		// 	console.log(num + "我是num");
+		// 	var num = 10; //如果这里没有声明这个变量,那么结果就是20,用为作用域链会向上找到这个变量
+		// }
+		// f2(); // 这里调用的结果是undefined,因为作用域的问题,它会现在这个函数作用域里寻找到这个变量名并提升到这个作用域的顶端(也就是他的前面var一个num但是赋值undefined)
+	</script>
+
+	<script>
+		f3(); //这里结果是undefined,因为在打印时是根据顺序的,先调用,会把函数声明和变量声明提升到他前面,但是不赋值
+		var num = 20;
+		//f3(); // 如果在这里调用,那么这个函数的num变量在他前面就赋值20了
+		function f3() {
+			console.log(num);
+		}
+	</script>
+</head>
+<body>
+</body>
+</html>

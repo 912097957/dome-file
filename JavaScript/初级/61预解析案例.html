@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+	<script>
+		// 预解析中,变量的提升,只会在当前的函数作用域中提升,提升到当前作用域的最上面
+		// 函数中的变量只会提升到函数作用域的中的最前面,不会出去
+		// 预解析中会分段,多对的script标签函数重名,预解析的时候不会冲突
+		
+		// 也就是说
+		function f1() {
+			console.log(num); // 结果为undefined
+			var num = 10;
+		}
+		console.log(num);
+		f1();
+		// --------------------------
+		function f2() {
+			console.log("哈哈");
+		}
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

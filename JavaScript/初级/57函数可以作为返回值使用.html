@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+	<script>
+		//函数可以作为参数使用,也可以作为返回值使用
+
+		function f1() { //这里f1调用时返回一个函数
+			console.log("f1函数调用了");
+			return function () { //当f1函数被调用,这里就会返回一个值
+				console.log("这是一个函数");
+			};
+		}
+		var ff = f1(); //这里定义一个变量来接收返回值,此时ff就是上面的这个函数里面返回的函数,ff储存了这个函数,那他就是一个函数就可以调用它
+		ff(); //此时变量ff就是一个函数
+	</script>
+</head>
+<body>
+</body>
+</html>

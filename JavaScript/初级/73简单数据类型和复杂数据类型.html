@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+	<script>
+		//原始数据类型:
+		// number string boolean undefined null object
+		// 其中简单类型(值类型)
+		// number string boolean 
+
+		// 复杂类型(引用类型):
+		// Object
+
+		// 空类型:
+		// undefined null
+
+		/*
+		值类型的值在哪一块空间中储存?
+		栈中储存
+
+		引用类型的值在哪一块空间中存储?
+		在栈和堆中存储:一个存着对象,一个存着该对象的地址
+		*/
+
+
+		// var num = 10; //值类型,存储在栈中
+		// var obj = {}; //复杂类型,对象储存在堆中,地址(引用)存储在栈中
+
+		// var num1 = 10;
+		// var num2 = num1; //传递的是值
+	</script>
+	<script>
+
+		//☆ 值类型之间传递,传递的是值
+
+		// function f1(x) {					// 3.这个变量中存储的是传入的10
+		// 	x = 100; 						// 4.这时x的值又改为100
+		// }
+		// var num = 10;						// 1.先执行这段代码,在栈中申请一块空间存储10
+		// f1(num); 							// 2.然后调用这个函数时,将10赋值一份传入函数里的X变量,此时在栈中开辟了一个x空间,赋值为10
+		// console.log(num) // 10				// 5.所有num的值和X的改变没有关系
+	</script>
+	<script>
+		//☆ 引用类型的之间传递的是地址
+		// var obj = {							//1.此时obj这个(变量)存储在栈中,值为地址
+		// 	name : "小明"					//2.这个对象属性存储在堆中,
+		// };
+		// function f1(obj2) {
+		// 	obj2.name = "小红";				//5.这个函数指向了0X120并更改了属性值
+		// }
+		// console.log(obj.name);				//3.打印这个属性时,指向了0X120这个地址
+		// f1(obj);							//4.此时将obj当中存储的地址0X120这个地址复制给了obj2
+		// console.log(obj.name);				//6.此时打印结果为小红(堆中的值被更改了)
+	</script>
+</head>
+<body>
+</body>
+</html>

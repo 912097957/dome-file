@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 交换变量的第一种思路: 借助第三方变量进行交换
+        // var num1 = 10;
+        // var num2 = 20;
+        // //声明一个零时变量temp并把num1的值取出来又存进这个零时变量
+        // var temp = num1;  //把num1的值取出来放进temp
+        // var num1 = num2;  //把num2的值放进num1中
+        // var num2 = temp;  //把temp的值取出放进nym2中
+        // console.log(num1);
+        // console.log(num2);
+
+        //第二种交换方式:一般用于数字的交换
+        // var num1 = 10;
+        // var num2 = 20;
+        // num1 = num1 + num2; //把num1和num2的值相加并赋到num1中
+        // num2 = num1 - num2; //此时num1的值为30,减掉num2的20等于10并赋进num2
+        // num1 = num1 - num2; //减掉num2的20并赋进num1
+        // //完成数字交换
+        // console.log(num1, num2);
+
+        //拓展:位运算  c语言
+        // var num1 = 10;
+        // var num2 = 20;
+        // num1 = num1 ^ num2;
+        // num2 = num1 ^ num2;
+        // num1 = num1 ^ num2;
+        // console.log(num1, num2);
+        // alert(num1);
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+	<script>
+		// 对象:是一组无序属性的集合(数组有顺序(下标))
+		// 至于属性的值可以是任何类型
+		// function Dog(name) {
+		// 	this.name(name);
+		// };
+
+		function Obj(name, age) {
+			this.name = name;
+			this.age = age;
+			// this.dog = new Dog();
+			// this.dog = {};
+			this.sex = true;
+			this.play = function () {
+				console.log("打飞机");
+			}
+		}
+		var per = new Obj();
+	</script>
+
+	<script>
+		// json数据的格式:一般都是成对的,是键值对
+		// json也是对象,数据都是成对的,一般json格式的数据无论是键还是值都是用双引号扩起来的
+		// 如果看到对象的属性和值都有双引号,那就是json格式的对象
+
+		var json = {
+			"name": "小明",
+			"age": "10",
+			"sex": "男",
+		};
+		// 我想一个一个的遍历出来,这个对象里面没有索引,所以不能用for循环遍历的
+		// 可以
+		console.log(json.name); //这是可以的 
+		// 还可以
+		console.log(json["name"]); //这也是可以的
+		// 还可以 
+		var key = "name"; //定义一个变量来接收这个属性名
+		//var key = "height"; //定义一个变量来接收这个属性名  但是由于Js是一门动态类型的语言,没有什么就定义什么,所以赋值undefined
+		console.log(json[key]); //这也是可以的
+
+		//我想遍历所有属性和值
+		//for循环不能遍历对象,但是for in 可以
+		for (var key in json) { //定义一个变量key接受对象里的属性名  属性名里存储着属性值
+			//对象中确实有这个属性对象.属性名字  或者对象(属性名字)
+			console.log(json.key); //输出结果为对象的属性名 值为undefined  因为这个json对象中没有这个属性
+			console.log(json[key]);
+		}
+
+
+		// 所以应该这样做
+		// key是一个变量,这个变量中存储的是对象的属性名字
+		for (var keys in json) {
+			console.log(keys + "属性的值为==>" + json[keys]);
+		}
+	</script>
+</head>
+<body>
+</body>
+</html>

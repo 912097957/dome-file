@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+	<script src="common.js"></script>
+	<style>
+		div {
+			width: 200px;
+			height: 200px;
+			background-color: hotpink;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="btn" value="隐藏">
+	<div id="dv"></div>
+	<script>
+		my$("btn").onclick=function(){
+			if (this.value=="显示") {
+				my$("dv").style.display = "block";
+				this.value = "隐藏";
+			} else if(this.value=="隐藏"){
+				my$("dv").style.display = "none";
+				this.value = "显示";
+			};
+		};
+	</script>
+</body>
+</html>
