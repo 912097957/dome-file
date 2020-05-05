@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="" />
+    <meta name="Keywords" content="" />
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="点击切换内容!" id="btn">
+    <br>
+    <input type="text" value="">
+    <br>
+    <input type="text" value="">
+    <br>
+    <input type="text" value="">
+    <br>
+    <input type="text" value="">
+    <br>
+    <input type="text" value="">
+    <br>
+    <input type="text" value="">
+</body>
+<script>
+    document.getElementById("btn").onclick = function () {
+        var input = document.getElementsByTagName("input");
+        for (var i = 1; i < input.length; i++) {
+            //判断这个元素是不是按钮
+            if (input[i].type != "button") {
+                input[i].value = "我喜欢廖雪梅!";
+            }
+        };
+    };
+</script>
+</html>

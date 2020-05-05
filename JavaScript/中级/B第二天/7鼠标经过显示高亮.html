@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+	<style>
+		li {
+			list-style: none;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>苹果</li>
+		<li>雪梨</li>
+		<li>大枣</li>
+		<li>哈密瓜</li>
+		<li>梭梭树</li>
+		<li>燕京</li>
+		<li>纯生</li>
+	</ul>
+	<script src="../../common.js"></script>
+	<script>
+		//鼠标进入事件---onmouseover
+		//鼠标离开事件---onmouseout
+
+		//根据标签名获取元素
+		var object = document.getElementsByTagName("li");
+		for (let i = 0; i < object.length; i++) {
+			// 为当前对象注册鼠标进入事件
+			object[i].onmouseover = function () {
+				this.style.backgroundColor = "yellow";
+			};
+			// 为当前对象注册鼠标离开事件
+			object[i].onmouseout = function () {
+				this.style.backgroundColor = "";
+			};
+		};
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="显示效果" id="btn">
+	<script>
+		//点击按钮弹出对话框
+		// document.querySelector ---- 根据选择器的方式获取元素
+		var input = document.querySelector("#btn");
+		input.onclick = function () {
+			alert("你点我干啥?");
+		};
+	</script>
+	<p>第一个标签</p>
+	<p class="cls">第二个标签</p>
+	<p>第三个标签</p>
+	<p class="cls">第四个标签</p>
+	<script>
+		// document.querySelectorAll ----根据类样式的方式获取元素(加点)
+		var p = document.querySelectorAll(".cls");
+		for (let i = 0; i < p.length; i++) {
+			p[i].style.background = "yellow";
+		};
+	</script>
+</body>
+</html>
