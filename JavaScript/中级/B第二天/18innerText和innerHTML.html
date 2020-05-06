@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content=""/>
+    <meta name="Keywords" content=""/>
+    <title>Document</title>
+    <script src="../../common.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="设置文本" id="btn">
+    <input type="button" value="设置文本" id="btn1">
+    <div id="dv">我是测试文本</div>
+    <div id="dv1">我是测试文本1
+        <p>我是测试文本2</p>
+    </div>
+    <script>
+        //总结:innerText主要是设置文本的,设置标签内容,是没有标签的效果的
+        //总结:innerHTML可以设置文本功能的,最重要的是它可以添加html标签,是有标签效果的 推荐  兼容性好
+        //想要设置文本内容  使用 innerText
+        //想要设置标签内容  使用 innerHTMl
+        my$("btn").onclick = function () {
+            // my$("dv").innerText = "设置文本"; //设置文本
+            my$("dv").innerText = "<p>我是添加的文本</p>"; //设置HTML标签
+        };
+    </script>
+    <script>
+        //获取的时候
+        //innerText 可以获取标签中的内容,但是如果这个标签里如果还有标签,那么最里面的标签的文本内容也能获取,它能拿到所有的文本
+        //innerHTML 才是真正的获取标签中的所有内容
+        my$("btn1").onclick = function () {
+            // console.log(my$("dv1").innerText);
+            console.log(my$("dv1").innerHTML);
+        }
+    </script>
+    <script>
+        //结论
+        /*
+        * 如果想要过去标签及内容,使用innerHTML
+        * 如果想要设置标签,使用innerHTML
+        * 想要仅仅设置文本,使用innerText,textContent,innerHTML
+        * */
+    </script>
+</body>
+</html>
