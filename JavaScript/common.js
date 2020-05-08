@@ -13,7 +13,7 @@
  */
 function my$(id) {
   return document.getElementById(id);
-}
+};
 
 /* @兼容性
  * @description: 获取任意标签中的任意文本内容
@@ -27,7 +27,7 @@ function getInnerText(element) {
   } else {
     return element.textContent;
   }
-}
+};
 
 /* @兼容性
  * @description: 设置任意标签中的任意文本内容
@@ -42,4 +42,4 @@ function setInnerText(element, text) {
   } else {
     element.textContent = text;
   }
-}
+};
