@@ -10,6 +10,7 @@
         div {
             width: 200px;
             height: 200px;
+            background-color: palevioletred;
         }
     </style>
 </head>
@@ -33,7 +34,7 @@
     <script>
         //获取的时候
         //innerText 可以获取标签中的内容,但是如果这个标签里如果还有标签,那么最里面的标签的文本内容也能获取,它能拿到所有的文本
-        //innerHTML 才是真正的获取标签中的所有内容
+        //innerHTML 才是真正的获取标签中的所有内容,可以获取到标签
         my$("btn1").onclick = function () {
             // console.log(my$("dv1").innerText);
             console.log(my$("dv1").innerHTML);

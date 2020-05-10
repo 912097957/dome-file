@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		li {
+			list-style: none;
+		}
+
+		.box {
+			width: 400px;
+			height: 300px;
+			border: 1px solid #ccc;
+			margin: 100px auto;
+			overflow: hidden;
+		}
+
+		.hd {
+			height: 45px;
+			font-size: 0px;
+		}
+
+		.hd span {
+			display: inline-block;
+			width: 100px;
+			background-color: pink;
+			line-height: 45px;
+			text-align: center;
+			cursor: pointer;
+			font-size: 16px;
+		}
+
+		.hd span.current {
+			background-color: purple;
+		}
+
+		.bd li {
+			height: 255px;
+			background-color: purple;
+			display: none;
+		}
+
+		.bd li.current {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+		<div class="hd">
+			<span class="current">体育</span>
+			<span>娱乐</span>
+			<span>新闻</span>
+			<span>综合</span>
+		</div>
+		<div class="bd">
+			<ul>
+				<li class="current">我是体育模块</li>
+				<li>我是娱乐模块</li>
+				<li>我是新闻模块</li>
+				<li>我是综合模块</li>
+			</ul>
+		</div>
+	</div>
+	<script src="../../common.js"></script>
+	<script>
+		//获取最外层的div
+		var box = my$("box");
+		var hd = box.getElementsByTagName("div")[0];
+		var bd = box.getElementsByTagName("div")[1];
+		//获取所有的span标签并添加点击事件
+		var spans = hd.getElementsByTagName("span");
+		var list = bd.getElementsByTagName("li");
+		//循环遍历的方式添加点击事件 
+		for (let i = 0; i < spans.length; i++) {
+			//在点击之前把索引保存在span标签中
+			spans[i].setAttribute("index", i); //添加自定义样式
+			spans[i].onclick = function () {
+				//第一件事,所有的span标签的类样式全部去移除
+				for (var j = 0; j < spans.length; j++) {
+					spans[j].removeAttribute("class");
+					list[j].removeAttribute("class");
+				};
+				//第二件事,为当前被点击的span标签应用类样式
+				this.className = "current";
+				var num = this.getAttribute("index");
+				//此时获取span标签被点击的时候获取存储的索引值
+				// 获取所有的li标签,每个标签先隐藏
+				// for (let l = 0; l < list.length; l++) {
+				// 	list[l].removeAttribute("class");
+				// };
+				list[num].className = "current";
+			};
+		};
+	</script>
+</body>
+</html>

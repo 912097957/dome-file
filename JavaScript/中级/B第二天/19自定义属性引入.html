@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        li {
+            list-style: none;
+            cursor: pointer;
+            height: 50px;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <ui id="uu">
+        <li score="10">助教</li>
+        <li score="20">小苏</li>
+        <li score="30">菩萨</li>
+        <li score="40">立国</li>
+        <li score="50">周瑜</li>
+    </ui>
+    <script src="../../common.js"></script>
+    <script>
+        //html中没有自带属性可以存储成绩的
+        //本身没有这个属性,但是可以自己添加-----自定义属性,为了存储一些数据
+        //在html中添加的自定义属性,如果需要获取这个属性的值,需要使用getAttribute("自定义属性名")才能获取这个属性的值
+
+        //获取每个li标签
+        var list = document.getElementsByTagName("li");
+        for (let i = 0; i < list.length; i++) {
+            //添加点击事件
+            list[i].onclick = function () {
+                // console.log(this.score);//没办法获取
+                console.log(this.getAttribute("score"));
+                // getAttribute--专门获取自定义属性的值
+            };
+        };
+    </script>
+</body>
+</html>
