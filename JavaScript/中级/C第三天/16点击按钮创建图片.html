@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+	<style>
+		div {
+			width: 100%;
+			height: 100%;
+		}
+
+		div img {
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="点击创建" id="btn">
+	<div id="dv"></div>
+	<script src="../../common.js"></script>
+	<script>
+		//点击按钮创建一个图片
+		my$("btn").onclick = function () {
+			my$("dv").innerHTML = "<img src='../images/1.jpg' alt='图片'>";
+		}
+	</script>
+</body>
+</html>
