@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="点击设置" id="btn">
+    <script src="../../common.js"></script>
+    <script>
+        // 为元素绑定事件DOM:一种,但是不兼容,所以有两种
+        // 第一种:对象.addEventListener("没有on事件类型",事件处理函数,false) --- 谷歌和火狐支持,IE8不支持
+        // 第二种:对象.attachEvent("有on事件类型",事件处理函数) --- 谷歌和火狐不支持,IE8支持
+
+        // 为按钮添加点击事件 addEventListener()
+        // 参数1:事件的类型---事件的名字但是没有on
+        // 参数2:事件处理函数---函数(命名函数,匿名函数)
+        // 参数3:布尔类型,目前就写false
+
+        //为同一个元素添加多个点击事件,这样就不会冲突
+        // my$("btn").addEventListener("click", function () {
+        //     console.log("你好猥琐!");
+        // }, false);
+        // my$("btn").addEventListener("click", function () {
+        //     console.log("你好下流!");
+        // }, false);
+        // my$("btn").addEventListener("click", function () {
+        //     console.log("你好邪恶!");
+        // }, false);
+        // my$("btn").addEventListener("click", function () {
+        //     console.log("你好龌龊!");
+        // }, false);
+
+        //第二种:attachEvent()
+        // 参数一:事件类型---事件名字,有on
+        // 参数二:function(匿名)
+        my$("btn").attachEvent("click",function () {
+            console.log("IE真的可以气死人!");
+        })
+    </script>
+</body>
+</html>

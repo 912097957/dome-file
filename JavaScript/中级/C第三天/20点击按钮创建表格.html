@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 300px;
+            height: 400px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="点击创建" id="btn">
+    <div id="dv"></div>
+    <script src="../../common.js"></script>
+    <script>
+        //创建数据
+        var arr = [
+            {name: "百度", href: "#"},
+            {name: "谷歌", href: "#"},
+            {name: "优酷", href: "#"},
+            {name: "快播", href: "#"},
+            {name: "京东", href: "#"},
+        ];
+        //点击按钮创建表格
+        my$("btn").onclick = function () {
+            //创建表格加入到div
+            var tableObj = document.createElement("table");
+            tableObj.border = "1";
+            tableObj.cellPadding = "0";
+            tableObj.cellSpacing = "0";
+            my$("dv").appendChild(tableObj);
+            // 创建行,加入到table中
+            for (var i = 0; i < arr.length; i++) {
+                var dt = arr[i]; //数组中每个对象
+                //创建tr并加入到table中
+                var trObj = document.createElement("tr");
+                tableObj.appendChild(trObj);
+                //创建第一列
+                var td1 = document.createElement("td");
+                td1.style.width = "100px";
+                td1.style.height = "30px";
+                td1.style.textAlign = "center";
+                td1.style.lineHeight = "30px";
+                //创建第二列
+                var td2 = document.createElement("td");
+                td2.style.width = "100px";
+                td2.style.height = "30px";
+                td2.style.textAlign = "center";
+                td2.style.lineHeight = "30px";
+                //往表格添加内容并加入到tr中
+                td1.innerText = dt.name;
+                tableObj.appendChild(td1);
+                td2.innerHTML = "<a href=" + dt.href + ">" + dt.name + "</a>";
+                tableObj.appendChild(td2);
+            }
+        }
+    </script>
+</body>
+</html>

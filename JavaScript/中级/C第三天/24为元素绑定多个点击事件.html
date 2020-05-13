@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="点击设置" id="btn">
+    <script src="../../common.js"></script>
+    <script>
+        //为任意元素绑定任意事件:任意的元素,事件的类型,事件的处理函数
+        function addEventListener(element, type, fn) {
+            //判断浏览器是否支持这个方法
+            if (element.addListener) {
+                element.addListener(type, fn, false);
+            } else if (element.attachEvent) {
+                element.attachEvent("on" + type, fn);
+            } else {
+                element["on" + type] = fn;
+            }
+        }
+
+        addEventListener(my$("btn"), "click", function () {
+            console.log("呕,太难了!");
+        })
+
+        // 拓展:
+        // function Person(name) {
+        //     this.name = name;
+        //     this.sayHi = function () {
+        //         console.log("你好");
+        //     }
+        // }
+
+        // let per = new Person("小明");//实例化对象
+        // if (per.sayHi) {//判断这个对象中有没有这个方法
+        //     per.sayHi();
+        // } else {
+        //     console.log("没有这种方法!");
+        // }
+
+        // 对象调用方法：
+        // per.sayHi();
+        // 还可以这样写：
+        // per["sayHi"]();
+    </script>
+</body>
+</html>

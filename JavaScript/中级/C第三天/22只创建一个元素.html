@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 500px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="点击设置" id="btn">
+    <div id="dv"></div>
+    <script src="../../common.js"></script>
+    <script>
+        //点击按钮只创建一个元素
+        //思路:有则删除,无则创建
+        // my$("btn").onclick = function () {
+        //     //先判断这个按钮有没有这个按钮的子级元素
+        //     if (my$("btn2")) {
+        //         my$("dv").removeChild(my$("btn2"));
+        //     }
+        //     var inputObj = document.createElement("input");
+        //     inputObj.value = "按钮";
+        //     inputObj.type = "button";
+        //     inputObj.id = "btn2";
+        //     my$("dv").appendChild(inputObj);
+        // }
+    </script>
+    <script>
+        // 只创建一次
+        // 思路:如果没有,就创建
+        my$("btn").onclick = function () {
+            //先判断这个按钮有没有这个按钮的子级元素
+            if (!my$("btn2")) {//如果没有就创建
+                var inputObj = document.createElement("input");
+                inputObj.value = "按钮";
+                inputObj.type = "button";
+                inputObj.id = "btn2";
+                my$("dv").appendChild(inputObj);
+            }
+        }
+    </script>
+</body>
+</html>
