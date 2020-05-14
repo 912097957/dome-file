@@ -95,7 +95,6 @@ function getLastElement(element) {
  * @return: 事件执行
  */
 
-//
 function addEventListener(element, type, fn) {
     //判断浏览器是否支持这个方法
     if (element.addEventListener()) {
@@ -104,5 +103,21 @@ function addEventListener(element, type, fn) {
         element.attachEvent("on" + type, fn);
     } else {
         element["on" + type] = fn;
+    }
+}
+
+/* @兼容性
+ * @description: 为任意元素解绑任意事件
+ * @param {type} 任意的元素,事件的类型,事件的处理函数
+ * @return: 事件解绑
+ */
+
+function removeEventListener(element, type, fnName) {
+    if (element.removeEventListener) {
+        element.removeEventListener(type, fnName, false)
+    } else if (element.detachEvent) {
+        element.detachEvent(type, fnName)
+    } else {
+        element["on" + type] = null;
     }
 }

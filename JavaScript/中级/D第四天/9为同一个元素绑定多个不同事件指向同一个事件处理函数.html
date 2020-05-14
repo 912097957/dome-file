@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="点击设置" id="btn">
+    <script src="../../common.js"></script>
+    <script>
+        //为同一个元素绑定多个不同的事件指向同一个事件处理函数
+        my$("btn").onclick = f1;
+        my$("btn").onmouseover = f1;
+        my$("btn").onmouseout = f1;
+
+        function f1(e) {
+            switch (e.type) {
+                case "click":
+                    alert("你好帅啊");
+                    break;
+                case "mouseover":
+                    this.style.backgroundColor = "red";
+                    break;
+                case "mouseout":
+                    this.style.backgroundColor = "green";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
