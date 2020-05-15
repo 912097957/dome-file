@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //页面加载的时候,按钮还没出现,页面没有加载完毕就会报错
+        //页面加载完毕了再获取按钮
+        //只要页面加载完毕这个事件就触发---标签,属性,文本,外部引入的文件
+
+        // window.onload = function () {
+        //     document.getElementById("btn").onclick = function () {
+        //         alert("你好呀");
+        //     }
+        // }
+        // window可以省略,onload这个事件很重要
+        // onload事件----页面加载完成后
+        onload = function () {
+            document.getElementById("btn").onclick = function () {
+                alert("你好呀");
+            }
+        }
+        // 拓展事件-----页面关闭后才触发的弹窗事件
+        window.onunload = function () {
+            alert("哈哈");
+        }
+        // 拓展事件-----页面关闭之前触发的弹窗事件
+        window.onbeforeunload = function () {
+            alert("嘿嘿");
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="按钮" id="btn">
+</body>
+</html>
