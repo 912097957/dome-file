@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+	<style>
+		div {
+			width: 200px;
+			height: 100px;
+			background-color: yellow;
+			border: 1px solid red;
+		}
+	</style>
+</head>
+
+<body>
+	<input type="button" value="创建" id="btn">
+	<div id="dv"></div>
+	<script src="../common.js"></script>
+	<script>
+		//点击按钮在div中创建一个P标签
+		// 第二种方式:对象.innerHTMl="标签代码及内容"
+		my$("btn").onclick = function () {
+			my$("dv").innerHTML = "<p>创建出了一个标签</p>";
+		}
+	</script>
+</body>
+
+</html>

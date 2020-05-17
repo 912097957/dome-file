@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: lawngreen;
+            margin-top: 20px;
+            position: absolute;
+        }
+
+        input {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="移动到400px" id="btn1">
+    <input type="button" value="移动到800px" id="btn2">
+    <div id="dv"></div>
+    <script src="../common.js"></script>
+    <script>
+        my$("dv").offsetLeft;
+        // div要移动必须脱离文档流,采用定位
+        // 如果样式的代码是在style标签当中,外边是无法获取的
+        // 如果样式的代码是在style属性当中,外边是可以获取的
+
+        //点击按钮1移动400像素
+        my$("btn1").onclick = function () {
+            var timeId = setInterval(function () {
+                //获取当前div的位置
+                var current = my$("dv").offsetLeft;//数字类型,没有px
+                // div每次走10步
+                var star = 10;
+                // 每次移动后的目标距离
+                current += star;
+                // 设置div的目标位置
+                if (current <= 400) {
+                    my$("dv").style.left = current + "px";
+                } else {
+                    clearInterval(timeId);
+                }
+            }, 20);
+        }
+        //点击按钮2移动800像素
+        my$("btn2").onclick = function () {
+            var timeId = setInterval(function () {
+                //获取当前div的位置
+                var current = my$("dv").offsetLeft;//数字类型,没有px
+                // div每次走10步
+                var star = 10;
+                // 每次移动后的目标距离
+                current += star;
+                // 设置div的目标位置
+                if (current <= 800) {
+                    my$("dv").style.left = current + "px";
+                } else {
+                    clearInterval(timeId);
+                }
+            }, 20);
+        }
+    </script>
+</body>
+</html>

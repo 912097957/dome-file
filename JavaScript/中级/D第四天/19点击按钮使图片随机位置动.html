@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            font-size: 0;
+            position: absolute;
+        }
+
+        img {
+            width: 300px;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="摇动" id="btn1">
+    <input type="button" value="停止" id="btn2">
+    <div id="dv">
+        <img src="../images/1.jpg" alt="">
+        <img src="../images/2.jpg" alt="">
+    </div>
+    <script src="../common.js"></script>
+    <script>
+        //思路:设置div定位脱离文档流后改变left和top值
+        //获取按钮注册点击事件
+        var stopTime = "";
+        console.log(stopTime);
+        my$("btn1").onclick = function () {
+            //每次点击都清除定时器
+            window.clearInterval(stopTime);
+            // 添加定时器
+            stopTime = setInterval(function () {
+                //定义变量接受改变位置的值
+                var x = parseInt(Math.random() * 900 + 1);
+                var y = parseInt(Math.random() * 500 + 1);
+                my$("dv").style.left = x + "px";
+                my$("dv").style.top = y + "px";
+            }, 1000);
+            console.log(stopTime);
+        };
+        // 清除定时器
+        my$("btn2").onclick = function () {
+            window.clearInterval(stopTime);
+        };
+    </script>
+</body>
+</html>

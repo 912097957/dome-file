@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            width: 1000px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="dv"></div>
+    <script src="../common.js"></script>
+    <script>
+        my$("dv").onclick = function (e) {
+            console.log("div被点了")
+            //window.event.cancelBubble = true;//阻止冒泡
+            e.stopPropagation();
+        };
+        document.body.onclick = function (e) {
+            console.log("body被点了");
+            e.stopPropagation();
+
+        };
+        document.onclick = function (e) {
+            console.log("document被点了")
+            e.stopPropagation();
+        };
+    </script>
+</body>
+</html>  

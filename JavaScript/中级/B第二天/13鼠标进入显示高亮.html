@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content=""/>
+	<meta name="Keywords" content=""/>
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		div {
+			float: left;
+			width: 200px;
+			height: 200px;
+			background-color: greenyellow;
+			background-repeat: 2px solid greenyellow;
+			/* box-sizing: border-box; */
+			margin: 0 10px;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script>
+		var dvObjS = document.getElementsByTagName("div");
+		for (let i = 0; i < dvObjS.length; i++) {
+			dvObjS[i].onmouseover=function(){
+				dvObjS[i].style.border="2px solid red";
+			};
+			dvObjS[i].onmouseout=function(){
+				dvObjS[i].style.border="2px solid greenyellow";
+			};
+		};
+	</script>
+</body>
+</html>

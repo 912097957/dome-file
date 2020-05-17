@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+	<style>
+		div {
+			height: 200px;
+			background: rgba(0, 0, 0, 0.3);
+			border: 1px dashed pink;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="点击设置" id="btn">
+	<div id="dv"></div>
+	<script src="../common.js"></script>
+	<script>
+		// 第三种方式创建元素
+		// document.createElement("标签的名字"); //对象
+		// 把元素追加到父级元素
+		my$("btn").onclick = function () {
+			var pObj = document.createElement("p");
+			setInnerText(pObj,"这是一个P标签");
+			my$("dv").appendChild(pObj);
+		}
+	</script>
+</body>
+</html>

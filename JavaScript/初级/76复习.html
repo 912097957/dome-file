@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		复习
+		面向过程:凡是亲力亲为,所有事情的过程都要清楚,重要的是过程
+		面向对象:提出需求,找到对象,对象解决这个问题,我们要结果,注重的是结果
+
+		面向对象的特性:封装,继承,多态(抽象性)
+
+		js是一门什么样的语言
+		是一门解释性语言  		//解释一行执行一行
+		是一门脚本语言	  		//运行在客户端
+		是一门弱类型语言		//声明变量都用var
+		是一门基于对象的语言
+		是一门动态类型的语言
+
+
+		对象:
+		有属性和方法,具体特指的某个事物
+		对象:JS中一组无序的属性的集合
+		属性----特征
+		方法----行为
+
+		创建对象的方式:
+		1. 调用系统的构造函数创建对象  
+		var obj = new Object ();
+		2. 自定义构造函数的方式创建对象 
+		var obj = new  自定义构造函数();
+		3. 字面量的方式创建对象
+		var obj = {};
+
+		new 的执行过程:----->new 的时候,系统做了什么事
+		1.在内存中申请一块空闲空间,存储创建的新的对象
+		2.把this设置为当前的这个对象
+		3.设置属性和方法的值
+		4.返回当前的新的对象
+
+		变量 instanceof 对象  ----->布尔类型,判断这个变量是不是这个类型的
+
+		JSON格式的数据,都是键值对,成对的数据:实际上就是格式化后的一组字符串数据---->方便传值
+		var json = {
+			"name": "小明",
+		};
+
+		对象设置属性值的写法
+		对象.属性名字 = 值; ---点语法
+		对象["属性名"] = 值; ---键值对
+
+		对象获取属性值的写法
+		对象.属性
+		对象[属性] 
+
+		遍历对象
+		for (var key in 对象){  //key---是一个变量,这个变量中存储的是遍历的对象的属性的名字 
+			 
+		}
+
+		原始数据类型:number string boolean undefined null object 
+		其中:
+		基本类型(简单类型,值类型):number string boolean
+		
+		复杂类型(引用类型):object 
+		
+		空类型:undefined null
+
+		基本类型的值存在栈上
+		复杂类型的值存在堆上,地址(引用)存在栈上 
+		
+		值类型之间传递的是值
+		引用类型之间传递的是地址
+
+		对象分为三种:
+		内置对象:系统提供的
+
+		Math 是一个对象,但不是一个函数
+		Math 对象下的属性和方法都是静态的
+		方法:
+		Math.ceil() ---向上取整
+		Math.floor() ---向下取整
+		Math.PI  ---圆周率
+		Math.max()  ---最大值
+		Math.min() ---最小值
+		Math.abs() ---绝对值
+		Math.sqrt() ---开平方根
+		Math.pow() ---一个数字的多少次平方(幂)
+		Math.random() ---随机数
+
+		 
+		自定义对象:自己写的
+		浏览器对象:浏览器的
+
+		*/
+		// 创建一个对象
+
+		var obj = {
+			name: "李荣浩",
+			age: 23,
+			sex: "男"
+		};
+
+		// 使用for in 遍历这个对象
+		for (const key in obj) {
+			console.log(key + "----->" + obj[key]);
+		};
+	</script>
+</body>
+</html>

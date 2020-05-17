@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="显示图片" id="btn">
+	<img src="#" alt="" id="im">
+	<script>
+		//先根据id属性值找到元素标签(对象)
+		var btnObj = document.getElementById("btn");
+		// 为获取到的元素添加点击事件和事件函数处理
+		btnObj.onclick = function () {
+			//根据id获取到图片的标签,设置图片的src属性值
+			var imObj = document.getElementById("im");
+			imObj.src = "../images/2.jpg";
+			// 设置图片大小
+			imObj.width = "500";
+		};
+	</script>
+</body>
+</html>

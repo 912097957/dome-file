@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            background-color: #999;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            width: 730px;
+            height: 454px;
+            vertical-align: top;
+        }
+
+        .box {
+            width: 730px;
+            height: 454px;
+            margin: 100px auto;
+            padding: 5px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px #59FFC5 inset;
+        }
+
+        .inner {
+            width: 730px;
+            height: 454px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .inner ul {
+            width: 1000%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .inner li {
+            float: left;
+        }
+
+        .inner li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .square {
+            position: absolute;
+            left: 50%;
+            bottom: 10px;
+            transform: translate(-50%);
+        }
+
+        .square span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #fff;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+
+        .square span.current {
+            background-color: orangered;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <div class="inner"><!--相框-->
+            <ul>
+                <li><a href="#"><img src="../images/1.jpg" alt=""/></a></li>
+                <li><a href="#"><img src="../images/2.jpg" alt=""/></a></li>
+                <li><a href="#"><img src="../images/3.jpg" alt=""/></a></li>
+                <li><a href="#"><img src="../images/4.jpg" alt=""/></a></li>
+                <li><a href="#"><img src="../images/5.jpg" alt=""/></a></li>
+                <li><a href="#"><img src="../images/default.jpg" alt=""/></a></li>
+            </ul>
+            <div class="square">
+                <span class="current">1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+            </div>
+        </div>
+    </div>
+    <script src="../common.js"></script>
+    <script>
+        //先获取最外面的div
+        var box = my$("box");
+        //获取相框
+        var inner = box.children[0];
+        //获取相框的宽度
+        var imgWidth = inner.offsetWidth;
+        //获取ul标签
+        var ulObj = inner.children[0];
+        //获取所有span标签
+        var spanObj = inner.children[1].children;
+        //循环遍历所有span并注册鼠标进入事件
+        for (var i = 0; i < spanObj.length; i++) {
+            // 循环的时候把索引值保存进每个span自定义属性中
+            spanObj[i].setAttribute("index", i);
+            //注册鼠标进入事件
+            spanObj[i].onmouseover = function () {
+                //先干掉所有span的背景颜色
+                for (var j = 0; j < spanObj.length; j++) {
+                    //移除所有的class类样式
+                    spanObj[j].removeAttribute("class");
+                }
+                //设置当前的span的背景颜色
+                this.className = "current";
+                //移动ul(每个图片的宽乘以鼠标进入的span标签的索引乘以图片的宽度)
+                //获取当前鼠标进入的span的索引
+                var index = this.getAttribute("index");
+                animate(ulObj, -index * imgWidth, 10, 5);
+            }
+        }
+    </script>
+</body>
+</html>
+
+

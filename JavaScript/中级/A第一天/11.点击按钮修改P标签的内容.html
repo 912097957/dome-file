@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+</head>
+<body>
+	<p id="p1">我是一段文字</p>
+	<input type="button" value="点击切换文字" id="btn">
+	<script>
+		//案例:点击按钮修改p标签的内容
+		//凡是成对的标签,修改中间的文本内容,设置的时候都使用innerText这个属性的方式
+
+		// 根据id获取按钮,为按钮注册事件,添加事件处理函数
+		document.getElementById("btn").onclick = function () {
+			document.getElementById("p1").innerText = "这是一个新内容";
+		};
+	</script>
+</body>
+</html>

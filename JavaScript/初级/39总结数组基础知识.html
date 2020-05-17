@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+</head>
+<body>
+	数组的总结:
+	数组:存储一组有顺序的数据;
+	数组的作用:一次性存储多个数据;
+	数组的定义方式:
+
+	1:构造函数定义数组
+	var 数组名 = new Array(数据);
+	var 数组名 = new Array();					定义了一个空数组,长度为0
+	var 数组名 = new Array(一个数字);			定义了一个数组.数组长度就是这个数字
+	var 数组名 = new Array(值1,值2,值3...);		定义了一个数组并且有多个数据
+
+	2:字面量定义数组
+	var 数组名 = [数据];
+	var 数组名 = [];							定义了一个空数组
+	var 数组名 = [值1];							定义了一个数组,数组长度为1,数据为值1
+
+	数组元素:数组中存储的数据;
+	数组长度:数组中存储数据的个数;
+	数组索引(下标):从0开始,直到数组的个数-1
+
+	通过下标访问数组的元素值:	数组名 [下标];
+	通过下标设置数组的元素值:	数组名 [下标] = 值;
+</body>
+	<script>
+		var arr1 = new Array();						//空数组
+			console.log(arr1);
+		var arr2 = new Array(5);					//长度为5的数组,值为undefined
+			console.log(arr2);
+		
+		var arr3 = [];								//空数组
+			console.log(arr3);
+		var arr4 = [5];								//长度为1,值为5的数组
+			console.log(arr4);
+		var arr5 = [1, 2, 3, 4];					//长度为4,值为1 2 3 4的数组
+			console.log(arr5);			
+		var arr6 = ["哈哈", "123", 12];				//数组的值可以是不一样的
+			console.log(arr6);
+		
+		var arr7 = [];								//通过索引往数组里添加数据
+			arr7[0] = 10;
+			arr7[1] = 20;
+			console.log(arr7);
+
+		var arr8 = [10, 20, 30, 40];				//获取数组的长度
+			console.log(arr8.length);
+	</script>
+</html>

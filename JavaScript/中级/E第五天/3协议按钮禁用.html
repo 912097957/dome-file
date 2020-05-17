@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="text" id="" cols="30" rows="10">
+        床前明月光,疑似地上霜.举头望明月,低头思故乡.
+    </textarea>
+    <input type="button" value="请仔细阅读协议(5)" id="btn" disabled>
+    <script src="../common.js"></script>
+    <script>
+        var time = 5;
+        var timeId = setInterval(function () {
+            time--;
+            if (time >= 0) {
+                my$("btn").value = "请仔细阅读协议(" + time + ")";
+            } else {
+                clearInterval(timeId);
+                my$("btn").disabled = false;
+                my$("btn").value = "同意注册";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

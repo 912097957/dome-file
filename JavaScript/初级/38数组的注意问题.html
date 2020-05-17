@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+	<script>
+		var arr = [12, 23, 4, 6, 3, 767, 34];
+		//数组长度: 7
+		//数组索引(下标): 0 ~ 6
+		console.log(arr);				//alert(arr);  //这里弹窗内的逗号不是数组中的逗号,是浏览器自己加的
+		
+	</script>
+	<script>
+		//数组中的数据类型是一样的吗
+		var arr = [10, "哈哈", true, null, undefined, new Object()];
+		console.log(arr);				// 输出结果并不是,所以字符串中的数据是可以多变的
+		
+	</script>
+
+	<script>
+		//数组的长度是否可以改变
+		var arr = [];
+		console.log(arr.length); 		//打印数组长度结果为0
+		arr[0] = 10; 					//往数组的第一位索引添加一个数据
+		console.log(arr); 				//打印这个数组
+		console.log(arr.length); 		//数组长度为1,数据为10
+		arr[1] = 20; 					//往数组的第二位下标添加数据
+		console.log(arr) 				//打印这个数组
+		console.log(arr.length);		 //结果这个数组的长度变为20
+
+		// 所以:可以通过索引(下标)来改变数组的长度和数据内容
+	</script>
+
+	<script>
+		//通过索引来获取数组中的值  如果是空数组,打印的下标对应的值不存在,输出结果就为undefined
+		var arr = [];
+		console.log(arr[3]);			//结果为undefined
+	</script>
+
+	<script>
+		// 拓展:打印这个字符串的长度
+		// var str = "123464546575498";
+		// console.log(str.length);
+	</script>
+</head>
+<body>
+</body>
+</html>

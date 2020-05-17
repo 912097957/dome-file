@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+	<script>
+		//截取字符串
+		// var str = "小陈真的好帅啊,真的是一个大帅哥";
+		// var key = prompt("请输入要截取的字符串");
+		// var str1 = str.indexOf(key); //先获取要截取的字符串的位置
+		// var str2 = str.substr(str1, 2); //从指定的位置开始截取,截取两个即可
+		// console.log(str2);
+	</script>
+	<script>
+		//找到字符串中所有o的位置
+		var str = "hello world object out";
+		var index = 0; //从0的位置开始找
+		var key = "o"; //要查找的值
+		//先来个循环,因为我们不知道要循环几次所以用while循环
+		while ((index = str.indexOf(key, index)) != -1) { //从0开始找,找到了然后赋值给index变量
+			console.log(index);
+			index += key.length; //避免死循环,每次循环都把key的长度1加进去
+		}
+	</script>
+	<script>
+		//找出数组中所有的字母O出现多少次
+		var str = "asdksOahdfoiuhaisdOhfaldhfkaOsudfOhsdf";
+		//第一步因为有大写和小写字母,第一步需要转化为大写或者小写
+		var str1 = str.toUpperCase(); //转换为大写
+		//第二步创建一个空对象,把字母作为键,次数作为值
+		var obj = {};
+		//第三步遍历字符串,获取每个字母
+		for (var i = 0; i < str.length; i++) {
+			console.log(str1[i]);
+			//然后判断obj这个对象中有没有这个字母
+			var key = arr[i]; //代表每个字母
+			if (obj[key]) { //判断obj中有没有这个键就是字母
+				//如果对象中有这个字母了
+				obj[key]++;
+			} else {
+				//对象中如果没有这个字母,那就把字母加进这个对象的属性里,并且给这个字母一个出现的次数,如果第一次来,默认1次
+				obj[key] = 1;
+			}
+		}
+		for (var key in obj) {
+			console.log(key + "这个字母出现了" + obj[key] + "次");
+		}
+	</script>
+	<script>
+		//知识:判断一个对象中有没有这个属性
+		var obj = {
+			"age": "男"
+		};
+		if (obj["sex"]) {
+			console.log("有");
+		} else {
+			console.log("没有");
+		}
+	</script>
+</head>
+<body>
+</body>
+</html>

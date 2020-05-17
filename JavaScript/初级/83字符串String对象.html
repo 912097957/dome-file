@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+	<script>
+		// String 字符串对象
+		// string ---------(小写)字符串类型 基本  可以看成是一个由字符组成的数组,但是js中没有字符
+		// String ---------(大写)字符串类型 引用类型 可以看成是一个对象
+		//结论:
+		// 字符是用一个单引号括起来的
+		// 但是在js中字符串可以使用单引号,也可以使用双引号
+		// 因为字符串可以看成数组,所以可以用for循环遍历
+		// 字符串的值看起来改变了,那时因为指向改变了,并不是指真的改变了
+
+
+		var str = "ABCDEF"; //字符串可以看成一个数组,而数组可以遍历,那么字符串也可以遍历
+		for (var i = 0; i < str.length; i++) {
+			console.log(str[i]);
+		}
+
+		// 字符串特性:不可变性:字符串的值是不能改变的  但是会被下面的代码推翻  
+		// 所以此时应该使用对象的方法来看待
+		var str = "小苏好邪恶";
+		str = "小苏好猥琐"; //重新赋值 //改变的是栈和堆中的指向改变了(重新申请一块空间来接收这个指向)
+		console.log(str);
+
+		// 字符串可以用索引(下标)来访问其中的某个值
+		var str1 = "hello";
+		var num = str1[3];
+		console.log(num);
+
+		// 但是不能改变---只读 下面代码通过索引改变值,但是失败
+		var str2 = "hello";
+		str2[0] = "a";
+		console.log(str2);
+	</script>
+</head>
+<body>
+</body>
+</html>

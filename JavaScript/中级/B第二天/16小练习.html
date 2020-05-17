@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+</head>
+<body>
+	<!-- 获取文本框的属性 -->
+	<input type="text" value="文本框" id="txt">
+	<p>我是一个P</p>
+	<script src="../common.js"></script>
+	<input type="button" value="获取属性" id="btn">
+	<script>
+		my$("txt").onblur = function () {
+			this.value = "哈哈";
+			console.log(this.value);
+			console.log(this.type);
+			console.log(this.id);
+		};
+		//点击按钮获取p标签的文本内容
+		my$("btn").onclick = function () {
+			console.log(document.getElementsByTagName("p")[0].innerText);
+		};
+	</script>
+</body>
+</html>

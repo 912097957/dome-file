@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		div {
+			width: 300px;
+			height: 300px;
+			background-color: green;
+		}
+
+		li {
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="点击设置" id="btn">
+	<div id="dv"></div>
+	<script src="../common.js"></script>
+	<script>
+		//获取按钮注册点击事件
+		// my$("btn").onclick = function () {
+		// 	my$("dv").innerHTML = "<ul><li>杨过</li><li>小龙女</li><li>梅绝师太</li><li>张无忌</li><li>尹志平</li></ul>";
+		// }
+		// 上面的代码写死了
+
+		var names = ["杨过", "郭靖", "郭襄", "狮王", "虚竹", "哈哈"];
+		my$("btn").onclick = function () {
+			var str = "<ul style='cursor:pointer'>";
+			for (var i = 0; i < names.length; i++) {
+				str += "<li style='height:40px'>" + names[i] + "</li>";
+			}
+			str += "</ul>";
+			my$("dv").innerHTML = str;
+
+			//代码执行到这里li已经有了
+			var list = my$("dv").getElementsByTagName("li");
+			for (var i = 0; i < list.length; i++) {
+				//注册鼠标进入事件
+				list[i].onmouseover = function () {
+					this.style.backgroundColor = "red";
+				}
+				//注册鼠标离开事件
+				list[i].onmouseout = function () {
+					this.style.backgroundColor = "";
+				};
+			};
+		};
+	</script>
+</body>
+</html>

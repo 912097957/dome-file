@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+	<script>
+		// function names(x, y) {
+		// 	var sum = x + y; // 功能:计算和
+		// 	console.log(sum); //功能:输出和
+		// }
+		// names(100, 200); //调用函数并传人参数
+	</script>
+
+	<script>
+		function result(x, y) { //传参:下面调用函数的实参值传进形参:传参
+			sum = x + y; //计算表达式
+			console.log("和为:" + sum); //打印结果
+		}
+		var num1 = parseInt(prompt("请输入第一个数字")); //定义一个变量接受用户框输入内容
+		var num2 = parseInt(prompt("请输入第二个数字")); //定义一个变量接受用户框输入内容
+		result(num1, num2); //调用上面的函数,里面的实参就是接受的变量值
+	</script>
+</head>
+<body>
+	函数参数:
+	在定义函数的时候,函数名字后面的小括号里的变量就是参数,目的是在调用函数的时候,使用用户传进来的值进行操作;
+	此时函数定义的时候里面的小括号里的变量叫做参数;写了两个变量就有两个参数;
+	在函数调用的时候,按照提示的方式给变量赋值(把变量),,就叫传值或叫传参;
+
+	形参:函数在定义的是后小括号里的变量叫形参:
+	实参:函数在调用的是时候小括号里的变量叫实参,实参可以是数值,也可以是变量;
+</body>
+</html>

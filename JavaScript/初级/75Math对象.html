@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Tom shelby" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<meta name="description" content="网站介绍" />
+	<meta name="Keywords" content="关键字" />
+	<title>Document</title>
+	<script>
+		/*
+		实例对象:通过构造函数创建出来的,实例化对象
+		静态对象:不需要创建,直接就是一个对象,方法(静态方法)直接通过这个对象名字调用
+		实例方法必须通过实例方法去调用
+		静态方法必须通过大写的对象调用
+		*/
+		// Math常用属性及方法
+		Math.PI //圆周率
+		Math.abs(值) //获取绝对值
+		Math.ceil //向上取整
+		Math.floor //向下取整
+		Math.max //找出一串数字中的最大值
+		Math.min //找出一串数字中的最小值
+		Math.pow //计算一个数值的平方
+		Math.sqrt //计算一个数值的平方根
+		Math.random //返回一个随机数(重要)
+	</script>
+	<script>
+		console.log(Math.PI);
+		console.log(Math.abs(-3));
+		console.log(Math.ceil(3.32));
+		console.log(Math.floor(5.342));
+		console.log(Math.max(21, 323, 42, 21, 4, 53, 5));
+		console.log(Math.min(21, 323, 42, 21, 4, 53, 5));
+		console.log(Math.pow(3, 2));
+		console.log(Math.sqrt(16));
+		//返回的是一个0到1之间的伪随机数,乘以100是让这个数字变大,需要在多少之内,就乘以多少+1
+		//返回一个100以内的随机数字
+		console.log(parseInt(Math.random() * 100 + 1));
+	</script>
+</head>
+<body>
+</body>
+</html>

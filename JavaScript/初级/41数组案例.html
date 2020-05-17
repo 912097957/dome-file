@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Tom shelby"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="description" content="网站介绍"/>
+    <meta name="Keywords" content="关键字"/>
+    <title>Document</title>
+    <script>
+        //求数组的总和
+        var arr = [2, 3, 4, 5, 6, 7, 8, 9];
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        console.log(sum);
+    </script>
+
+    <script>
+        //求数组中的平均值
+        var arr1 = [23, 43, 342, 23, 425, 532, 523, 24];
+        var sum = 0;
+        for (var i = 0; i < arr1.length; i++) {
+            sum += arr1[i];
+        }
+        console.log(sum / arr1.length); //求出总和再除以数组的长度
+    </script>
+
+    <script>
+        //求数组中最大的值
+        var arr2 = [23, 34, 52, 63, 345, 63, 355];
+        var max = arr2[0]; //这里不能直接写0,如果数组中存在负数那么最大值永远是0
+        for (var i = 0; i < arr2.length; i++) {
+            if (max < arr2[i]) { //对数组中的数进行比较
+                max = arr2[i]; //如果大于第一个数,则进行赋值
+            }
+        }
+        console.log("最大值:" + max);
+        //或者
+        var arr3 = [23, 34, 52, 63, 345, 63, 355];
+        var max = Number.MIN_VALUE; //假设这里面存的是最小值,假设变量是最大值,实际上是最小值
+        for (var i = 0; i < arr3.length; i++) {
+            if (max < arr3[i]) { //对数组中的数与最小值比较
+                max = arr3[i]; //如果大于第一个数,则进行赋值
+            }
+        }
+        console.log("最大值:" + max);
+    </script>
+
+    <script>
+        //求数组中的最小值
+        var arr4 = [1234, 3423, 51234, 52, 2342, 25626];
+        var min = arr4[0]; //先用数组第一位作为做开始的比较值
+        for (var i = 0; i < arr4.length; i++) {
+            if (min > arr4[i]) { //如果小于这个变量
+                min = arr4[i]; //那么就把这个小的数进行赋进去
+            }
+        }
+        console.log(min);
+        // 或者
+        var arr4 = [1234, 3423, 51234, 52, 2342, 25626];
+        var min = Number.MAX_VALUE;
+        for (var i = 0; i < arr4.length; i++) {
+            if (min > arr4[i]) {
+                min = arr4[i];
+            }
+        }
+        console.log(min);
+    </script>
+
+    <script>
+        //倒序遍历数组
+        var arr5 = [23, 342, 243, 24, 5, 6, 45, 75, 54];
+        for (var i = arr5.length - 1; i >= 0; i--) { //从数组的最后以为开始遍历,最后一位下标等于数组长度减1,数组的下标依次递减
+            console.log(arr5[i]);
+        }
+    </script>
+
+    <script>
+        //把一个字符串里的内容用竖线连接起来
+        var names = ["佐助", "黑骑一户", "大蛇丸", "市丸银", "蓝染忽右介"];
+        var str = ""; //定义一个空字符串
+        for (var i = 0; i < names.length - 1; i++) { //从左往右依次遍历,遍历到最后一个时停止
+            str += names[i] + "|"; //遍历出来的结果拼接加进空字符串
+        }
+        console.log(str + names[names.length - 1]); // 由于上面没有遍历到最后一位,所以直接加上原本字符串的最后一位
+
+        //或者
+        var namely = ["佐助", "黑骑一户", "大蛇丸", "市丸银", "蓝染忽右介"];
+        var str = ""; //定义一个空字符串
+        for (i = 1; i < namely.length; i++) { //从数组的第二位开始遍历到最后
+            str += "|" + namely[i] //把遍历结果赋进新的字符串
+        }
+        console.log(namely[0] + str); //再把原数组的第一位拼接到数组前面
+    </script>
+
+    <script>
+        //把数组重新放进一个新数组里
+        var arr = [12, 34, 5, 0, 57, 0, 57, 5, 56];
+        var arr1 = [];
+        for (var i = 0; i <= arr.length - 1; i++) {
+            if (arr[i] != 0) {
+                arr1[arr1.length] = arr[i]; //把新数组的长度当做下标,数组的长度是可以改变的
+            }
+        }
+        console.log(arr1);
+    </script>
+
+    <script>
+        //倒序遍历一个数组并打印出来
+        var arr = [12, 34, 5, 0, 57, 0, 57, 5, 56];
+        var newArray = [];
+        for (var i = arr.length - 1; i >= 0; i--) {
+            newArray[newArray.length] = arr[i];
+        }
+        console.log(newArray);
+    </script>
+
+    <script>
+        //反转数组:把数组中的位置调换过来
+        var arr = [10, 20, 30, 40, 50, 60];
+        for (var i = 0; i < arr.length / 2; i++) { //控住循环的次数
+            var temp = arr[i]; //把这个数组元素放进一个临时变量中
+            arr[i] = arr[arr.length - 1 - i]; //把下标第一位的元素放进第一位
+            arr[arr.length - 1 - i] = temp; //再把存在零时变量的值放进最后一位
+        }
+        console.log(arr);
+    </script>
+</head>
+<body>
+</body>
+</html>

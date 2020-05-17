@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="点击" id="btn">
+    <script src="../common.js"></script>
+    <script>
+        /*
+        *总结绑定事件的区别:
+        *addEventListener();
+        *attachEvent();
+        *
+        * 相同点: 都可以为事件绑定函数
+        *
+        * 区别:
+        * 1.方法名不一样
+        * 2.参数个数不一样
+        * 3.addEventListener  谷歌,火狐,IE11支持,IE8不支持
+        *   attachEvent       谷歌,火狐,IE11不支持,IE8支持
+        * 4.this不同,addEventListener 中this是当前绑定事件的对象
+        *           attachEvent      中this是window
+        * 5.addEventListener中事件的类型(事件的名字)没有on
+        *   attachEvent中事件的类型(事件的名字)有on
+        *
+        */
+
+
+
+        // 为按钮绑定多个事件
+        // my$("btn").addEventListener("click", function () {
+        //     console.log(this);
+        // }, false);
+        //
+        // my$("btn").attachEvent("onclick", function () {
+        //     console.log(this);
+        // });
+    </script>
+</body>
+</html>

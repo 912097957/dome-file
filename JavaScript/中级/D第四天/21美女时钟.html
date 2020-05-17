@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <img src="#" alt="" id="img">
+    <script src="../common.js"></script>
+    <script>
+        function f1() {
+            // 获取当前时间
+            var time = new Date();
+            var hour = time.getHours();
+            var second = time.getSeconds();
+            hour = hour < 10 ? "0" + hour : hour;
+            second = second < 10 ? "0" + second : second;
+            my$("img").src = "girl/" + hour + "_" + second + ".jpg";
+        }
+
+        f1();//加载页面时先执行一次,就不会出现慢一秒的情况
+        setInterval(f1, 1000);
+    </script>
+</body>
+</html>
