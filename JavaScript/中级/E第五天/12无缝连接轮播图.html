@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body, ul, ol, li, img {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #box {
+            width: 700px;
+            height: 400px;
+            position: relative;
+            border: 1px solid #ccc;
+            margin: 100px auto 0;
+        }
+
+        .ad {
+            width: 700px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            margin: auto;
+        }
+
+        #box img {
+            width: 700px;
+            height: 400px;
+            /*vertical-align: top;*/
+            display: block;
+        }
+
+        .ad ul {
+            position: absolute;
+            top: 0;
+            width: 1000%;
+        }
+
+        .ad ul li {
+            /*font-size: 0;*/
+            float: left;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="ad">
+            <ul id="imgS">
+                <li><img src="../images/01.jpg"/></li>
+                <li><img src="../images/02.jpg"/></li>
+                <li><img src="../images/03.jpg"/></li>
+                <li><img src="../images/04.jpg"/></li>
+                <li><img src="../images/05.jpg"/></li>
+                <li><img src="../images/01.jpg"/></li>
+            </ul>
+        </div>
+    </div>
+    <script src="../common.js"></script>
+    <script>
+        window.onload = function () {
+            var current = 0;
+            function f1() {
+                current -= 1;
+                if (current < -2600) {
+                    my$("imgS").style.left = 0 + "px";
+                    current = 0;
+                } else {
+                    my$("imgS").style.left = current + "px";
+                }
+            }
+            var timeId = setInterval(f1, 10);
+            //鼠标进入暂停
+            my$("box").onmouseover = function () {
+                clearInterval(timeId);
+            }
+            //鼠标离开继续
+            my$("box").onmouseout = function () {
+                //离开后新建一个计时器,原来的那个不能用了
+                timeId = setInterval(f1, 10);
+            }
+        }
+    </script>
+</body>
+</html>

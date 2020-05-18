@@ -7,11 +7,11 @@
 	<title>Document</title>
 </head>
 <body>
-	<a href="images/2.jpg" id="ak"><img src="images/2-small.jpg" alt="" id="im"></a>
+	<a href="../images/2.jpg" id="ak"><img src="../images/2-small.jpg" alt="" id="im"></a>
 	<script>
 		document.getElementById("im").onclick = function () {
 			this.src = document.getElementById("ak").href;
-			if (document.getElementById("im").src != "images/2-small.jpg") {
+			if (document.getElementById("im").src != "../images/2-small.jpg") {
 				document.getElementById("im").onclick = function () {
 					this.src = "images/2-small.jpg";
 					return false;
