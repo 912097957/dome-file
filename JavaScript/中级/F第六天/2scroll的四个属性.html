@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 300px;
+            height: 200px;
+            border: 1px solid red;
+            overflow: auto; /*由系统自动显示,如果超出,显示滚动条*/
+        }
+
+        input {
+            margin-left: 120px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="dv">
+        我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅我喜欢廖雪梅
+    </div>
+    <input type="button" value="点击设置" id="btn">
+    <script src="../common.js"></script>
+    <script>
+        // my$("btn").onclick = function () {
+        //     // console.log(my$("dv").offsetWidth); //元素的宽度 (包括边框)
+        //     // console.log(my$("dv").offsetHeight); //元素的高度 (包括边框)
+        //     // console.log(my$("dv").scrollWidth); //元素中内容的实际宽度
+        //     // console.log(my$("dv").scrollHeight); //元素中内容的实际高度
+        //     // console.log(parseInt(my$("dv").scrollTop)); //向上卷曲出去的距离
+        //     // console.log(parseInt(my$("dv").scrollLeft)); //向左卷曲出去的距离
+        // }
+
+        // 实时获取div向上卷曲出去的值
+        // div的滚动事件
+        my$("dv").onscroll = function () {
+            console.log(this.scrollTop);
+        }
+
+        /*
+        * offset系列
+        * 元素的样式是无法通过对象.style.属性来获取(样式在内联样式中可以获取到)
+        * offsetLeft:元素距离左边的距离
+        * offsetTop:元素距离顶部的距离
+        * offsetWidth:元素的宽度 (包括边框)
+        * offsetHeight:元素的高度 (包括边框)
+        *
+        * scroll系列:卷曲---滚出去
+        * scrollWidth:元素中内容的实际的宽度(没有边框),如果没有内容就是元素的宽度
+        * scrollHeight:元素中内容的实际的高度(没有边框),如果没有内容就是元素的高度
+        * scrollLeft: 向左卷曲出去的距离
+        * scrollTop: 向上卷曲出去的距离
+        *
+        * */
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        body,
+        html {
+            width: 100%;
+        }
+
+        #topPart,
+        #navBar {
+            width: 1423px;
+            margin: 0 auto;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        .main {
+            margin: 0 auto;
+            width: 1000px;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="top" id="topPart">
+        <img src="../images/top.png" alt=""/>
+    </div>
+    <div class="nav" id="navBar">
+        <img src="../images/nav.png" alt=""/>
+    </div>
+    <div class="main" id="mainPart">
+        <img src="../images/main.png" alt=""/>
+    </div>
+    <script src="../common.js"></script>
+    <script>
+        //获取浏览器向上卷曲出去的距离的值
+        // function getScroll() {
+        // 通过对象.方法的形式
+        //     var obj = {};
+        //     var scrollTop = window.pageXOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        //     var scrollLeft = window.pageYOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0;
+        //     obj.top = scrollTop;
+        //     obj.left = scrollLeft;
+        //
+        //     return obj;
+        // }
+
+        // 简化代码:
+
+        // function getScroll() {
+        //     // 去掉变量
+        //     var obj = {};
+        //     obj.top = window.pageXOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        //     obj.left = window.pageYOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0;
+        //
+        //     return obj;
+        // }
+
+        // 优化代码写法
+
+        // function getScroll() {
+        //     // 去掉变量
+        //     var obj = {
+        //         top: window.pageXOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
+        //         left: window.pageYOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0
+        //     };
+        //
+        //     return obj;
+        // }
+
+        // 继续简化代码
+
+        function getScroll() {
+            // 直接返回,连对象的变量都不要了
+            // 这里返回的是这个对象
+            // 后面+0是防止报错
+            return {
+                top: window.pageXOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
+                left: window.pageYOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0
+            };
+        }
+
+        //测试:
+        // 浏览器的滚动事件
+        window.onscroll = function () {
+            console.log(parseInt(getScroll().top));
+            if (parseInt(getScroll().top) > 165) {
+                my$("navBar").className = "fixed";
+                my$("mainPart").style.marginTop = 80 + "px";
+
+            } else {
+                my$("navBar").className = "nav";
+                my$("mainPart").style.marginTop = "";
+            }
+        }
+    </script>
+</body>
+</html>

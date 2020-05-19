@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #dv1 {
+            width: 500px;
+            height: 500px;
+            background-color: red;
+            position: absolute;
+            left: 500px;
+            top: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <script src="../common.js"></script>
+    <div id="dv1">
+    </div>
+    <input type="button" value="点击获取红色" id="btn1">
+    <script>
+        /*
+
+        *获取元素的宽高用offset系列来获取
+        * offsetWidth-----> 获取元素的宽度
+        * offsetHeight-----> 获取元素的高度
+        * offsetLeft-----> 获取元素的left值
+        * offsetTop-----> 获取元素的top值
+        *
+        * */
+    </script>
+    <script>
+        //点击按钮获取到红色div的宽高
+        my$("btn1").onclick = function () {
+            // 设置在style中的样式是拿不到的
+            // 只有设置在行内样式中才能拿到
+            // 获取元素的样式这两种方法就费了
+            // console.log(my$("dv1").style.width);
+            // console.log(my$("dv1").style.height);
+            // -------------------------------------------
+
+            //以后获取元素的宽高都用这种.offset系列获取
+            console.log("红色的宽:" + my$("dv1").offsetWidth);
+            console.log("红色的高:" + my$("dv1").offsetHeight);
+            console.log("红色的left:" + my$("dv1").offsetLeft);
+            console.log("红色的top:" + my$("dv1").offsetTop);
+        }
+    </script>
+</body>
+</html>

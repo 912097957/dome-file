@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document</title>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <p id="p"></p>
+    <img src="../images/tianshi.gif" alt="" id="im">
+    <script src="../common.js"></script>
+    <script>
+        // 鼠标在页面中移动,图片跟着飞
+        // 因为body的大小不固定,所以要向鼠标进入就触发事件,只能选用HTML注册鼠标进入移动事件
+        // 鼠标移动事件
+        document.onmousemove = function (e) {
+            //获取鼠标移动的坐标
+            //可视区域的横纵坐标
+            my$("im").style.left = e.clientX + "px";
+            my$("im").style.top = e.clientY + "px";
+        };
+    </script>
+</body>
+</html>
