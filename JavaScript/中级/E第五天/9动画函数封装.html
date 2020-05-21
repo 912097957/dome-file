@@ -7,7 +7,7 @@
 <body>
     <script>
         //设置任意一个元素,移动到指定的目标位置
-        function animate(element, target) {
+        function animate(element, target, distance, time) {
             //每点击一次按钮都要先清理一次定时器(不管有没有)
             clearInterval(element.timeId);
             //定时器的一个id值存储到了对象的一个属性中
@@ -15,7 +15,7 @@
                 //获取元素当前的位置
                 var current = element.offsetLeft;
                 //每次移动的距离
-                var temp = 10;
+                var temp = distance;
                 temp = current < target ? temp : -temp;
                 //移动到当前位置
                 current += temp;
@@ -27,7 +27,7 @@
                     clearInterval(element.timeId);
                     element.style.left = target + "px";
                 }
-            }, 20)
+            }, time);
         }
     </script>
 </body>

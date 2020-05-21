@@ -100,10 +100,9 @@
         // 浏览器的滚动事件
         window.onscroll = function () {
             console.log(parseInt(getScroll().top));
-            if (parseInt(getScroll().top) > 165) {
-                my$("navBar").className = "fixed";
+            if (parseInt(getScroll().top) > my$("topPart").offsetHeight) {
+                my$("navBar").className = "nav fixed";
                 my$("mainPart").style.marginTop = 80 + "px";
-
             } else {
                 my$("navBar").className = "nav";
                 my$("mainPart").style.marginTop = "";

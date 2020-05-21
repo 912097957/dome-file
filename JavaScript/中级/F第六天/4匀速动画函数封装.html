@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: peachpuff;
+        }
+    </style>
+</head>
+<body>
+    <div id="dv1"></div>
+    <input type="button" value="点击400px" id="btn1">
+    <input type="button" value="点击800px" id="btn2">
+    <script src="../common.js"></script>
+    <script>
+        my$("btn1").onclick = function () {
+            animate(my$("dv1"), 400, 10, 20);
+        }
+        my$("btn2").onclick = function () {
+            animate(my$("dv1"), 800, 10, 20);
+        }
+        // // 动画函数-----任意一个元素移动到指定的位置
+        // function animate(element, target) {
+        //     // 每次开始先清理定时器
+        //     clearInterval(element.timeId);
+        //     element.timeId = setInterval(function () {
+        //         //获取当前div的位置
+        //         var current = element.offsetLeft;//数字类型,没有px
+        //         // div每次移动多少像素
+        //         var star = 10;
+        //         star = current < target ? star : -star;
+        //         // 每次移动后的目标距离
+        //         current += star;
+        //         // 判断当前移动后的位置是否到达目标位置
+        //         if (Math.abs(current - target) > Math.abs(star)) {
+        //             element.style.left = current + "px";
+        //         } else {
+        //             clearInterval(element.timeId);
+        //             element.style.left = target + "px";
+        //         }
+        //     }, 20);
+        // }
+    </script>
+</body>
+</html>

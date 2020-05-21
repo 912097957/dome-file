@@ -57,9 +57,9 @@
         .all ol li {
             float: left;
             width: 20px;
-            height: 10px;
+            height: 5px;
             border: 1px solid #ccc;
-            margin-left: 10px;
+            margin: 0 5px;
             cursor: pointer;
             border-radius: 5px;
             background: rgba(0, 0, 0, .3);
@@ -205,7 +205,7 @@
         //左边按钮
         my$("left").onclick = function () {
             if (pic == 0) {
-                pic = 5;
+                pic = ulObj.children.length - 1;
                 ulObj.style.left = -pic * imgWidth + "px";
             }
             pic--;

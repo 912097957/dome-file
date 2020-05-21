@@ -122,13 +122,40 @@ function removeEventListener(element, type, fnName) {
     }
 }
 
-/* @兼容性
- * @description: 设置任意一个元素,移动到指定的目标位置(需要脱离文档流)
+/* @匀速动画函数
+ * @description: 设置任意一个元素,匀速移动到指定的目标位置(需要脱离文档流)
  * @param {type} 任意的元素,目标位置(Number),定时器每次移动的距离(Number),定时器时间
  * @return: 元素移动
  */
 
 function animate(element, target, distance, time) {
+    // 每次开始先清理定时器
+    clearInterval(element.timeId);
+    element.timeId = setInterval(function () {
+        //获取当前div的位置
+        var current = element.offsetLeft;//数字类型,没有px
+        // div每次移动多少像素
+        var star = distance;
+        star = current < target ? star : -star;
+        // 每次移动后的目标距离
+        current += star;
+        // 判断当前移动后的位置是否到达目标位置
+        if (Math.abs(current - target) > Math.abs(star)) {
+            element.style.left = current + "px";
+        } else {
+            clearInterval(element.timeId);
+            element.style.left = target + "px";
+        }
+    }, time);
+}
+
+/* @变速动画函数
+ * @description: 设置任意一个元素,缓速移动到指定的目标位置(需要脱离文档流)
+ * @param {type} 任意的元素,目标位置(Number),定时器时间
+ * @return: 元素移动
+ */
+
+function animate1(element, target, time) {
     //每点击一次按钮都要先清理一次定时器(不管有没有)
     clearInterval(element.timeId);
     //定时器的一个id值存储到了对象的一个属性中
@@ -136,17 +163,16 @@ function animate(element, target, distance, time) {
         //获取元素当前的位置
         var current = element.offsetLeft;
         //每次移动的距离
-        var temp = distance;
-        temp = current < target ? temp : -temp;
+        var temp = (target - current) / 10;
+        temp = temp > 0 ? Math.ceil(temp) : Math.floor(temp);
         //移动到当前位置
         current += temp;
+        element.style.left = current + "px";
+        //测试代码:
+        console.log("目标位置:" + target + ",当前位置:" + current + ",每次移动步数:" + temp);
         //判断:如果我当前的位置距离目标位置大于我每次走的步数,我就照常走
-        if (Math.abs(current - target) > Math.abs(temp)) {
-            element.style.left = current + "px";
-        } else {
-            //如果小于,我就直接到达目标位置并清理定时器
+        if (current == target) {
             clearInterval(element.timeId);
-            element.style.left = target + "px";
         }
-    }, time)
+    }, time);
 }
