@@ -128,7 +128,7 @@ function removeEventListener(element, type, fnName) {
  * @return: 元素移动
  */
 
-function animate(element, target, distance, time) {
+function animate1(element, target, distance, time) {
     // 每次开始先清理定时器
     clearInterval(element.timeId);
     element.timeId = setInterval(function () {
@@ -150,29 +150,43 @@ function animate(element, target, distance, time) {
 }
 
 /* @变速动画函数
- * @description: 设置任意一个元素,缓速移动到指定的目标位置(需要脱离文档流)
- * @param {type} 任意的元素,目标位置(Number),定时器时间
- * @return: 元素移动
+ * @description: 获取一个元素设置任意属性值的动画函数
+ * @param {type} 任意的元素,目标位置(Number),定时器时间,属性名(字符串类型)
+ * @return: 元素移动获取则
  */
 
-function animate1(element, target, time) {
-    //每点击一次按钮都要先清理一次定时器(不管有没有)
-    clearInterval(element.timeId);
-    //定时器的一个id值存储到了对象的一个属性中
-    element.timeId = setInterval(function () {
-        //获取元素当前的位置
-        var current = element.offsetLeft;
-        //每次移动的距离
-        var temp = (target - current) / 10;
-        temp = temp > 0 ? Math.ceil(temp) : Math.floor(temp);
-        //移动到当前位置
-        current += temp;
-        element.style.left = current + "px";
-        //测试代码:
-        console.log("目标位置:" + target + ",当前位置:" + current + ",每次移动步数:" + temp);
-        //判断:如果我当前的位置距离目标位置大于我每次走的步数,我就照常走
-        if (current == target) {
-            clearInterval(element.timeId);
-        }
-    }, time);
+//element-----元素
+//target-----目标距离
+//time-----计时器时间
+//style-----样式的名字
+// function animate2(element, target, time, style) {
+//     //每点击一次按钮都要先清理一次定时器(不管有没有)
+//     clearInterval(element.timeId);
+//     //定时器的一个id值存储到了对象的一个属性中
+//     element.timeId = setInterval(function () {
+//         //获取元素当前的位置
+//         var current = parseInt(getStyle(element, style));
+//         //每次移动的距离
+//         var temp = (target - current) / 10;
+//         temp = temp > 0 ? Math.ceil(temp) : Math.floor(temp);
+//         //移动到当前位置
+//         current += temp;
+//         element.style[style] = current + "px";
+//         //测试代码:
+//         console.log("目标位置:" + target + ",当前位置:" + current + ",每次移动步数:" + temp);
+//         //判断:如果我当前的位置距离目标位置大于我每次走的步数,我就照常走
+//         if (current == target) {
+//             clearInterval(element.timeId);
+//         }
+//     }, time);
+// }
+
+/* @兼容性
+ * @description: 获取任意一个元素的任意一个样式的值 两个参数
+ * @param {type} 任意的元素,需要获取的样式名字(字符串类型)
+ * @return: 属性值
+ */
+
+function getStyle(element, style) {
+    return window.getComputedStyle ? window.getComputedStyle(element, null)[style] : element.currentStyle[style];
 }

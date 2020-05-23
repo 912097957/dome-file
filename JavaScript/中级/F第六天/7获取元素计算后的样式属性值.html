@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            left: 100px;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="点击设置" id="btn">
+    <div id="dv"></div>
+    <script src="../common.js"></script>
+    <script>
+        my$("btn").onclick = function () {
+            // console.log(window.getComputedStyle(my$("dv"), null));//谷歌,火狐支持
+            // console.log(window.currentStyle(my$("dv"))["left"]);//另一种写法,点可以换中括号
+            // IE8支持
+            // console.log(my$("dv").currentStyle.left);
+            console.log(getStyle(my$("dv"), "top"));
+        }
+        //获取任意一个元素的任意一个样式的值 三个参数
+        // function getStyle(element, style) {
+        //     //判断浏览器是否支持这个方法
+        //     if (window.getComputedStyle) {
+        //         return window.getComputedStyle(element, null)[style];
+        //     } else {
+        //         return element.currentStyle[style];
+        //     }
+        // }
+
+        //---------------------------------------------------------
+        //优化:三元表达式
+
+        function getStyle(element, style) {
+            return window.getComputedStyle ? window.getComputedStyle(element, null)[style] : element.currentStyle[style];
+        }
+    </script>
+</body>
+</html>

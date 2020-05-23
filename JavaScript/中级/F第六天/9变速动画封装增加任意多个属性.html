@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            background-color: peachpuff;
+        }
+    </style>
+</head>
+<body>
+    <div id="dv1"></div>
+    <input type="button" value="点击400px" id="btn1">
+    <script src="../common.js"></script>
+    <script>
+        my$("btn1").onclick = function () {
+            animate(my$("dv1"), {
+                "width": 500,
+                "height": 700,
+            }, 20)
+        }
+
+        function animate(element, json, time) {
+            //每点击一次按钮都要先清理一次定时器(不管有没有)
+            clearInterval(element.timeId);
+            //定时器的一个id值存储到了对象的一个属性中
+            element.timeId = setInterval(function () {
+                var flag = true;//默认,假设,全部到达目标
+                for (const attr in json) {
+                    //获取元素当前的位置
+                    var current = parseInt(getStyle(element, attr));
+                    //当前的对象对应的属性的属性值,不能用点的方法
+                    var target = json[attr];
+                    //每次移动的距离
+                    var temp = (target - current) / 10;
+                    temp = temp > 0 ? Math.ceil(temp) : Math.floor(temp);
+                    //移动到当前位置
+                    current += temp;
+                    element.style[attr] = current + "px";
+                    if (current != target) {
+                        flag = false;
+                    }
+                    //测试代码:
+                    console.log("目标位置:" + target + ",当前位置:" + current + ",每次移动步数:" + temp);
+                    //判断:如果我当前的位置距离目标位置大于我每次走的步数,我就照常走
+                }
+                console.log(flag);
+                if (current == target) {
+                    clearInterval(element.timeId);
+                }
+            }, time);
+        }
+
+        // 计算后的样式属性-----一个元素任意的一个样式的属性值----字符串类型
+        function getStyle(element, style) {
+            return window.getComputedStyle ? window.getComputedStyle(element, null)[style] : element.currentStyle[style];
+        }
+    </script>
+</body>
+</html>
