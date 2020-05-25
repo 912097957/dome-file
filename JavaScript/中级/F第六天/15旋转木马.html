@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旋转木马轮播图</title>
+    <link rel="stylesheet" href="../images3/css/css.css"/>
+    <script src="../common.js"></script>
+    <script>
+        let styleObj = [
+            {
+                width: 400,
+                top: 20,
+                left: 50,
+                opacity: 0.2,
+                zIndex: 2
+            },
+            {
+                width: 600,
+                top: 70,
+                left: 0,
+                opacity: 0.8,
+                zIndex: 3
+            },
+            {
+                width: 800,
+                top: 100,
+                left: 200,
+                opacity: 1,
+                zIndex: 4
+            },
+            {
+                width: 600,
+                top: 70,
+                left: 600,
+                opacity: 0.8,
+                zIndex: 3
+            },
+            {
+                width: 400,
+                top: 20,
+                left: 750,
+                opacity: 0.2,
+                zIndex: 2
+            }
+        ];
+        //页面加载事件
+        window.onload = function () {
+            let list = my$("slide").getElementsByTagName("li");
+
+            //加锁
+            let flag = true;
+
+            //散开所有图片:分配
+            function assign() {
+                for (let i = 0; i < list.length; i++) {
+                    animate(list[i], styleObj[i], function () {
+                        flag = true;//=========>动画完成之后下次点击才生效
+                    });
+                }
+            }
+
+            //立即调用散开
+            assign();
+
+            //鼠标进入按钮出现
+            my$("wrap").onmouseover = function () {
+                animate(my$("arrow"), {"opacity": 1});
+            }
+
+            //鼠标进入按钮消失
+            my$("wrap").onmouseout = function () {
+                animate(my$("arrow"), {"opacity": 0});
+            }
+
+            //为按钮添加点击事件
+            //右边按钮
+            my$("arrRight").onclick = function () {
+                if (flag) {
+                    flag = false;
+                    left();
+                }
+            }
+
+            function left() {
+                styleObj.push(styleObj.shift());
+                assign();
+            }
+
+            //左边按钮
+            my$("arrLeft").onclick = function () {
+                if (flag) {
+                    flag = false;
+                    styleObj.unshift(styleObj.pop());
+                    assign();
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="wrap" id="wrap">
+        <div class="slide" id="slide">
+            <ul>
+                <li><a href="#"><img src="../images3/slidepic1.jpg" alt=""/></a></li>
+                <li><a href="#"><img src="../images3/slidepic2.jpg" alt=""/></a></li>
+                <li><a href="#"><img src="../images3/slidepic3.jpg" alt=""/></a></li>
+                <li><a href="#"><img src="../images3/slidepic4.jpg" alt=""/></a></li>
+                <li><a href="#"><img src="../images3/slidepic5.jpg" alt=""/></a></li>
+            </ul>
+            <div class="arrow" id="arrow">
+                <a href="javascript:;" class="prev" id="arrLeft"></a>
+                <a href="javascript:;" class="next" id="arrRight"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

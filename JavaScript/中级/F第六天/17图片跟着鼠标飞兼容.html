@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <img src="../images/tianshi.gif" alt="" id="img">
+    <script src="../common.js"></script>
+    <script>
+        //注册文档的鼠标移动事件
+        //通过arguments.length可以得出事件处理函数中实际上是有一个参数的,这个参数和事件有关系,而且是一个对象,称为事件参数对象
+        //谷歌和火狐中都有这个事件参数对象,IE8中没有
+        //IE8中用window.event来代替
+        // document.onmousemove = function (e) {
+        //     console.log(arguments[0]);
+        //     console.log(e);
+        // }
+
+        // document.onmousemove = function (e) {//因为IE8中是没有e这个事件参数对象的
+        //     document.title = e.clientX + "====>" + e.clientY;
+        //     my$("img").style.left = e.clientX + "px";
+        //     my$("img").style.top = e.clientY + "px";
+        //     my$("img").style.left = window.event.clientX + "px";
+        //     my$("img").style.top = window.event.clientY + "px";
+        // }
+        //兼容代码
+        document.onmousemove = function (e) {
+            let item = e || window.event;
+            my$("img").style.left = item.clientX + "px";
+            my$("img").style.top = item.clientY + "px";
+        }
+    </script>
+</body>
+</html>

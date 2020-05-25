@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document</title>
+    <style>
+
+        ul {
+            list-style: none;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 1150px;
+            height: 400px;
+            margin: 50px auto;
+            border: 1px solid red;
+            overflow: hidden;
+        }
+
+        div li {
+            width: 240px;
+            height: 400px;
+            float: left;
+        }
+
+        div ul {
+            width: 1300px;
+            background-position: center right;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script src="../common.js"></script>
+    <script>
+        //先获取所有的li标签
+        var list = my$("box").getElementsByTagName("li");
+        for (var i = 0; i < list.length; i++) {
+            list[i].style.backgroundImage = "url(../images2/" + (i + 1) + ".jpg)";
+            //鼠标进入
+            list[i].onmouseover = mouseoverHandle;
+            //鼠标离开
+            list[i].onmouseout = mouseoutHandle;
+        }
+
+        //进入
+        function mouseoverHandle() {
+            for (var j = 0; j < list.length; j++) {
+                animateFunctioin(list[j], {"width": 100});//动画效果
+            }
+            animateFunctioin(this, {"width": 800});
+            this.backgroundPosition = "-50px 0";
+        }
+
+        //离开
+        function mouseoutHandle() {
+            for (var j = 0; j < list.length; j++) {
+                animateFunctioin(list[j], {"width": 240});//动画效果
+            }
+        }
+    </script>
+</body>
+</html>

@@ -133,7 +133,7 @@ function animate1(element, target, distance, time) {
     clearInterval(element.timeId);
     element.timeId = setInterval(function () {
         //获取当前div的位置
-        var current = element.offsetLeft;//数字类型,没有px
+        var current = element.offsetLeft; //数字类型,没有px
         // div每次移动多少像素
         var star = distance;
         star = current < target ? star : -star;
@@ -149,44 +149,68 @@ function animate1(element, target, distance, time) {
     }, time);
 }
 
-/* @变速动画函数
- * @description: 获取一个元素设置任意属性值的动画函数
- * @param {type} 任意的元素,目标位置(Number),定时器时间,属性名(字符串类型)
- * @return: 元素移动获取则
- */
 
-//element-----元素
-//target-----目标距离
-//time-----计时器时间
-//style-----样式的名字
-// function animate2(element, target, time, style) {
-//     //每点击一次按钮都要先清理一次定时器(不管有没有)
-//     clearInterval(element.timeId);
-//     //定时器的一个id值存储到了对象的一个属性中
-//     element.timeId = setInterval(function () {
-//         //获取元素当前的位置
-//         var current = parseInt(getStyle(element, style));
-//         //每次移动的距离
-//         var temp = (target - current) / 10;
-//         temp = temp > 0 ? Math.ceil(temp) : Math.floor(temp);
-//         //移动到当前位置
-//         current += temp;
-//         element.style[style] = current + "px";
-//         //测试代码:
-//         console.log("目标位置:" + target + ",当前位置:" + current + ",每次移动步数:" + temp);
-//         //判断:如果我当前的位置距离目标位置大于我每次走的步数,我就照常走
-//         if (current == target) {
-//             clearInterval(element.timeId);
-//         }
-//     }, time);
-// }
-
-/* @兼容性
+/* @获取属性值
  * @description: 获取任意一个元素的任意一个样式的值 两个参数
  * @param {type} 任意的元素,需要获取的样式名字(字符串类型)
  * @return: 属性值
  */
 
-function getStyle(element, style) {
-    return window.getComputedStyle ? window.getComputedStyle(element, null)[style] : element.currentStyle[style];
+function getStyle(element, attr) {
+    return window.getComputedStyle ? window.getComputedStyle(element, null)[attr] : element.currentStyle[attr] || 0;
+}
+
+/* @最终版动画函数
+ * @description:传入四个参数1元素,2要改变的属性对象(json格式数据),3定时器事件(速度),4回调函数
+ * @param {type}元素,对象,数字,函数
+ * @return: 属性值
+ */
+
+function animate(element, json, fn) {
+    clearInterval(element.timeId); //清理定时器
+    //定时器,返回的是定时器的id
+    element.timeId = setInterval(function () {
+        var flag = true; //默认,假设,全部到达目标
+        //遍历json对象中的每个属性还有属性对应的目标值
+        for (var attr in json) {
+            //判断这个属性attr中是不是opacity
+            if (attr == "opacity") {
+                //获取元素的当前的透明度,当前的透明度放大100倍
+                var current = getStyle(element, attr) * 100;
+                //目标的透明度放大100倍
+                var target = json[attr] * 100;
+                var step = (target - current) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                current += step; //移动后的值
+                element.style[attr] = current / 100;
+            } else if (attr == "zIndex") { //判断这个属性attr中是不是zIndex
+                //层级改变就是直接改变这个属性的值
+                element.style[attr] = json[attr];
+            } else {
+                //普通的属性
+                //获取元素这个属性的当前的值
+                var current = parseInt(getStyle(element, attr));
+                //当前的属性对应的目标值
+                var target = json[attr];
+                //移动的步数
+                var step = (target - current) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                current += step; //移动后的值
+                element.style[attr] = current + "px";
+            }
+            //是否到达目标
+            if (current != target) {
+                flag = false;
+            }
+        }
+        if (flag) {
+            clearInterval(element.timeId); //清理定时器
+            //所有的属性到达目标才能使用这个函数,前提是用户传入了这个函数
+            if (fn) {
+                fn();
+            }
+        }
+        //测试代码
+        console.log("目标:" + target + ",当前:" + current + ",每次的移动步数:" + step);
+    }, 20);
 }
