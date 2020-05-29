@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content=""/>
+    <meta name="Keywords" content=""/>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <img src="../images/tianshi.gif" alt="" id="img">
+    <script src="../common.js"></script>
+    <script>
+        document.onmousemove = function (e) {
+            // my$("img").style.left = e.clientX + "px";
+            // my$("img").style.top = e.clientY + "px";
+
+            //因为IE8中针对事件参数对象使用的是window.event,那个事件处理函数中是没有e这个参数的,所以使用window.event来代替e
+
+            //IE8中不支持page这个属性
+            function getScroll() {
+                return {
+                    left: window.pageXOffset || document.body.scrollLeft || document.documentElement.scrollLeft || 0,
+                    top: window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop | 0
+                }
+            }
+
+            my$("img").style.left = window.event.clientX + getScroll().left + "px";
+            my$("img").style.top = window.event.clientY + getScroll().top + "px";
+        }
+    </script>
+</body>
+</html>

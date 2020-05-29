@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 2000px;
+        }
+
+        img {
+            position: absolute;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <img src="../images/bird.png" alt="" id="img">
+    <script src="../common.js"></script>
+    <script>
+        //可以在方法中调用方法
+        // let obj = {
+        //     sayHi: function () {
+        //         console.log("你好");
+        //         this.eat();
+        //     },
+        //     eat: function () {
+        //         console.log("吃饭");
+        //     }
+        // }
+        // obj.sayHi();
+
+        // 图片跟着鼠标飞,可以在任何的浏览器中实现
+        // 使用window.event和事件参数对象e的兼容
+        // clientX和clientY的单独使用
+        // scrollLeft和scrollTop的兼容代码
+        // pageX,pageY和clientX+clientY  和  clientY+scrollTop
+
+        // 把代码封装在一个函数
+        // 把代码放在一个对象
+
+        let event = {
+            //window.event和事件参数对象e的兼容
+            getEvent: function (e) {
+                return window.event || e;
+            },
+            //可视区域的横纵坐标兼容代码
+            getClientX: function (e) {
+                return this.getEvent(e).clientX;
+            },
+            getClientY: function (e) {
+                return this.getEvent(e).clientY;
+            },
+            //页面卷曲出去的横纵坐标
+            getScrollLeft: function () {
+                return window.pageXOffset || document.body.offsetLeft || document.documentElement.offsetLeft || 0;
+            },
+            getScrollTop: function () {
+                return window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop || 0;
+            },
+            //相对于页面的横坐标(pageX或者clientLeft+scrollLeft)
+            getPageX: function (e) {
+                return this.getEvent(e).pageX ? this.getEvent(e).pageX : this.getClientX(e) + this.getScrollLeft();
+            },
+            //相对于页面的纵坐标(pageY或者clientTop+scrollTop)
+            getPageY: function (e) {
+                return this.getEvent(e).pageY ? this.getEvent(e).pageY : this.getClientY(e) + this.getScrollTop(e);
+            }
+        }
+        // 注册鼠标移动事件
+        document.onmousemove = function (e) {
+            my$("img").style.left = event.getPageX(e) + "px";
+            my$("img").style.top = event.getPageY(e) + "px";
+        }
+    </script>
+</body>
+</html>

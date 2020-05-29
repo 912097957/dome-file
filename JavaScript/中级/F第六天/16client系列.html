@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -13,47 +14,49 @@
             width: 100px;
             height: 100px;
             background-color: pink;
-            border-left: 200px solid red;
+            border-left: 20px solid red;
             margin-left: 50px;
         }
     </style>
 </head>
+
 <body>
     <div id="dv"></div>
     <script>
         /*
-        * offset系列:获取元素的宽,高,left,top,parent
-        *
-        * offsetWidth:元素的宽,有边框
-        * offsetHeight:元素的高,有边框
-        * offsetLeft:元素距离左边的距离
-        * offsetTop:元素距离上面的值
-        *
-        * scroll系列:卷曲出去的值
-        *
-        * scrollWidth:元素中内容的实际的宽,如果内容很少或者没有内容,就是元素自身的宽,没有边框
-        * scrollHeight:元素中内容的实际的高,如果内容很少或者没有内容,就是元素自身的高,没有边框
-        * scrollTop:向上卷曲出去的距离
-        * scrollLeft:像左卷曲出去的距离
-        *
-        *
-        * client系列:元素可视区域的大小
-        * clientWidth:元素可是区域的宽,不包括边框
-        * clientHeight:元素可是区域的高,不包括边框
-        * clientLeft:左边框的宽度
-        * clientTop:上边框的宽度
-        *
-        *
-        *
-        *
-        *
-        * */
-
+         * offset系列:获取元素的宽,高,left,top,parent
+         *
+         * offsetWidth:元素的宽,有边框
+         * offsetHeight:元素的高,有边框
+         * offsetLeft:元素距离左边的距离
+         * offsetTop:元素距离上面的值
+         *
+         * scroll系列:卷曲出去的值
+         *
+         * scrollWidth:元素中内容的实际的宽,如果内容很少或者没有内容,就是元素自身的宽,没有边框
+         * scrollHeight:元素中内容的实际的高,如果内容很少或者没有内容,就是元素自身的高,没有边框
+         * scrollTop:向上卷曲出去的距离
+         * scrollLeft:像左卷曲出去的距离
+         *
+         *
+         * client系列:元素可视区域的大小
+         * clientWidth:元素可是区域的宽,不包括边框
+         * clientHeight:元素可是区域的高,不包括边框
+         * clientLeft:左边框的宽度
+         * clientTop:上边框的宽度
+         *
+         *
+         *
+         *
+         *
+         * */
     </script>
     <script src="../common.js"></script>
     <script>
         console.log(my$("dv").clientWidth);
         console.log(my$("dv").clientLeft);
+        console.log(my$("dv").offsetLeft);
     </script>
 </body>
+
 </html>

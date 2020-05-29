@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.baidu.com" id="a">百度一下</a>
+    <script src="../common.js"></script>
+    <script>
+        my$("a").onclick = function (e) {
+            alert("我被点了");
+            return false;//多数用这个
+            //e.preventDefault();//阻止连接跳转
+        }
+    </script>
+</body>
+</html>

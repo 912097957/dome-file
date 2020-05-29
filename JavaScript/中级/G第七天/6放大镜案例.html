@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>哈哈</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 350px;
+            height: 350px;
+            margin: 100px;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+
+        .big {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 360px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            display: none;
+        }
+
+        .small img {
+            width: 350px;
+        }
+
+        .big img {
+            width: 800px;
+        }
+
+        .mask {
+            width: 175px;
+            height: 175px;
+            background: rgba(255, 255, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: move;
+            display: none;
+        }
+
+        .small {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <div class="small"><!--小层-->
+            <img src="../images/small.png" alt=""/>
+            <div class="mask"></div><!--遮挡层-->
+        </div><!--小图-->
+        <div class="big"><!--大层-->
+            <img src="../images/big.jpg" alt=""/><!--大图-->
+        </div><!--大图-->
+    </div>
+    <!--导入外部的js文件-->
+    <script src="../common.js"></script>
+    <script>
+        //获取需要的元素
+        let box = my$("box");
+        //获取小图的div
+        let small = box.children[0];
+        //遮挡层
+        let mask = small.children[1];
+        //获取大图的div
+        let big = box.children[1];
+        //注册鼠标进入事件
+        box.onmouseover = function () {
+            mask.style.display = "block";
+            big.style.display = "block";
+        }
+        //注册鼠标移除事件
+        box.onmouseout = function () {
+            mask.style.display = "none";
+            big.style.display = "none";
+        }
+
+    </script>
+</body>
+</html>

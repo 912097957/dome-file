@@ -1,7 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Document</title>
     <style>
         * {
@@ -9,13 +10,18 @@
             padding: 0;
         }
 
+        body {
+            height: 2000px;
+        }
+
         img {
             position: absolute;
         }
     </style>
 </head>
+
 <body>
-    <img src="../images/tianshi.gif" alt="" id="img">
+    <img src="../images/tianshi.gif" alt="" id="img" />
     <script src="../common.js"></script>
     <script>
         //注册文档的鼠标移动事件
@@ -35,11 +41,21 @@
         //     my$("img").style.top = window.event.clientY + "px";
         // }
         //兼容代码
+        // document.onmousemove = function (e) {
+        //     let item = e || window.event;
+        //     //可视区域的横纵坐标
+        //     my$("img").style.top = item.clientY + "px";
+        //     my$("img").style.left = item.clientX + "px";
+        // };
+
         document.onmousemove = function (e) {
             let item = e || window.event;
-            my$("img").style.left = item.clientX + "px";
-            my$("img").style.top = item.clientY + "px";
-        }
+            //相对于页面顶部的坐标
+            my$("img").style.left = item.pageX + "px";
+            my$("img").style.top = item.pageY + "px";
+            // page在IE8不能用
+        };
     </script>
 </body>
+
 </html>

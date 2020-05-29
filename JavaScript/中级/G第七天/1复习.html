@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>Document</title>
+</head>
+
+<body>
+	<script src="../common.js"></script>
+	<script>
+		/*
+		复习:三大系列
+	
+		offset系列:
+		offsetLeft:元素距离左边位置的距离
+		offsetTop:元素距离上面位置的距离
+		offsetWidth:获取元素的宽度(有边框)
+		offsetHeight:获取元素的高度(有边框)
+
+		scroll系列:
+		scrollLeft:向左卷曲出去的距离
+		scrollTop:向上卷曲出去的距离
+		scrollWidth:获取元素的宽度(无边框)
+		scrollHeight:获取元素的高的(无边框)
+
+		client系列
+		clientLeft:左边框的宽度
+		clientTop:上边框的宽度
+		clientWidth:可视区域的宽度,没有边框
+		clientHeight:可是区域的高度,没有边框
+		clientX:可视区域的横坐标
+		clientY:可视区域的纵坐标
+
+		动画函数:
+
+
+		
+		*/
+		//获取的是元素计算后的样式属性的值
+		function getStyle(element, attr) {
+			return window.getComputedStyle ? window.getComputedStyle(element, null)[attr] : element.currentStyle[attr] || 0;
+		}
+	</script>
+</body>
+
+</html>
