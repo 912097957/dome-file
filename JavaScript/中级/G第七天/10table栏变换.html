@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #list li {
+            list-style-type: none;
+            width: 80px;
+            height: 30px;
+            line-height: 30px;
+            background-color: beige;
+            text-align: center;
+            float: left;
+            margin-left: 5px;
+        }
+
+        #list li.current {
+            background-color: burlywood;
+        }
+
+        #list li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <ul id="list">
+            <li class="current">
+                <a href="http://www.baidu.com">首页</a>
+            </li>
+            <li>
+                <a href="http://www.baidu.com">播客</a>
+            </li>
+            <li>
+                <a href="http://www.baidu.com">博客</a>
+            </li>
+            <li>
+                <a href="http://www.baidu.com">相册</a>
+            </li>
+            <li>
+                <a href="http://www.baidu.com">关于</a>
+            </li>
+            <li>
+                <a href="http://www.baidu.com">帮助</a>
+            </li>
+        </ul>
+    </div>
+    <script src="../common.js"></script>
+    <script>
+        //获取所有li
+        let liObj = document.getElementsByTagName("li");
+        //循环遍历
+        for (let i = 0; i < liObj.length; i++) {
+            //每个li中的a标签
+            let aObj = getFirstElement(liObj[i]);
+            aObj.onclick = function () {
+                //把当前这个所在的这个a标签的父级标签类样式全部移除
+                for (let j = 0; j < liObj.length; j++) {
+                    liObj[j].removeAttribute("class");
+                }
+                //当前点击的a标签的父级(li)元素改变颜色
+                this.parentElement.className = "current";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

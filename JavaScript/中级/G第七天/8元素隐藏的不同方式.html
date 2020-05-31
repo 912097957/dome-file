@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            border: 1px solid hotpink;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="btn" value="隐藏">
+    <div id="dv"></div>
+    哈哈哈
+    <script src="../common.js"></script>
+    <script>
+        document.getElementById("btn").onclick = function () {
+            //隐藏div
+            // my$("dv").style.display = "none";//不占位置
+            // my$("dv").style.visibility = "hidden";//占位置
+            // my$("dv").style.opacity = 0;//透明度为0 占位置
+            // my$("dv").style.height = "0px";//不占位置
+            my$("dv").style.border = "0px solid red";//占位置
+        }
+    </script>
+</body>
+</html>

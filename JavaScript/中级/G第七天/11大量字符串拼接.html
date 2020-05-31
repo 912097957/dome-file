@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="拼接" id="btn"><br>
+    <input type="text" value=""><br>
+    <input type="text" value=""><br>
+    <input type="text" value=""><br>
+    <input type="text" value=""><br>
+    <input type="text" value=""><br>
+    <input type="text" value=""><br>
+    <script src="../common.js"></script>
+    <script>
+        //字符串特性:内容不能改变
+        //大量字符串拼接造成性能浪费效率低
+        //所以使用数组,不过现代浏览器用什么都行
+
+        //点击按钮实现
+        my$("btn").onclick = function () {
+            let str = [];
+            //获取所有的文本框
+            let inputObj = document.getElementsByTagName("input");
+            //获取每个文本框的value值
+            for (let i = 0; i < inputObj.length - 1; i++) {
+                if (inputObj[i].type !== "button") {
+                    str.push(inputObj[i].value)
+                }
+            }
+            console.log(str.join("|"));
+        }
+    </script>
+</body>
+</html>
