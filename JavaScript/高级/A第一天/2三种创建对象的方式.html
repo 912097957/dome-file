@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        * 对象:特指某一事物,具有属性和方法(一组无序的属性集合)
+        * 特征:属性
+        * 行为:方法
+        *
+        * 创建对象的三种方法
+        * //字面量的方式
+        * //调用系统的构造函数
+        * //自定义构造函数方式
+        *
+        * */
+        //实例对象
+        let per1 = {
+            name: "小明",
+            age: 18,
+            sex: "男",
+            eat: function () {
+                console.log("白菜");
+            },
+            readBook: function () {
+                console.log("老人与海")
+            }
+        }
+
+        //调用系统的构造函数
+        let per2 = new Object();
+        per2.name = "卡卡西";
+        per2.age = 30;
+        per2.sex = "男";
+        per2.eat = function () {
+            console.log("苹果");
+        }
+        per2.run = function () {
+            console.log("跑");
+        }
+        // console.log(per2 instanceof Person);
+
+        //自定义构造函数
+        function Person(name, age, sex) {
+            this.name = name;
+            this.name = age;
+            this.name = sex;
+            this.play = function () {
+                console.log("打游戏")
+            };
+        }
+
+        //工厂模式创建对象能找到它是什么类型的,其他两种不能
+        let person = new Person("小红", 18, "女");
+        console.log(person instanceof Person);
+    </script>
+</body>
+</html>

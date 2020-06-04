@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        Person.prototype.eat = function () {
+            console.log("今天吃大骨头")
+        }
+        let p1 = new Person("小明", 20);
+        let p2 = new Person("小红", 30);
+        p1.eat();
+        p2.eat();
+        // 调用的是同一个方法,解决了性能浪费,数据共享
+        console.log(p1 === p2);//false ----说明不是同一个对象
+        console.log(p1.eat === p2.eat)//true-----说明调用的是同一个方法
+
+        console.dir(p1);
+        console.dir(p2);
+        console.log(p1)
+        console.log(Person.prototype)
+    </script>
+</body>
+</html>

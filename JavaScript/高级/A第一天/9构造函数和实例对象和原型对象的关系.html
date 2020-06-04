@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //好像实例对象的调用的方法都在构造函数的原型对象中
+
+        //通过构造函数实例对象,并初始化
+        // var arr = new Array(10, 20, 30, 40);
+        // //join是方法,是实例方法调用的
+        // arr.join("|");
+        // console.dir(arr);
+        // //join方法在实例对象__proto__原型中
+        // console.log(arr.__proto__ == arr.prototype);
+    </script>
+    <script>
+        //原型的作用:共享数据,节省空间
+        // 构造函数
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        // 构造函数的原型对象
+        //通过构造函数的原型添加一个方法
+        Person.prototype.eat = function () {
+            console.log("廖雪梅,我喜欢你!")
+        }
+
+    </script>
+</body>
+</html>

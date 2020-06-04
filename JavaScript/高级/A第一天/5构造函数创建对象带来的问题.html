@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function eat() {
+            console.log("今天吃的是红薯");
+        }
+
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.eat = eat;//这里把方法的指向改变了,指向同一个函数(方法)
+        }
+
+        //实例化对象
+        let per1 = new Person("小红", 20);
+        let per2 = new Person("小蓝", 30);
+        per1.eat();
+        per2.eat();
+        //这里答应结果相同,但是不是同一个方法
+        console.log(per1.eat === per2.eat);
+
+        console.dir(per1);
+        console.dir(per2);
+        console.log(per1.eat === per2.eat);
+
+        //它们的方法不是同一个方法,如果创建多个对象,会在内存中多次开辟空间创建,造成浪费
+        //通过原型解决-----------数据共享,节省空间
+    </script>
+</body>
+</html>

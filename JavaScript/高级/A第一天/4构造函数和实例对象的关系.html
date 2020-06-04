@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //面向对象的思想是-----抽象的过程----->实例化的过程
+
+        //例子
+        //小苏这个人,姓名,年龄,性别,吃饭,打招呼,睡觉
+
+        // 自定义构造函数----->实例化对象
+        function Person(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.eat = function () {
+                console.log("爱吃臭豆腐")
+            };
+            this.sleep = function () {
+                console.log("8点睡觉");
+            }
+        }
+
+        let per = new Person("小苏", 18, "男");
+        per.eat();
+        //实例对象是通过构造函数创建的
+        //实例对象会指向它的构造函数
+
+
+        console.dir(per);//dir可以把这个对象的结构显示出来
+        console.dir(Person);
+
+
+        //实例对象的构造器(构造函数)
+        //实例对象的构造器是指向Person的,结果是true,所以这个实例对象per是通过Person创建的
+        console.log(per.constructor === Person);
+
+        console.log(per.__proto__.constructor === Person);
+        console.log(per.__proto__.constructor === Person.prototype.constructor)
+
+
+        //构造函数
+        function Animal(name) {
+            this.name = name;
+        }
+
+        let dog = new Animal();
+        console.dir(dog);//实例对象
+        console.dir(Animal);//构造函数的名字
+
+        console.log(dog.__proto__.constructor === Animal);
+        console.log(dog.__proto__.constructor === Animal.prototype.constructor);
+
+
+        //判断这个对象是不是这种类型
+        console.log(dog.__proto__ === Animal.prototype)
+        console.log(dog.constructor === Animal)
+        console.log(dog instanceof Animal)
+
+
+        // 总结
+        /*
+        * 实例对象和构造函数之间的关系
+        * 1.实例对象是通过构造函数创建的----创建的过程叫实例化
+        * 2.如何判断这个对象是不是这种类型
+        * (1)通过构造器的方式:  实例对象.构造器==构造器函数名字
+        * (2)对象 instanceof 构造函数名字
+        * 尽量使用第二种
+        *
+        *
+        *
+        * */
+    </script>
+</body>
+</html>

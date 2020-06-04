@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name, age) {
+            this.name = name;
+            this.age = name;
+            this.play = function () {
+                console.log("打游戏");
+            }
+        }
+
+        // 创建对象----实例化一个对象,同时对属性进行赋值
+        let per = new Person("小红", 20);
+
+        // 做了四件事
+        /*
+        * 1.开辟一块新的内存空间储存这个对象
+        * 2.把this设置为当前对象
+        * 3.设置属性和方法
+        * 4.把this对象返回
+        *
+        * */
+    </script>
+    <script>
+        //工厂模式
+        function createObject(name, age) {
+            let obj = new Object();
+            obj.name = name;
+            obj.age = age;
+            obj.eat = function () {
+                console.log("爱吃榴莲");
+            }
+            return obj;
+        }
+
+        let per1 = createObject("小红", 28);
+        console.log(per1);
+    </script>
+    <script>
+        /*
+        * 两者相同点:都是函数,都可以创建对象,都可以传入参数
+        *
+        * 不同点:
+        * 工厂模式:函数名小写
+        * 有new并且有返回值
+        * new之后的对象是当前对象
+        * 直接调用函数就可以创建对象
+        *
+        * 自定义构造函数:
+        * 首字母大写
+        * 没有new,没有返回值
+        * this是当前对象
+        * 通过new的方式来创建对象
+        *
+        *
+        *
+        * */
+    </script>
+</body>
+</html>

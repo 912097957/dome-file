@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        p {
+            width: 30px;
+            height: 30px;
+            background-color: #0099cc;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="btn" value="点击">
+    <div id="dv"></div>
+    <p id="p"></p>
+    <script src="../../中级/common.js"></script>
+    <script>
+        function ChangeStyle(btnObj, dvObj, json) {
+            this.btnObj = btnObj;
+            this.dvObj = dvObj;
+            this.json = json;
+            console.log(json);
+        }
+
+        ChangeStyle.prototype.init = function () {
+            //点击按钮改变div多个属性值
+            var that = this;//按钮的点击事件是按钮,所以下面不能用this
+            this.btnObj.onclick = function () {//为按钮注册点击事件
+                for (let key in that.json) {
+                    that.dvObj.style[key] = json[key];
+                }
+            }
+        }
+        //实例化对象
+        let json = { "width": "500px", "height": "800px", "opacity": "0.3", "backgroundColor": "yellow" };
+        let cs = new ChangeStyle(my$("btn"), my$("dv"), json);
+        cs.init();//调用方法
+
+        //点击p标签设置div的样式
+        let json1 = { "width": "500px", "height": "800px", "opacity": "0.3", "backgroundColor": "green" };
+        let cs1 = new ChangeStyle(my$("p"), my$("dv"), json1);
+        cs1.init();//调用方法
+    </script>
+    <script>
+        // 面向过程编程思想
+        // 点击按钮设置div的背景颜色
+        // my$("btn").onclick = function () {
+        //     my$("dv").style.backgroundColor = "hotpink";
+        // }
+        // //-----------------------------------
+        // 面向对象思想
+        // 按钮是一个对象,div也是一个对象,颜色是一个属性
+        // function ChangeStyle(btn, dv, color) {
+        //     this.btnObj = document.getElementById(btn)//按钮对象
+        //     this.dvObj = document.getElementById(dv)//按钮对象
+        //     this.color = color;
+        // }
+
+        // //数据共享来实现背景颜色改变
+        // ChangeStyle.prototype.init = function () {
+        //     var that = this;
+        //     // console.log(this);//实例对象,当前对象
+        //     this.btnObj.onclick = function () {
+        //         that.dvObj.style.backgroundColor = that.color;
+        //     }
+        // }
+        // //实例化对象
+        // var cs = new ChangeStyle("btn", "dv", "hotpink");
+    </script>
+</body>
+</html>
