@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //为内置对象添加原型方法
+        let arr = new Array(1, 2, 3, 4, 5);
+        arr.join("|");
+        console.dir(arr);
+
+        let str = new String("哦,我喜欢廖雪梅");
+        console.log(str.indexOf("廖雪梅"));
+        console.dir(str);
+
+        let time = new Date();
+        time.getFullYear();
+        console.dir(time);
+
+        //实例中的方法如果没有,去创建该实例对象的构造函数的原型对象中找
+
+        //我们能否为系统对象中的原型中添加方法,相当于在改变源码
+        //我希望倒序打印字符串
+        String.prototype.myMain = function () {
+            for (let i = this.length - 1; i >= 0; i--) {
+                console.log(this[i]);
+            }
+        }
+        let str1 = "ABCDE";
+        str1.myMain();
+        console.log(str1);
+
+        //字符串就有了打招呼方法
+        String.prototype.sayHi = function () {
+            console.log("哈哈");
+        }
+
+        str1.sayHi();
+    </script>
+</body>
+</html>

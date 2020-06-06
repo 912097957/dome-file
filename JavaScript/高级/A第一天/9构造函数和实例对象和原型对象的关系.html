@@ -26,10 +26,19 @@
 
         // 构造函数的原型对象
         //通过构造函数的原型添加一个方法
-        Person.prototype.eat = function () {
+        Person.prototype.love = function () {
             console.log("廖雪梅,我喜欢你!")
         }
 
+        //实例化对象
+        var person = new Person("小红", 18);
+        // person.__proto__.love();
+        person.love();
+        //构造函数,原型对象和实例对象之间的关系
+        console.dir(Person);
+        //这个构造函数里面有个原型对象,原型对象中有个构造器指向自己的构造函数,实例对象是通过构造函数创建
+        //原型对象中的方法可以被实例对象所共享
+        console.log(person);
     </script>
 </body>
 </html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //产生一个随机数对象,然后暴露给window
+        //通过自调用函数的方式产生一个随机数对象,在自调用函数外面,调用该随机数对象方法产生随机数
+
+        (function (window) {
+            //产生随机数的构造函数
+            function Random() {
+
+            }
+
+            //在原型对象中添加方法
+            Random.prototype.getRandom = function (min, max) {
+                return Math.floor(Math.random() * (max - min) + min);
+            }
+
+            // let rm = new Random();
+            // let num = rm.getRandom();
+            // console.log(num);
+
+            //此时给传入的window对象添加属性,这个属性就是这个构造函数
+            //把Random对象暴露给顶级对象window===>导致外部能直接使用这个对象
+            window.Random = Random;
+        })(window);
+        // let ran = new window.random();
+        // 优化:
+        // 此时顶级对象就有了Random这个属性,这个属性里存着构造函数,然后通过这个构造函数实例化一个对象,这个对象可以调用构造函数的原型对象里的方法
+
+        let ran = new Random();//实例化window对象下的这个属性,把这个属性(它的值为构造函数)变成一个对象
+
+        //然后这个对象调用构造函数里的原型对象的方法
+
+        let num = ran.getRandom(50, 101);
+
+        //产生100就弹窗
+        if (num == 100) {
+            alert(num);
+        }
+    </script>
+</body>
+</html>

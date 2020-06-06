@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(age) {
+            this.age = "18";
+            this.sayHi = function () {
+                console.log("考你急哇");
+                //打招呼的同时直接调用方法
+                this.eat();
+            }
+            this.eat = function () {
+                console.log("喜欢吃韭菜");
+            }
+        }
+
+        //实例化对象并初始化
+        let per = new Person("18");
+        //通过实例对象调用方法
+        per.sayHi();
+        per.eat();
+
+        //原型中的方法,是可以相互调用的
+        function Animal(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        //原型中添加方法
+        Animal.prototype.eat = function () {
+            console.log("动物喜欢什么");
+            this.play();
+        }
+        Animal.prototype.play = function () {
+            console.log("动物喜欢玩球");
+            this.sleep();
+        }
+        Animal.prototype.sleep = function () {
+            console.log("睡觉了");
+        }
+        let animal = new Animal("老虎", 10);
+        animal.eat();
+
+        //原型对象中的方法可以相互调用
+    </script>
+</body>
+</html>

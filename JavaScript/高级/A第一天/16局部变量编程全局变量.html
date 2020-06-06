@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //函数的自调用---函数的自调用
+        //一次性函数:声明的同时直接调用
+        (function () {
+            console.log("函数自调用");
+        })();
+
+        //页面加载后这个自调用函数的代码就执行完了
+        // (function (形参) {
+        //     let num = 10;//局部变量
+        //     console.log("函数调用了");
+        // })(实参);
+        //console.log(num);//报错
+
+
+        //----------------------------------------
+        //浏览器顶级对象是window
+        //这段代码意思是你把一个对象传给我,我给你添加我自己的一个内部变量(属性)并赋值,再返回给你,你就可访问我这个局部变量了
+        (function (win) {
+            let num = 10;//局部变量
+            //js是动态类型的语言,对象没有什么属性就点什么,点了就有了
+            win.number = num;
+            console.log("函数调用了");
+        })(window);
+        console.log(number);
+
+        //如何把局部变量变成全局变量
+        //把函数内的局部变量给window()顶级对象下面添加一个属性并将自身的值赋予对象的属性值
+    </script>
+</body>
+</html>
