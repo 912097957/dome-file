@@ -6,12 +6,39 @@
 </head>
 <body>
     <script>
-        let object = {
-            eat: "dom",
-            love: "lai"
-        };
+        /*
+        * 什么是原型
+        * 实例对象中有__proto__这个属性,叫原型,也是一个对象,这个属性时给浏览器使用的,不是标准属性
+        * 构造函数中有prototype这个属性,叫原型.也是一个对象,这个属性是给程序员使用的
+        * 两者都可以叫原型对象
+        *
+        *
+        *
+        *
+        * */
 
-        console.dir(object);
+
+
+        //实例对象中没有方法,但是能够使用
+        //document是属性,也是一个对象
+        //write();是方法
+        window.document.write("哈哈");
+
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.eat = function () {
+                console.log("我是方法");
+            }
+        }
+
+        let a = new Person("小红", 18);
+        let b = new Person("小明", 18);
+        console.dir(Person);
+        console.dir(a);
+        console.dir(b);
+
+        a.eat();
     </script>
 </body>
 </html>
