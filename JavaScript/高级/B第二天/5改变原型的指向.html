@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //构造函数中的this就是实例对象
+        //原型对象中方法的this就是实例对象
+        //原型指向可以改变
+
+        //实例对象的原型__proto__指向的是该对象所在的构造函数的原型对象prototype
+        //构造函数的原型对象的指向如果改变了,实例对象的原型(__proto__)指向也会发生改变
+        //原型的指向是可以改变的
+        //实例对象和原型对象之间的关系是通过__proto__原型联系起来的---这个关系就是原型链
+
+        // function Person(name) {
+        //     this.name = name;
+        //     console.log(this);
+        // }
+        //
+        // Person.prototype.sayHi = function () {
+        //     console.log("你吃了没");
+        //     console.log(this);
+        // }
+        // let per = new Person(name);
+        // per.sayHi();
+        // console.log(per);
+
+        // --------------------------------
+
+        // function Student() {
+        //
+        // }
+        //
+        // Student.prototype.study = function () {
+        //     console.log("好好学习");
+        // }
+        // Student.prototype = {
+        //     eat: function () {
+        //         console.log("喜欢吃榴莲");
+        //     }
+        // };
+        // let stu = new Student();
+        // stu.eat();
+
+        // ------------------------------
+
+        //人的构造函数
+        function Person(age) {
+            this.age = age;
+        }
+
+        //人的原型对象
+        Person.prototype.eat = function () {
+            console.log("人的原型");
+        }
+
+        //狗的构造函数
+        function Dog() {
+
+        }
+
+        //狗的的原型对象方法
+        Dog.prototype.sayHi = function () {
+            console.log("我是狗的原型");
+        }
+        //狗的原型指向一个人的实例对象
+        Dog.prototype = new Person(10);
+        let dog = new Dog();
+        dog.eat();//结果是调用了人的吃的方法
+        // dog.sayHi();//反而报错,因为dog这个实例对象的原型被改了,指向了人的构造函数的原型对象
+
+
+    </script>
+</body>
+</html>

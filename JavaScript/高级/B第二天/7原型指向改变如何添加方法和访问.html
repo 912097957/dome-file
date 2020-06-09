@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //人的构造函数
+        function Person(age) {
+            this.age = age;
+        }
+
+        //人的原型中吃东西的方法
+        Person.prototype.eat = function () {
+            console.log("吃东西!");
+        };
+
+        //学生的构造函数
+        function Study(sex) {
+            this.sex = sex;
+        }
+
+        //学生的原型中打招呼的方法
+        Study.prototype.sayHi = function () {
+            console.log("你好呀!");
+        }
+
+        //改变了这个原型对象的指向
+        Study.prototype = new Person(10);
+
+        //原型指向改变之后再添加法方法
+        Study.prototype.sayHi = function () {
+            console.log("你好呀!");
+        }
+        let stu = new Study("10");
+        stu.sayHi();//指向改变不能访问
+        //所以要在原型指向改变之后再添加方法
+        stu.eat();
+    </script>
+</body>
+</html>

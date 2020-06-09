@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person() {
+
+        }
+
+        Person.prototype.eat = function () {
+            console.log("吃东西");
+        };
+
+        let per = new Person();
+        console.dir(Person);
+        console.dir(per);
+        //(只要是对象,就会有__proto__原型)
+
+
+        //实例对象中有__proto__原型
+        //构造函数中有prototype原型
+        //prototype是对象
+        //所以prototype这个对象中也有__proto__原型,那么指向了哪里
+        //实例对象中的__proto__指向的是构造函数的prototype原型
+        //所以prototype这个对象中的__proto__指向的是某个构造函数的prototype原型
+
+        //输出的是Person构造函数的原型prototype的__proto__的指向
+        console.log(Person.prototype.__proto__);//Object
+
+        //实例对象的__proto__指向---->Person.prototype,然后prototype的__proto__指向------>Object.prototype,那么Object.prototype也是对象,它的__proto__指向了null
+
+        console.log(per.__proto__ === Person.prototype);
+        console.log(per.__proto__.__proto__ === Person.prototype.__proto__);
+        console.log(Person.prototype.__proto__ === Object.__proto__);
+        console.log(Object.prototype.__proto__);
+    </script>
+</body>
+</html>

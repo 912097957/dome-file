@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        //使用对象----使用对象中的属性和方法,使用对象就需要有构造函数
+
+        //如果想要使用一些属性和方法,并且属性的值在每个对象中都是一样的,方法在每个对象中都是一样的,那么为了共享数据,节省内存空间,是可以把属性和方法通过的原型的方法进行赋值
+
+        //构造函数
+        function Person(name, age) { //1申请一块内存空间
+            this.name = name;//3储存方法和属性
+            this.age = age;
+            this.eat = function () {
+                console.log("我在构造函数中");
+            }
+        }
+
+        Person.prototype.sex = "男";
+        Person.prototype.sayHi = function () {
+            console.log("我是原型的方法");
+        }
+
+        //4把这个实例对象返回
+        let per = new Person("小明", 19);//2把this指定当前的实例对象
+        console.dir(Person);
+        console.dir(per);
+
+        //现有构造函数再有的实例对象
+        //实例对象中的原型__proto__指向的是构造函数中的prototype
+        console.log(per.__proto__ === Person.prototype);
+
+        //实例对象中可以直接访问原型对象中的属性和方法
+        //实例对象和原型对象之间是通过原型来联系的
+
+        // 原型链:是一种关机,实例对象和原型对象值之间的关系,关系是通过原型来联系的--->__proto__(下划线的原型)
+    </script>
+</body>
+</html>  
