@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 继承:父类的属性被子类或者孙子类继承了
+
+        //动物:有名字,有体重,有吃东西的行为
+        //小狗:有名字,有体重,有毛色,有吃东西的行为,会咬人
+        //哈士奇:有名字,有体重,有毛色,性别,有吃东西的行为,会咬人,逗主人开心
+
+        //动物的构造函数
+        function Animal(name, weight,) {
+            this.name = name;
+            this.weight = weight;
+        }
+
+        //动物的原型类别
+        Animal.prototype.eat = function () {
+            console.log("天天吃东西");
+        }
+
+        //狗的构造函数
+        function Dog(color) {
+            this.color = color;
+        }
+
+        Dog.prototype = new Animal("哮天犬", "50KG");
+        Dog.prototype.bitePerson = function () {
+            console.log("旺旺旺,咬死你");
+        }
+
+        //哈士奇
+        function ErHa(sex) {
+            this.sex = sex;
+        }
+
+        ErHa.prototype = new Dog("黑白色");
+        ErHa.prototype.playHost = function () {
+            console.log("哄主人开心");
+        }
+
+        let erHa = new ErHa("雄性");
+
+        //输出:
+        console.log(erHa.name, erHa.sex, erHa.weight, erHa.color);
+        erHa.eat();
+        erHa.bitePerson();
+        erHa.playHost();
+    </script>
+</body>
+</html>

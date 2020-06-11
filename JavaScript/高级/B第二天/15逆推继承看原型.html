@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function F1(age) {
+            this.age = age;
+        }
+
+        function F2(age) {
+            this.age = age;
+        }
+
+        F2.prototype = new F2(10);
+
+        function F3(age) {
+            this.age = age;
+        }
+
+        F3.prototype = new F2(20);
+
+        let f3 = new F3(30);
+
+        console.log(F3.age);//30  ----->  先在自己的实例对象中找,如果没找到就往它的原型链上找,直到object,如果还没有,那就是null,null是对象,没有赋值最终结果就是undefined
+
+    </script>
+</body>
+</html>

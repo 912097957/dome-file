@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //原型链:实例对象和原型对象之间的关系通过__proto__来联系的,这个就是原型链,它是一种指向性的关系链
+        //只要是对象就会有__proto__(隐式原型),就会指向该对象所指向的构造函数的原型对象prototype
+    </script>
+    <div id="dv"></div>
+    <script>
+        let dv =document.getElementById("dv");
+        console.dir(dv);//对象的结构
+        //div的__proto__指向的是----->HTMLDivElement.prototype
+        //HTMLDivElement.prototype的__proto__指向的是---->HTMLElement.prototype
+        //HTMLElement.prototype的__proto__指向的是---->Element
+        //Element.prototype的__proto__指向的是---->node
+        //node.prototype的__proto__指向的是----->EventTarget
+        //EventTarget.prototype的__proto__指向的是----->Object
+        //Object没有__proto__,所以Object.__proto__是null
+    </script>
+</body>
+</html>

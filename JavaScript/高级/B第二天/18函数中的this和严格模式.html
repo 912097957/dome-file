@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //函数中this的指向
+        //方法的本质是函数
+
+        /*
+        * 普通函数中的this是谁---->window
+        * 构造函数中的this是谁-----实例对象
+        * 对象.方法中的this是谁----实例对象
+        * 原型对象.方法中的this是谁----实例对象
+        * 定时器方法中的this是谁---->window
+        * */
+
+        //普通函数中的this是谁---->window
+        function f1() {
+            console.log(this);
+        }
+
+        window.f1();
+        //BOM的顶级对象是window,浏览器中的所有东西都是window的
+
+        //对象.方法中的this是谁----当前的实例对象
+        function F2() {
+            console.log(this);
+            this.sayHi = function () {
+                console.log(this);
+            }
+        }
+
+        let ff = new F2();
+        ff.sayHi();
+
+        //定时器方法中的this是谁---->window
+        window.setInterval(function () {
+            console.log(this);
+        }, 9000);//还是window
+
+
+        //构造函数中的this是谁-----实例对象
+        function Person() {
+            console.log(this);
+        }
+
+        let per = new Person();
+        console.log(per);
+
+        //原型对象方法中的this是谁----当前的实例对象
+        function Obj() {
+        }
+
+        Obj.prototype.eat = function () {
+            console.log(this);
+        }
+        let obj = new Obj;
+        obj.eat();
+
+    </script>
+
+    <script>
+        //严格模式
+        //严格模式是指使代码在严格条件下运行。如果你在JavaScript脚本的头部看到“use strict”，那么就表明当前处于严格模式下。
+        // 严格模式主要是为了消除JavaScript语法的一些不合理和怪异之处。
+
+        "use strict";//严格模式
+        function f1() {
+            console.log(this);
+        }
+        //严格模式下调用这个函数,系统会认为这个函数是个方法,但是方法应该是通过对象调用的,但是没写,那么它就不知道是谁调用的
+        // f1();//这里undefined
+        window.f1();//window
+
+
+    </script>
+</body>
+</html>

@@ -33,10 +33,37 @@
         Study.prototype.sayHi = function () {
             console.log("你好呀!");
         }
+        //实例化这个对象
         let stu = new Study("10");
+
         stu.sayHi();//指向改变不能访问
         //所以要在原型指向改变之后再添加方法
         stu.eat();
+
+        //如果原型的指向改变了,那么久应该在原型改变之后添加原型方法
+
+        //构造函数
+        function Per(age) {
+            this.age = age;
+        }
+
+        //先添加原型方法
+        Per.prototype.sayHi = function () {
+            console.log("你好");
+        }
+        //改变指向
+        Per.prototype = {
+            eat: function () {
+                console.log("吃东西");
+            }
+        };
+        //改变后再添加方法
+        Per.prototype.sayHi = function () {
+            console.log("你好");
+        }
+        let perS = new Per(10);
+        perS.sayHi();//所以这里不能访问,改变后再添加就能访问了
+        console.dir(perS)
     </script>
 </body>
 </html>

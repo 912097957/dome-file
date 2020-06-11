@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //普通函数
+        function f1() {
+            console.log("文能提笔控萝莉");
+        }
+
+        f1();
+
+        //构造函数---通过new来调用,创建对象
+        function F1() {
+            console.log("武能越塔揍人机")
+        }
+
+        let ff = new F1();
+
+        //对象方法---对象.方法
+        function Person() {
+            this.play = function () {
+                console.log("今天敲代码");
+            }
+        }
+
+        let per = new Person();
+        per.play();
+    </script>
+</body>
+</html>

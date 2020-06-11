@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function Person(name, age, sex, weight) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.sex = sex;
+        //     this.weight = weight;
+        // }
+        //
+        // Person.prototype.sayHi = function () {
+        //     console.log("打一个招呼!");
+        // }
+        //
+        // function Student(score) {
+        //     this.score = score;
+        // }
+        //
+        // //希望人的类别中的数据可以共享给学生----继承
+        // Student.prototype = new Person("小明", 10, "男", "50kg");
+        //
+        // let stu1 = new Student(100);
+        // console.log(stu1.name, stu1.age, stu1.sex, stu1.score);
+        // stu1.sayHi();
+        //
+        // let stu2 = new Student(50);
+        // stu2.name = "张三";
+        // stu2.age = 20;
+        // stu2.sex = "女";
+        // console.log(stu2.name, stu2.age, stu2.sex, stu2.score);
+        // stu2.sayHi();
+        //
+        // let stu3 = new Student(40);
+        // console.log(stu3.name, stu3.age, stu3.sex, stu3.score);
+        // stu3.sayHi();
+        //出现问题:为了数据共享,改变了原型继承,做到了继承---通改变原型指向实现的继承
+        //缺陷:因为改变原型指向的同时实现继承,直接初始化了属性,继承过来的属性值都是一样的,所以这就是问题
+        //只能重新调用对象的属性重新赋值
+
+        //--------------------------------------------------------------
+        //解决方案:
+        //继承的时候,不用改变原型的指向,直接调用父级的构造函数的方式来为属性赋值就可以了---借用构造函数
+        //把要继承的父级的构造函数拿过来使用
+        //借用构造函数:构造函数名字.call(当前对象,属性1,属性2,属性3,属性4,属性5,....);
+        //解决了属性继承,并且值不重复的问题
+        //缺陷:父级类别中的方法不能继承
+
+        function Person(name, age, sex, weight) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.weight = weight;
+        }
+
+        Person.prototype.sayHi = function () {
+            console.log("打一个招呼!");
+        }
+
+        function Student(name, age, sex, weight, score) {
+            //借用构造函数
+            //当前的Student函数呼叫一下Person这个构造函数
+            Person.call(this, name, age, sex, weight);
+            this.score = score;
+        }
+
+        let stu1 = new Student("小明", 18, "男", "60Kg", 80);
+        console.log("姓名:" + stu1.name, "年龄:" + stu1.age, "性别:" + stu1.sex, "分数" + stu1.score);
+        stu1.sayHi();
+
+        let stu2 = new Student("小红", 28, "女", "40Kg", 90);
+        console.log("姓名:" + stu2.name, "年龄:" + stu2.age, "性别:" + stu2.sex, "分数" + stu2.score);
+        stu2.sayHi();
+
+        let stu3 = new Student("小蓝", 18, "男", "50Kg", 80);
+        console.log("姓名:" + stu3.name, "年龄:" + stu3.age, "性别:" + stu3.sex, "分数" + stu3.score);
+        stu3.sayHi();
+    </script>
+</body>
+</html>

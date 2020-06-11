@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //拷贝继承:把一个对象中的属性和方法直接复制到另一个对象中(通过for循环遍历对象)
+
+
+        // let obj = {
+        //     name: "小糊涂",
+        //     age: 20,
+        //     sleep: function () {
+        //         console.log("睡觉觉");
+        //     }
+        // }
+        // //改变栈中的地址指向
+        // let per = obj;
+        // console.log(per.name, per.age);
+        // per.sleep();
+
+
+        // let obj1 = {
+        //     name: "小糊涂",
+        //     age: 20,
+        //     sleep: function () {
+        //         console.log("睡觉觉");
+        //     }
+        // }
+        // let obj2 = {};
+        // for (let key in obj1) {
+        //     //obj2.name=obj1.name
+        //     obj2[key] = obj1[key];
+        // }
+        // console.log(obj2.name);
+
+        //真正的浅拷贝继承
+        function Person() {
+
+        }
+
+        Person.prototype.name = "小红";
+        Person.prototype.age = 19;
+        Person.prototype.sex = "女";
+        Person.prototype.height = 175;
+        Person.prototype.play = function () {
+            console.log("玩羽毛球");
+        }
+
+        let obj = {};
+        //Person的构造函数中有原型prototype,它就是一个对象,里面的name,age,sex都是该对象的属性或者方法
+        //循环遍历第一个对象中的属性和方法再加入到第二个对象当中
+        for (let key in Person.prototype) {
+            obj[key] = Person.prototype[key];
+        }
+
+        console.dir(obj);
+        obj.play();
+    </script>
+</body>
+</html>
