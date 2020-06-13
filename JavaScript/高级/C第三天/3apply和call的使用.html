@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        * 两者的作用都是改变this的指向
+        *
+        *
+        * */
+
+        function f1(x, y) {
+            console.log("结果是:" + (x + y) + "====>" + this);
+            return "10000";
+        }
+
+        f1(10, 20);
+
+        console.log("========================");
+        //此时f1函数时当成对象来使用的
+        //apply和call也是函数调用的方式
+        //f1.apply();
+        //f1.call();
+        console.log("========================");
+        //f1.apply(null);
+        //.call(null);
+        //apply和call方法中如果没有传入参数,或者传入的是null,那么调用该方法的函数对象中的this就是默认window
+
+        // f1.apply(null, [100, 200]);
+        // f1.call(null, [100, 200]);
+
+        //apply和call都可以让函数或者方法来调用,传入参数和函数自己调用的写法不一样,但是效果是一样的
+
+        // let sum1 = f1.apply(null, [10, 20]);
+        // let sum2 = f1.call(null, 10, 20);
+        // console.log(sum1);
+        // console.log(sum2);
+
+        function f2(x, y) {
+            console.log("这个函数时window对象的一个方法" + (x + y) + this.sex);
+        }
+
+        //window此时是一个实例对象,f2是一个方法
+        // window.f2(10, 20);
+
+        let obj = {
+            age: 10,
+            sex: "男"
+        };
+        f2.apply(obj, [100, 200]);
+        f2.call(obj, 100, 200);
+        console.dir(obj);
+
+        /*
+        * 总结:
+        * 1.apply和call都可以改变this的指向,同时直接调用函数
+        *
+        * */
+        function Person(age, sex) {
+            this.age = age;
+            this.sex = sex;
+        }
+
+        Person.prototype.sayHi = function (x, y) {
+            console.log("你好呀:" + this.sex);
+            return 1000;
+        }
+        let per = new Person(10, "男");
+        per.sayHi();
+
+        console.log("=====================");
+
+        function Student(name, sex) {
+            this.name = name;
+            this.sex = sex;
+        }
+
+        let stu = new Student("小明", "人妖");
+        let r1 = per.sayHi.apply(stu, [10, 20]);
+        let r2 = per.sayHi.call(stu, 10, 20);
+        console.log(r1);
+        console.log(r2);
+    </script>
+</body>
+</html>

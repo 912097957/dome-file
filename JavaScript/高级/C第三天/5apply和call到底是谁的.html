@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function f() {
+            console.log(this + ":调用了");
+        }
+
+        //f是函数,也是对象
+        console.dir(f);
+        f.apply();
+        f.call();
+        console.log(f.__proto__ == Function.prototype);//true
+        //所有函数都是Function的实例对象
+        console.log(Function.prototype);
+        console.dir(Function);
+        //所以f函数(对象)之所以能调用apply和call这两个方法,这两个方法并不在f函数这个实例对象中存在,而是在它所指向Function的原型里边
+    </script>
+    <script>
+        function Person() {
+            this.eat = function () {
+                console.log("吃");
+            }
+        }
+
+        Person.prototype.sayHi = function () {
+            console.log("你好");
+        }
+
+        let per = new Person();
+        per.eat();
+        per.sayHi();
+        //实例对象要想调用方法,要么在实例对象中存在,要么在创建它的构造函数的原型当中存在
+    </script>
+</body>
+</html>

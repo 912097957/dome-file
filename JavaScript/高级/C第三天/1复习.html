@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        /*
+        * 原型:
+        * 实例对象中有一个属性__proto__属性,是原型,浏览器使用的,不标准的属性
+        * 构造函数中有一个属性prototype属性,是原型,程序员使用的,标准的属性
+        *
+        * 面型对象和面向过程都是编程思想
+        * 面型对象注重的是结果,面向过程注重的是过程
+        * 面向对象的三个特性:封装,继承,多态
+        *
+        * 继承:
+        * 1通过原型实现继承------>改变原型指向,属性子啊初始化的时候偶就已经固定了,如果是多个对象实例化,那么每个实例对象的属性值在初始化的时候都是一样的
+        *
+        * 2借用构造函数继承------->不能继承方法
+        *
+        * 3组合继承-------------->可以解决属性和方法的继承问题
+        *
+        * 4拷贝继承-------------->拷贝继承,就是把一个对象的原型中的所有属性和方法复制一份给另一个对象
+        *
+        * 创建对象的三种方式
+        * 1:字面量
+        * 2:调用系统的构造函数
+        * 3:自定义构造函数
+        *
+        * 原型链:实例对象和原型对象的关系,主要是通过prototype和__proto__来联系
+        *
+        * 原型的指向是可以改变的,所以继承主要是通过改变指向来实现
+        * 原型的作用:
+        * 1.实现数据共享
+        * 2.实现继承
+        * 如果属性和方法都需要共享,那就把他们都添加进原型
+        *
+        * 函数中的this的指向
+        * 普通函数----->window
+        * 构造函数----->一般都是创建实例对象使用的,通过new关键字,构造函数也是函数--->实例对象
+        * 方法中的this---->也是实例对象
+        * 原型中方法的this---->也是实例对象
+        * 定时器中的this------>window
+        *
+        * 函数也是对象,构造函数也是函数,也是对象
+        * 对象不一定是函数,比如Math是对象但不是函数
+        * 对象中有__proto__
+        * 函数中有prototype
+        *
+        * 
+        * */
+    </script>
+    <script>
+        //字面量创建
+        let obj1 = {
+            age: 10,
+            sex: "男",
+            sayHi: function () {
+                console.log("你好");
+            }
+        };
+
+        //调用系统内置对象
+        let obj2 = new Object();
+        obj2.age = 10;
+        obj2.sex = "男";
+        obj2.sayHi = function () {
+            console.log("你好");
+        };
+
+        //自定义构造函数
+        function Person(age, sex) {
+            this.age = age;
+            this.sex = sex;
+            this.sayHi = function () {
+                console.log("你好");
+            };
+        }
+
+        let per = new Person();
+    </script>
+    <script>
+        //继承的代码
+        function Person(age, sex) {
+            this.age = age;
+            this.sex = sex;
+        }
+
+        //通过原型添加属性和方法
+        Person.prototype.color = "yellow";
+        Person.prototype.eat = function () {
+            console.log("中秋快乐");
+        }
+
+        function Dog(name, age, sex) {
+            this.name = name;
+            //借用构造函数
+            Person.call(this, age, sex);
+        }
+
+        //改变原型指向,为了继承方法
+        Dog.prototype = new Person();
+
+        let dog = new Dog("小黄", 10, "男");
+        console.log(dog.name);
+        console.log(dog.age);
+        console.log(dog.sex);
+        dog.eat();
+    </script>
+    <script>
+        //普通函数
+        function f() {
+            console.log(this);
+        }
+
+        f();
+
+        //构造函数
+        function Person() {
+            console.log(this);
+            this.sayHi = function () {
+                console.log(this);
+            }
+        }
+
+        //原型方法
+        Person.prototype.eat = function () {
+            console.log(this);
+        };
+        let per1 = new Person();
+        per1.sayHi();
+        per1.eat();
+
+        //定时器
+        setInterval(function () {
+            console.log(this);
+        }, 1000);
+    </script>
+    <script>
+        console.dir(Math);
+
+        function f1() {
+        }
+
+        console.dir(f1);
+    </script>
+</body>
+</html>  

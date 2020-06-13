@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //apply和call都可以改变this的指向
+        //函数的调用改变this的指向
+        // function f1(x, y) {
+        //     console.log((x + y) + ":====>" + this);
+        //     return "这是函数的返回值";
+        // }
+        //
+        // //apply和call调用
+        // let r1 = f1.apply(null, [10, 20]);//此时this是window
+        // console.log(r1);
+        // let r2 = f1.call(null, 10, 20);//此时this是window
+        // console.log(r2);
+        // console.log("======================");
+        // //改变this的指向
+        // let obj = {
+        //     sex: "男"
+        // };
+        // //本来f1函数时window对象的,但是传入了对象之后,这个函数就是obj的了
+        // let r3 = f1.apply(obj, [10, 20]);//此时this是obj
+        // console.log(r3);
+        // let r4 = f1.call(obj, 10, 20);//此时this是obj
+        // console.log(r4);
+
+        //方法改变指向
+        function Person(age) {
+            this.age = age;
+        }
+
+        Person.prototype.sayHi = function (x, y) {
+            console.log((x + y) + "====" + this.age);
+        };
+
+        function Student(age) {
+            this.age = age;
+        }
+
+        let per = new Person(10);//实例对象
+        let stu = new Student(100);//实例对象
+        //sayHi方法是per的
+        per.sayHi.apply(stu, [10, 20]);
+        per.sayHi.call(stu, 10, 20);
+
+        //apply和call使用方法
+        /*
+        * apply:
+        * 函数名字.apply(对象,[参数1,参数2,....])
+        * 方法名字.apply(对象,[参数1,参数2,....])
+        * call:
+        * 函数名字.call(对象,参数1,参数2,....)
+        * 方法名字.call(对象,参数1,参数2,....)
+        *
+        * 作用:改变this的指向
+        * 不同:参数传递的方式是不一样的
+        *
+        * 适用地方:
+        * 只要是是使用别的对象的方法,并且希望这个方法是当前对象的,那么就可以使用apply或者是call方法来改变this的指向
+        *
+        *
+        * */
+    </script>
+</body>
+</html>
