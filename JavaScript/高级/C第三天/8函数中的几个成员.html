@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //函数中有一个name属性,是这个函数的名字,它是只读的
+        //函数中有一个arguments是实参的个数
+        //函数中有一个length属性是形参的个数
+        //函数中有一个caller属性是函数的调用者-----f1函数是在f2中调用的,所以此时的调用者就是f2
+        function f1(x, y) {
+            console.log(f1.name);//函数的名字
+            console.log(f1.arguments);//实参的个数
+            console.log(f1.length);//形参的个数
+            console.log(f1.caller);//函数的调用者
+        }
+
+        // f1.name = "f5";//无法修改函数的name属性值,创建这个函数时就已经定了的
+        // f1(10, 20);
+        // console.dir(f1);
+
+        function f2() {
+            console.log("f2函数的代码");
+            f1(1, 2);
+        }
+
+        f2();
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function f() {
+            console.log("f函数开始");
+            return function () {
+                console.log("我是函数,但是我是作为返回值的函数");
+            }
+            console.log("f函数开始");
+        }
+
+        //调用f函数后返回一个返回值存入了ff这个变量,此时它是一个函数,可以调用
+        let ff = f();
+        ff();
+    </script>
+    <script>
+        let num = 10;
+        console.log(typeof num);//获取num变量的数据类型
+
+        let obj = {};
+        console.log(obj instanceof Object);//判断obj这个对象是不是一个对象--true
+
+        //想要获取某个对象的数据类型的样子
+        //Object.prototype.toString.call(对象);//此时得到的就是这个对象的类型的样子
+
+
+        //还有一种方法:Object.prototype.toString   查看某个对象的数据类型---默认是Object的
+        //此时输出的是Object这种数据类型的 ---- [object Object]
+        console.log(Object.prototype.toString());
+        //输出数组的数据类型----[]是数组是数组,数组也是对象---->结果是[object Array]
+        console.log(Object.prototype.toString.call([]));
+
+        let arr = [10, 20];
+        //本来是toString是Object对象的,但是此时把数组传入,相当arr这个数组对象借用了这个方法
+        console.log(Object.prototype.toString.call(arr));
+
+        //时间对象---[object Date]
+        console.log(Object.prototype.toString.call(new Date()));
+
+    </script>
+    <script>
+        //获取某个对象是不是你传入的类型
+        //主要是判断这个对象和传入的类型是否一致
+        function GetType(type) {
+            return function (obj) {
+                console.log(Object.prototype.toString.call(obj));
+                return Object.prototype.toString.call(obj) === type;
+            }
+        }
+
+        let ff1 = GetType("[object Array]");
+        let result1 = ff1([10, 20, 30]);
+        console.log(result1);
+
+        let ff2 = GetType("[object Date]");
+        let dt = new Date();
+        let result2 = ff2(dt);//true
+        console.log(result2);
+    </script>
+</body>
+</html>
