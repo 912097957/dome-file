@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*
+        * 创建正则表达式:两种方式
+        * 通过构造函数
+        * 通过字面量
+        *
+        * 作用:匹配字符串的
+        *
+        * */
+        //对象创建完毕---->没有正则表达式的对象
+        var reg = new RegExp(/\d{7}/);//在//注释符中写
+        //字符串
+        var ele = "我的电话1888767";
+        //调用方法验证字符串是否匹配
+        console.log(reg.test(ele));
+
+        // --------------------
+        //对象创建完毕---->没有正则表达式的对象
+        var reg1 = new RegExp(/\d{7}/);//在//注释符中写
+        //调用方法验证字符串是否匹配
+        console.log(reg1.test("我的电话1888767"));
+        // ------------------------
+
+
+        //字面量方式创建
+        var reg2 = /\d{3}/;
+        var flag = reg2.test("我的幸运数字:888");
+        console.log(flag);
+
+
+    </script>
+</body>
+</html>

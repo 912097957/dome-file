@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //浅拷贝:拷贝就是复制,就相当于把一个对象中的所有内容,复制给另一个对象,直接复制,或者说把一个对象的地址给另一个对象,它们指向相同,两个对象之间有共同的属性或者方法,都可以使用
+        let obj1 = {
+            name: "小红",
+            age: 18,
+            car: ["奔驰", "宝马", "特斯拉"]
+        }
+        let obj2 = {};
+
+        //写一个函数,作用:把一个对象的属性赋值到另一个对象中,浅拷贝
+        //把对象a中的属性赋值到对象b中
+        function f1(a, b) {
+            for (let key in a) {
+                b[key] = a[key];
+            }
+        }
+
+        f1(obj1, obj2);
+        console.dir(obj1);//有属性的
+        console.dir(obj2);//无属性的
+        //这就是浅拷贝
+    </script>
+</body>
+</html>

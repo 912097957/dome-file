@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //深拷贝:拷贝还是复制,深:把一个对象中的属性或者方法,一个一个的找到,并且在另一个对象中开辟相应的空间,一个一个的存储到另一个对象中,效率低下
+
+        let obj1 = {
+            name: "小苏",
+            sex: "男",
+            age: 18,
+            dog: {
+                name: "小黄",
+                age: 18,
+                color: "红色",
+            }
+        };
+        let obj2 = {};//空对象
+        //通过函数实现,把对象a中的所以数据深拷贝到对象b中
+
+        function f(a, b) {
+            for (let aKey in a) {
+                //先获取a对象中每个属性的值
+                let item = a[aKey];
+                if (item instanceof Array) {//判断这个属性值是不是数组,如果是
+                    b[aKey] = [];//在b对象中添加一个新的属性,并且这个属性值也是数组
+                    f(item, b[aKey]);//并且调用这个方法把a对象中这个数组的属性值一个一个的赋值到b对象的数组属性中
+                } else if (item instanceof Object) {//判断这个值是不是对象了类型的,那么在这个b对象中,添加一个空对象
+                    b[aKey] = {};
+                    f(item, b[aKey]);//再次调用这个函数把a对象中的这个属性对象值一个一个的复制到对象b的这个属性中
+                } else {//如果是普通的数据,直接复制到对象b中
+                    b[aKey] = item;
+                }
+            }
+        }
+
+        f(obj1, obj2);
+        console.dir(obj1);
+        console.dir(obj2);
+    </script>
+</body>
+</html>

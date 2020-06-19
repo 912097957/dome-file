@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    #dv {
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        left: 300px;
+        top: 100px;
+    }
+
+    .strengthLv0 {
+        height: 6px;
+        width: 120px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+
+    .strengthLv1 {
+        background: red;
+        height: 6px;
+        width: 40px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+
+    .strengthLv2 {
+        background: orange;
+        height: 6px;
+        width: 80px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+
+    .strengthLv3 {
+        background: green;
+        height: 6px;
+        width: 120px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+</style>
+<body>
+    <div id="dv">
+        <label for="pwd">密码</label>
+        <input type="text" id="pwd" maxlength="16"><!--课外话题-->
+        <div>
+            <em>密码强度：</em>
+            <em id="strength"></em>
+            <div id="strengthLevel" class="strengthLv0"></div>
+        </div>
+    </div>
+    <script>
+        function my$(id) {
+            return document.getElementById(id);
+        }
+    </script>
+    <script>
+        /*
+        * 密码:数字,符号,特殊符号
+        *
+        * 密码只有数字或者是只有字母或者特殊符号-----1级
+        * 密码有两两组合-----2级
+        * 三者都有-----------3级
+        *
+        * */
+        //获取文本框注册键盘抬起事件
+        // my$("pwd").onkeyup = function () {
+        //     //每次键盘抬起都要获取文本框中的内容,验证文本框中有什么东西,得到一个级别,对应显示强度
+        //     //如果密码的长度小于6没有必要判断
+        //     if (this.value.length >= 6) {
+        //         var lvl = getLiv(this.value);
+        //         //拿到div根据返回值改变类样式
+        //         if (lvl === 1) {
+        //             //弱
+        //             my$("strengthLevel").className = "strengthLv1";
+        //         } else if (lvl === 2) {
+        //             my$("strengthLevel").className = "strengthLv2";
+        //         } else if (lvl === 3) {
+        //             my$("strengthLevel").className = "strengthLv3";
+        //         } else {
+        //             my$("strengthLevel").className = "strengthLv0";
+        //         }
+        //     } else {
+        //         my$("strengthLevel").className = "strengthLv0";
+        //     }
+        // };
+        //
+        // //给我密码,返回对应的级别
+        // function getLiv(pwd) {
+        //     var lvl = 0;//默认是0级;
+        //     //判断密码中是否有数字,或者是字母,或者是特殊符号
+        //     if (/\d/.test(pwd)) {
+        //         lvl++;
+        //     }
+        //     //判断密码中有没有字母
+        //     if (/[a-zA-Z]/.test(pwd)) {
+        //         lvl++;
+        //     }
+        //     //密码中有没有特殊符号
+        //     if (/[^0-9a-zA-Z_]/.test(pwd)) {
+        //         lvl++;
+        //     }
+        //     return lvl; //最少是1,最多是3
+        // }
+    </script>
+    <script>
+        //获取文本框注册键盘抬起事件
+        my$("pwd").onkeyup = function () {
+            //每次键盘抬起都要获取文本框中的内容,验证文本框中有什么东西,得到一个级别,对应显示强度
+            //如果密码的长度小于6没有必要判断
+            // if (this.value.length >= 6) {
+            //     var lvl = getLiv(this.value);
+            //     //拿到div根据返回值改变类样式
+            //     my$("strengthLevel").className = "strengthLv" + lvl;
+            // } else {
+            //     my$("strengthLevel").className = "strengthLv0";
+            // }
+            //以上代码可以改成这样
+            my$("strengthLevel").className = "strengthLv" + (this.value.length >= 6 ? getLiv(this.value) : 0);
+        }
+
+        //给我密码,返回对应的级别
+        function getLiv(pwd) {
+            var lvl = 0;//默认是0级;
+            //判断密码中是否有数字,或者是字母,或者是特殊符号
+            if (/\d/.test(pwd)) {
+                lvl++;
+            }
+            //判断密码中有没有字母
+            if (/[a-zA-Z]/.test(pwd)) {
+                lvl++;
+            }
+            //密码中有没有特殊符号
+            if (/[^0-9a-zA-Z_]/.test(pwd)) {
+                lvl++;
+            }
+            return lvl; //最少是1,最多是3
+        }
+    </script>
+</body>
+</html>

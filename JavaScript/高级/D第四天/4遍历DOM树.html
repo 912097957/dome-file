@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遍历DOM树</title>
+</head>
+<body>
+    <h1>遍历 DOM 树</h1>
+    <p style="color: green;">Tip: 可以在遍历的回调函数中任意定制需求</p>
+    <div>
+        <ul>
+            <li>123</li>
+            <li>456</li>
+            <li>789</li>
+        </ul>
+        <div>
+            <div>
+                <span>哈哈</span>
+            </div>
+        </div>
+    </div>
+    <div id="demo_node">
+        <ul>
+            <li>123</li>
+        </ul>
+        <p>hello</p>
+        <h2>world</h2>
+        <div>
+            <p>abc</p>
+            <h3>
+                <span>abc</span>
+            </h3>
+        </div>
+    </div>
+    <script>
+        //获取根节点
+        let root = document.documentElement;//html
+        //遍历DOM树
+        //根据根节点调用,调用fn函数,显示的是根节点的名字
+        function forDOM(root1, fn) {
+            //调用f1.显示的是节点的名字
+            f1(root1);
+            //获取根节点所有的子节点
+            let children = root1.children;
+            //遍历所有子节点的函数
+            forChildren(children);
+        }
+
+        //给我一个子节点,我把这个子节点中所有的子节点显示出来
+        function forChildren(children) {
+            //遍历所有子节点
+            for (let i = 0; i < children.length; i++) {
+                //每个子节点
+                let child = children[i];
+                //拿到每个子节点并调用打印函数
+                f1(child);
+                //判断这个子节点下面还有没有子节点,如果有则继续遍历
+                child.children && forDOM(child);
+            }
+        }
+
+        //函数调用,传入根节点
+        forDOM(root);
+        function f1(node) {
+            console.log("节点的名字:" + node.nodeName);
+        }
+
+        //节点:nodeName,nodeType,nodeValue
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <label for="pwd">请输入邮箱:</label>
+    <input type="text" name="pwd" id="pwd" style="outline:none">
+    <script>
+        //如果输入的是邮箱,那么背景颜色是绿色,否则是红色
+        //获取文本框注册失去焦点事件
+        document.getElementById("pwd").onblur = function () {
+            //判断文本框输入的是不是邮箱
+            var flag = /^[0-9a-zA-Z.-]+[@][0-9a-zA-Z]+([.][a-zA-Z]+){1,2}$/.test(this.value);
+            this.style.backgroundColor = flag ? "green" : "red";
+        }
+    </script>
+</body>
+</html>

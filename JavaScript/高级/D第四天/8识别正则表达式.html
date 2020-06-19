@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <script>
+        //    console.log(/[a-zA-Z]+/.test("hello"));
+        //    console.log(/./.test("除了回车换行以为的任意字符"));//true
+        //    console.log(/.*/.test("0个到多个"));//true
+        //    console.log(/.+/.test("1个到多个"));//true
+        //    console.log(/.?/.test("哈哈"));//true
+        //    console.log(/[0-9]/.test("9527"));//true
+        //    console.log(/[a-z]/.test("what"));//true
+        //    console.log(/[A-Z]/.test("Are"));//true
+        //    console.log(/[a-zA-Z]/.test("干啥子"));//false
+        //    console.log(/[0-9a-zA-Z]/.test("9ebg"));//true
+        //    console.log(/b|(ara)/.test("abra"));//true
+        //    console.log(/[a-z]{2,3}/.test("arfsf"));//
+
+
+        console.log(/\d/.test("998"));
+
+        console.log(/\d*/.test("998"));
+
+        console.log(/\d+/.test("998"));
+
+        console.log(/\d{0,}/.test("998"));
+
+        console.log(/\d{2,3}/.test("998"));
+
+        console.log(/\D/.test("eat"));
+
+        console.log(/\s/.test("  "));
+        console.log(/\S/.test("嘎嘎 "));
+        console.log(/\w/.test("_"));
+        console.log(/\W/.test("_"));
+
+    </script>
+</head>
+<body>
+</body>
+</html>

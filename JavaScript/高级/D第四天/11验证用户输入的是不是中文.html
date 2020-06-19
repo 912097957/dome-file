@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <label for="userName"></label>
+    <input type="text" id="userName">
+    <button id="chick">点击查询</button>
+    <script>
+        //思路:是不是中文名就不是数字,字母,和特殊符号
+        var txt = document.getElementById("userName");
+        document.getElementById("chick").onclick = function () {
+            var reg = /[\u4e00-\u9fa5]{2,6}$/;
+            if (reg.test(txt.value)) {
+                console.log("符合");
+            } else {
+                console.log("不符合");
+            }
+        }
+    </script>
+</body>
+</html>
