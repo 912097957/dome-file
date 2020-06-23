@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 250px;
+            margin: 0 auto;
+            background-color: #ced3d7;
+            padding: 1px;
+        }
+
+        #dv1 {
+            color: #666666;
+            height: 30px;
+            font-weight: 700;
+            line-height: 30px;
+            padding-left: 10px;
+            border: 1px solid white;
+
+        }
+
+        a {
+            display: block;
+            height: 20px;
+            margin: 10px 0 10px 5px;
+            color: #6b7980;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #dv2 {
+            border: 1px solid white;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div id="dv1">播放列表</div>
+        <div id="dv2">
+            <a href="#">猜不透 - 丁当</a>
+            <a href="#">玩家之徒 - 蔡依林</a>
+            <a href="#">自导自演 - 周杰伦</a>
+            <a href="#">浪漫窝 - 弦子</a>
+            <a href="#">流年 - 王菲</a>
+        </div>
+    </div>
+    <script>
+        //获取标签
+        var dv1 = document.getElementById("dv1");
+        var dv2 = document.getElementById("dv2");
+        var flag = true;
+        //注册点击事件
+        dv1.onclick = function () {
+            if (flag) {
+                dv2.style.display = "block";
+                flag = false;
+            }else {
+                dv2.style.display = "none";
+                flag = true;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .main {
+            width: 400px;
+            height: 200px;
+            background-color: black;
+            margin: 0 auto;
+            color: #ff6699;
+            font-size: 30px;
+        }
+
+        strong {
+            color: #ff9900;
+        }
+
+        span {
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+            display: inline-block;
+            margin: 22px 30px;
+            text-align: center;
+            line-height: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div>
+            <strong>请输入秒数:</strong>
+            <input type="text" id="ipt">
+            <button id="btn">开始</button>
+        </div>
+        <span id="h">00</span>分
+        <span id="s">00</span>秒
+    </div>
+    <script>
+      window.onload = function () {
+        var ipt = document.getElementById("ipt");
+        var btn = document.getElementById("btn");
+        var span = document.getElementsByTagName("span");
+
+        btn.onclick = function () {
+          var num = ipt.value;
+          setInterval(setTime, 1000);
+          setTime();
+
+          function setTime() {
+            var a = num % 60;
+            var b = (num - a) / 60;
+            span[0].innerHTML = b;
+            span[1].innerHTML = a;
+            num--;
+          }
+        }
+      }
+    </script>
+</body>
+</html>

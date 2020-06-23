@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            height: 200px;
+            color: #ff9900;
+            font-size: 200px;
+            text-align: center;
+            line-height: 200px;
+            background-color: rgba(0,0,0,.2);
+        }
+    </style>
+</head>
+<body>
+    <div>0</div>
+    <script>
+        window.onload=function () {
+            var dv =document.getElementsByTagName("div")[0];
+            var num=0;
+            setInterval(function () {
+                num++;
+                dv.innerHTML=num;
+            },1000);
+        }
+    </script>
+</body>
+</html>  

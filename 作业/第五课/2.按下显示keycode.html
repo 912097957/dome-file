@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, .4);
+        }
+
+        div {
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="dv"></div>
+    <script>
+      let dv = document.getElementById("dv");
+      document.documentElement.onmousemove = function (e) {
+        dv.innerHTML = "横坐标" + e.pageX + " | " + "纵坐标" + e.pageY;
+      }
+    </script>
+</body>
+</html>

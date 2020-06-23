@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标移过，修改图片路径</title>
+    <style>
+        body {
+            background: black;
+        }
+
+        .wrap {
+            width: 222px;
+            border: 5px solid white;
+            margin: 10px auto;
+            background: white;
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            background: black;
+            padding: 5px;
+            margin: 0;
+        }
+
+        ul > li {
+            justify-self: center;
+            align-self: center;
+            list-style: none;
+        }
+
+        .item-1 {
+            grid-column: 1/4;
+            grid-row: 1/4;
+        }
+
+        .item-2 {
+            grid-row: 1/2;
+        }
+
+        .item-3 {
+            grid-row: 2/3;
+        }
+
+        .item-4 {
+            grid-row: 3/4;
+        }
+
+        .loading {
+            background: url("../image/loading.gif");
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul>
+            <li class="item-1"><img src="../image/big_1.jpg">
+                <div class="loading"></div>
+            </li>
+            <li class="item-2"><a href="#"><img src="../image/small_1.jpg"></a></li>
+            <li class="item-3"><a href="#"><img src="../image/small_2.jpg"></a></li>
+            <li class="item-4"><a href="#"><img src="../image/small_3.jpg"></a></li>
+            <li class="item-5"><a href="#"><img src="../image/small_4.jpg"></a></li>
+            <li class="item-6"><a href="#"><img src="../image/small_5.jpg"></a></li>
+            <li class="item-7"><a href="#"><img src="../image/small_6.jpg"></a></li>
+            <li class="item-8"><a href="#"><img src="../image/small_7.jpg"></a></li>
+            <li class="item-9"><a href="#"><img src="../image/small_8.jpg"></a></li>
+            <li class="item-10"><a href="#"><img src="../image/small_9.jpg"></a></li>
+            <li class="item-11"><a href="#"><img src="../image/small_10.jpg"></a></li>
+            <li class="item-12"><a href="#"><img src="../image/small_11.jpg"></a></li>
+        </ul>
+    </div>
+    <script>
+        var ll = document.getElementsByTagName("li");
+        var img = document.getElementsByTagName("img");
+        for (var i = 0; i < ll.length; i++) {
+            ll[i].index = i;
+            ll[i].onmouseover = function () {
+                if (this.index === 0) {
+                    img[0].src = "../image/big_1.jpg";
+                } else {
+                    img[0].src = "../image/big_" + (this.index) + ".jpg";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

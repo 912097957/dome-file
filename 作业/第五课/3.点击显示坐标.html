@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, .4);
+        }
+
+        div {
+            width: 200px;
+            height: 100px;
+            margin: 200px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="dv"></div>
+    <script>
+      let dv = document.getElementById("dv");
+      document.documentElement.onkeydown = function (e) {
+        dv.innerHTML = "按下的是" + e.key + "====" + e.keyCode;
+
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html {
+            height: 100%;
+            background-color: rgba(0, 0, 0, .4);
+        }
+
+        div {
+            width: 130px;
+            margin: 0 auto;
+        }
+
+        span {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .sp1 {
+            background-color: blue;
+        }
+
+        .sp2 {
+            background-color: yellow;
+        }
+
+        .sp3 {
+            background-color: lawngreen;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span class="sp1"></span>
+        <span class="sp2"></span>
+        <span class="sp3"></span>
+    </div>
+    <script>
+        //获取根节点
+        var html = document.documentElement;
+        var sp = document.getElementsByTagName("span");
+        for (var i = 0; i < sp.length; i++) {
+            sp[i].onclick = function () {
+                var names = this.className;
+                if (names === "sp1") {
+                    html.style.backgroundColor = "red";
+                }
+                if (names === "sp2") {
+                    html.style.backgroundColor = "pink";
+                }
+                if (names === "sp3") {
+                    html.style.backgroundColor = "yellow";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

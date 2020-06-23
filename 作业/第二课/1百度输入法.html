@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .shuRu {
+            width: 200px;
+            height: 30px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 5px;
+            background-color: #ff9900;
+        }
+
+        .box {
+            width: 150px;
+            height: 30px;
+            background-color: #ccc;
+            margin: 10px auto 0;
+            color: cornflowerblue;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 0 2px black;
+            display: none;
+            cursor: pointer;
+
+        }
+
+        #off {
+            background-color: #cccccc;
+            width: 150px;
+            margin: 10px auto 0;
+            text-align: center;
+            border-radius: 3px;
+            display: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="shuRu" id="qie">输入法切换</div>
+    <div id="dv1" class="box">百度输入法</div>
+    <div id="dv2" class="box">搜狗输入法</div>
+    <p id="off">关闭</p>
+    <script>
+        //获取元素
+        var qieH = document.getElementById("qie");
+        var box = document.getElementsByClassName("box");
+        var off = document.getElementById("off");
+        //注册鼠标进入事件
+        qieH.onclick = function () {
+            for (var i = 0; i < box.length; i++) {
+                box[i].style.display = "block";
+                box[i].onmouseover = function () {
+                    this.style.backgroundColor = "hotpink";
+                    this.onclick = function () {
+                        qieH.innerHTML = this.innerHTML;
+                    }
+                }
+                box[i].onmouseout = function () {
+                    this.style.backgroundColor = "#ccc";
+                }
+                off.style.display = "block";
+            }
+        }
+        off.onclick = function () {
+            this.style.display = "none";
+            for (var j = 0; j < box.length; j++) {
+                box[j].removeAttribute("style");
+            }
+        }
+    </script>
+</body>
+</html>  

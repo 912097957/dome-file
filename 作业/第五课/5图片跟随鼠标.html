@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document</title>
+    <style>
+        .wrap {
+            margin: 10px auto;
+            width: 720px;
+            position: relative;
+        }
+
+        .wrap > img {
+            width: 174px;
+            height: 174px;
+            border: 1px solid #666666;
+            display: inline-block;
+        }
+
+        .big {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap" id="box">
+        <img src="../image/shirt_1.jpg"/>
+        <img src="../image/shirt_2.jpg"/>
+        <img src="../image/shirt_3.jpg"/>
+        <img src="../image/shirt_4.jpg"/>
+        <div class="big" id="big">
+            <img src="" alt="">
+        </div>
+    </div>
+    <script>
+      let box = document.getElementById("box");
+      let dv = document.getElementById("big");
+      let img = document.getElementById("img")
+      let imgS = document.getElementsByTagName("img");
+
+      document.onmousemove = function (e) {
+        dv.style.top = (e.pageY) + 10 + "px";
+        dv.style.left = e.pageX + 10 + "px";
+      }
+
+      for (let i = 0; i < imgS.length - 1; i++) {
+        imgS[i].index = i + 1;
+        imgS[i].onmouseover = function () {
+          dv.style.display = "block";
+          console.log(this.index);
+          imgS[4].src = "../image/shirt_" + (this.index) + "_big.jpg";
+        };
+
+        imgS[i].onmouseout = function () {
+          imgS[4].src = "";
+          dv.style.display = "none";
+        }
+      }
+    </script>
+</body>
+</html>

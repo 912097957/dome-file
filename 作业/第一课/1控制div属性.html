@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #btn_box {
+            width: 250px;
+            margin: 0 auto;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: lawngreen;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="btn_box">
+        <button id="btn1">变宽</button>
+        <button id="btn2">变高</button>
+        <button id="btn3">变色</button>
+        <button id="btn4">隐藏</button>
+        <button id="btn5">重置</button>
+    </div>
+    <div id="box" class="box"></div>
+    <script>
+        var div = document.getElementById("box");
+        var btnS = document.getElementById("btn_box").children;
+        for (var i = 0; i < btnS.length; i++) {
+            btnS[i].onclick = function () {
+                var id = this.id;
+                switch (id) {
+                    case "btn1":
+                        div.style.width = 300 + "px";
+                        break;
+                    case "btn2":
+                        div.style.height = 300 + "px";
+                        break;
+                    case "btn3":
+                        div.style.backgroundColor = "red";
+                        break;
+                    case "btn4":
+                        div.style.display = "none";
+                        break;
+                    case "btn5":
+                        div.removeAttribute("style");
+                        break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>  

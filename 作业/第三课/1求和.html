@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <input type="text">+
+    <input type="text">
+    <button>求和</button>
+    <input type="text">
+    <script>
+        var ipt=document.getElementsByTagName("input");
+        var btn=document.getElementsByTagName("button");
+        btn[0].onclick=function () {
+            ipt[2].value=parseInt(ipt[0].value)+parseInt(ipt[1].value);
+        }
+    </script>
+</body>
+</html>  

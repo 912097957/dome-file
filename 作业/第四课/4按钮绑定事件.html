@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="没有绑定">
+    <input type="button" value="为第一个绑定">
+    <input type="button" value="接触绑定">
+    <script>
+        function ve() {
+          alert("已绑定事件");
+        }
+
+        var ipt = document.getElementsByTagName("input");
+        ipt[1].addEventListener("click", function () {
+          ipt[0].value = "已经绑定";
+          ipt[0].addEventListener("click", ve);
+        });
+        ipt[2].addEventListener("click", function () {
+          ipt[0].value = "没有绑定";
+          ipt[0].removeEventListener("click", ve);
+        })
+    </script>
+</body>
+</html>

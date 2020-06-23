@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>记住密码提示框</title>
+    <style type="text/css">
+        .wrap {
+            width: 200px;
+            margin: 0 auto;
+        }
+
+        label {
+            font-size: 14px;
+            color: black;
+            line-height: 20px;
+        }
+
+        input {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .tips {
+            padding: 5px;
+            margin-top: 5px;
+            background: #ffefa4;
+            border: 1px solid #f90;
+            color: black;
+            font-size: 14px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <label>
+            <input type="checkbox" id="btn"><span>两周之内，自动登陆</span>
+        </label>
+        <div class="tips">
+            为了您的信息安全，请不要在网吧或者公用网络使用此功能
+        </div>
+    </div>
+    <script>
+        //获取密码框
+        var btn = document.getElementsByTagName("label");
+        var dv = document.getElementsByClassName("tips");
+        btn[0].onmouseover = function () {
+            dv[0].style.display = "block";
+        };
+        btn[0].onmouseout = function () {
+            dv[0].style.display = "none";
+        };
+    </script>
+</body>
+</html>

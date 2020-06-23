@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <button id="btn">点击我增加===>(0)</button>
+    <script>
+        var btn=document.getElementById("btn");
+        var num =0;
+        btn.onclick=function () {
+            if (num===2){
+                this.onclick=false;
+                alert("不想让你点了");
+            }else {
+                num++;
+                this.innerText="点击我增加===>"+"("+num+")";
+            }
+        }
+    </script>
+</body>
+</html>  

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>星级评分系统</title>
+    <style>
+        .wrap {
+            width: 250px;
+            margin: 10px auto;
+        }
+
+        span {
+            font-size: 14px;
+        }
+
+        ul {
+            display: flex;
+            height: 20px;
+            line-height: 20px;
+            width: 150px;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .star {
+            flex: 1;
+            background: url(../image/star.png) no-repeat;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .current {
+            background-position: 0 -28px;
+        }
+
+        input {
+            list-style: none;
+            width: 200px;
+            height: 100px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <span>点击星星就能打分并评价</span>
+        <ul>
+            <li class="star"></li>
+            <li class="star"></li>
+            <li class="star"></li>
+            <li class="star"></li>
+            <li class="star"></li>
+        </ul>
+        <input type="text" placeholder="请输入评价..." id="btn">
+    </div>
+    <script>
+      var ll = document.getElementsByTagName("li");
+      var btn = document.getElementById("btn");
+      for (let i = 0; i < ll.length; i++) {
+        var num = 0;
+        ll[i].onmouseover = function () {
+          num = i;
+          for (var j = 0; j <= num; j++) {
+            ll[j].className = "star current";
+          }
+        }
+        ll[i].onmouseout = function () {
+          for (var l = 0; l < ll.length; l++) {
+            ll[l].className = "star";
+          }
+        }
+        ll[i].onclick = function () {
+          for (var j = 0; j < ll.length; j++) {
+            ll[j].onmouseover = null;
+            ll[j].onmouseout = null;
+            btn.style.display = "block";
+          }
+        }
+      }
+    </script>
+</body>
+</html>

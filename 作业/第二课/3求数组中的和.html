@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        label {
+            margin-left: 30%;
+        }
+
+        input {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <label for="ipt">请输入数字并用逗号隔开:</label>
+    <input type="text" id="ipt">
+    <button id="btn">计算</button>
+    <script>
+        //获取按钮
+        var btn = document.getElementById("btn");
+        var ipt = document.getElementById("ipt");
+        var result = 0;
+        //注册事件
+        btn.onclick = function () {
+            var str = ipt.value.split(",");
+            var arr = [];
+            for (var i = 0; i < str.length; i++) {
+                result += arr.push(parseInt(str[i]));
+            }
+            alert(result);
+        }
+    </script>
+</body>
+</html>  

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #main {
+            width: 400px;
+            height: 600px;
+            background-color: #cccccc;
+            margin: 0 auto;
+        }
+
+        #main_in {
+            width: 100%;
+            height: 100px;
+            background-color: lightgoldenrodyellow;
+            font-size: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #show {
+            width: 100%;
+            height: 60px;
+            position: absolute;
+            bottom: 0;
+            font-size: 50px;
+            text-align: right;
+            color: palevioletred;
+        }
+
+        #hide {
+            display: none;
+        }
+
+        button {
+            font-size: 60px;
+        }
+
+        .btn1 {
+            width: 80px;
+            height: 100px;
+            display: block;
+            float: left;
+        }
+
+        .btn2 {
+            width: 133px;
+            height: 100px;
+            display: block;
+            float: left;
+        }
+
+        #result {
+            width: 187px;
+            height: 100px;
+            display: block;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="main_in">
+            <p id="hide"></p>
+            <p id="show"></p>
+        </div>
+        <button class="btn1">C</button>
+        <button class="btn1">+</button>
+        <button class="btn1">-</button>
+        <button class="btn1">*</button>
+        <button class="btn1">/</button>
+        <button class="btn2">7</button>
+        <button class="btn2">8</button>
+        <button class="btn2">9</button>
+        <button class="btn2">4</button>
+        <button class="btn2">5</button>
+        <button class="btn2">6</button>
+        <button class="btn2">1</button>
+        <button class="btn2">2</button>
+        <button class="btn2">3</button>
+        <button class="btn2">0</button>
+        <button class="btn1">.</button>
+        <button id="result">=</button>
+    </div>
+    <script>
+      //获取按钮
+      var btn = document.getElementsByTagName("button");
+      var show = document.getElementById("show");
+      var hide = document.getElementById("hide");
+      for (var i = 0; i < btn.length; i++) {
+        btn[i].onclick = function () {
+          var b = hide.innerHTML;
+          var c = show.innerHTML;
+          switch (this.innerHTML) {
+            case "1":
+            case "2":
+            case "3":
+            case "4":
+            case "5":
+            case "6":
+            case "7":
+            case "8":
+            case "9":
+            case "0":
+            case ".":
+              var x = show.innerHTML;
+              if (x === "+" || x === "-" || x === "*" || x === "/") {
+                show.innerHTML = this.innerHTML;
+              } else {
+                show.innerHTML += this.innerHTML;
+                hide.innerHTML = show.innerHTML;
+              }
+              break;
+            case "+":
+            case "-":
+            case "*":
+            case "/":
+              show.innerHTML = this.innerHTML;
+              hide.num = this.innerHTML;
+              break;
+            case "C":
+              show.innerHTML = "";
+              break;
+            case "=":
+              var k = show.innerHTML;
+              getSum(hide.num, b, c);
+              break;
+          }
+        }
+
+        //计算
+        function getSum(x, j, k) {
+          var n = Number(j);
+          var m = Number(k);
+          switch (x) {
+            case "+":
+              show.innerHTML = (n + m);
+              break;
+            case "-":
+              show.innerHTML = (n - m);
+              break;
+            case "*":
+              show.innerHTML = (n * m);
+              break;
+            case "/":
+              show.innerHTML = (n / m);
+              break;
+          }
+        }
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            background-color: black;
+            color: yellow;
+            size: 20px;
+            text-align: center;
+            line-height: 300px;
+        }
+
+        .color1 {
+            background-color: olivedrab;
+            color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <div id="div">鼠标移入移出改变颜色</div>
+    <script>
+        var dv = document.getElementById("div");
+        dv.onmouseover = f1;
+        dv.onmouseout = f1;
+
+        function f1(e) {
+            switch (e.type) {
+                case "mouseover":
+                    this.className = "color1";
+                    break;
+                case "mouseout":
+                    this.className = "color2";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

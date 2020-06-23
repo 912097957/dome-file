@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html {
+            background-color: #ccc;
+        }
+
+        .time {
+            width: 400px;
+            height: 100px;
+            background-color: black;
+            margin: 100px auto;
+            color: #ff9900;
+            line-height: 60px;
+            font-size: 24px;
+        }
+
+        span {
+            display: inline-block;
+            height: 60px;
+            width: 60px;
+            margin: 20px 20px;
+            background-color: white;
+            color: green;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="time" id="time">
+        <span class="hours">1</span>时
+        <span class="minutes">2</span>分
+        <span class="seconds">3</span>秒
+    </div>
+    <script>
+      window.onload = function () {
+        var sp = document.getElementsByTagName("span");
+
+        function getTime() {
+          var td = new Date();
+          var h = td.getHours();
+          var c = td.getMinutes();
+          var s = td.getSeconds();
+          sp[0].innerHTML = h;
+          sp[1].innerHTML = c;
+          sp[2].innerHTML = s;
+        }
+
+        getTime();
+
+        setInterval(getTime, 1000);
+      }
+    </script>
+</body>
+</html>

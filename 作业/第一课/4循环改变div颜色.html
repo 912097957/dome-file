@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        button {
+            width: 100px;
+            margin: 0 auto;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            float: left;
+            border: 1px solid yellow;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">改变颜色</button>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        var btn = document.getElementById("btn");
+        var div = document.getElementsByTagName("div");
+        var arr = ["pink", "green", "red"];
+        btn.onclick = function () {
+            for (var i = 0; i < div.length; i++) {
+                div[i].style.backgroundColor = arr[i];
+            }
+        }
+    </script>
+</body>
+</html>

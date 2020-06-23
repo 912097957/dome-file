@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        ul li {
+            list-style: none;
+            margin: 15px auto;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .big {
+            margin: 0 auto;
+            width: 304px;
+        }
+
+        .head {
+            width: 300px;
+            height: 50px;
+            border: 2px solid black;
+        }
+
+        .head span {
+            display: block;
+            float: left;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+        }
+
+        .head span:hover {
+            background-color: darkgrey;
+        }
+
+        .bodyS {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            position: relative;
+            border: 2px solid #ff9900;
+        }
+
+
+        .current {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="big">
+        <div class="head">
+            <span>新闻</span>
+            <span>购物</span>
+            <span>促销</span>
+        </div>
+        <div class="bodyS">
+            <ul class="current">
+                <li>新闻直播间</li>
+                <li>新闻直播间</li>
+                <li>新闻直播间</li>
+                <li>新闻直播间</li>
+                <li>新闻直播间</li>
+                <li>新闻直播间</li>
+            </ul>
+            <ul>
+                <li>购物直通车</li>
+                <li>购物直通车</li>
+                <li>购物直通车</li>
+                <li>购物直通车</li>
+                <li>购物直通车</li>
+                <li>购物直通车</li>
+            </ul>
+            <ul>
+                <li>限时大促销</li>
+                <li>限时大促销</li>
+                <li>限时大促销</li>
+                <li>限时大促销</li>
+                <li>限时大促销</li>
+                <li>限时大促销</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var sp = document.getElementsByTagName("span");
+        var uu = document.getElementsByTagName("ul");
+        //遍历
+        for (var i = 0; i < sp.length; i++) {
+            sp[i].num = i;
+            sp[i].onmouseover = function () {
+                for (var j = 0; j < uu.length; j++) {
+                    uu[j].style.display = "none";
+                }
+                uu[this.index].style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

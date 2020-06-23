@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 600px;
+            height: 300px;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        ul li {
+            list-style: none;
+            width: 150px;
+            height: 150px;
+            background-color: hotpink;
+            float: left;
+            border: 10px solid yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul id="ll">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        var ll = document.getElementById("ll").children;
+        for (var i = 0; i < ll.length; i++) {
+            ll[i].onmouseover = function () {
+                this.style.opacity = ".6";
+            }
+            ll[i].onmouseout = function () {
+                this.removeAttribute("style");
+            }
+        }
+    </script>
+</body>
+</html>

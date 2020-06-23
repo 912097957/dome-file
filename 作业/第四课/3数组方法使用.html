@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        p {
+            color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <p id="node1">January(1),February(2),March(3),April(4),May(5),June(6),July(7),Aguest(8),September(9),October(10),November(11),December(12)</p>
+    <input type="button" value="删除第一位">
+    <input type="button" value="删除最后一位">
+
+    <p id="node2">0,1,2,3,4,5,6,7,8,9</p>
+    <input type="button" value="复制">
+    <input type="button" value="还原">
+    <p id="node3">red,green,blue,white,yellow,black,brown</p>
+    <input type="button" value="还原">
+    <input type="button" value="删除前三项">
+    <input type="button" value="删除二到三项">
+    <input type="button" value="在第二项插入">
+    <input type="button" value="替换第二项和第三项">
+    <script>
+      window.onload = function () {
+        var p1 = document.getElementById("node1");
+        var p2 = document.getElementById("node2");
+        var p3 = document.getElementById("node3");
+        var ipt = document.getElementsByTagName("input");
+        var arr1 = ['January(1)', 'February(2)', 'March(3)', 'April(4)', 'May(5)', 'June(6)', 'July(7)', 'Aguest(8)', 'September(9)', 'October(10)', 'November(11)', 'December(12)'];
+        var arr2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        var arr3 = ["red", "green", "blue", "white", "yellow", "black", "brown"];
+
+        ipt[0].onclick = function () {
+          arr1.shift();
+          p1.innerHTML = arr1;
+        }
+        ipt[1].onclick = function () {
+          arr1.pop();
+          p1.innerHTML = arr1;
+        }
+        ipt[2].onclick = function () {
+          var it = arr2.length;
+          for (var i = 0; i < it; i++) {
+            arr2.push(arr2[i]);
+            p2.innerHTML = arr2;
+          }
+        }
+        ipt[3].onclick = function () {
+          var arr4 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+          p2.innerHTML = arr4;
+        }
+        ipt[4].onclick = function () {
+          p3.innerHTML = "red,green,blue,white,yellow,black,brown";
+        }
+        ipt[5].onclick = function () {
+          var x = arr3.slice(3);
+          p3.innerHTML = x;
+        }
+        ipt[6].onclick = function () {
+          var n = arr3;
+          n.splice(2, 1)
+          p3.innerHTML = n;
+        }
+        ipt[7].onclick = function () {
+          arr3.splice(1, 0, "已插入")
+          p3.innerHTML = arr3;
+        }
+        ipt[8].onclick = function () {
+          arr3.splice(2, 1, "已替换")
+          p3.innerHTML = arr3;
+        }
+      }
+    </script>
+</body>
+</html>
