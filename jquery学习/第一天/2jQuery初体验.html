@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document</title>
+    <style>
+        div {
+            height: 100px;
+            background-color: red;
+            margin: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">点击展示</button>
+    <button id="btn2">点击设置</button>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+      //js的入口函数时window.onload
+      //jq的入口函数写法
+      //入口函数:加载后执行
+      $(document).ready(function () {
+        //获取按钮注册事件,去掉on
+        $("#btn1").click(function () {
+          $("div").show(1000);
+          // $("div").show(500);
+        });
+
+        //设置内容,隐士迭代:会自定遍历
+        $("#btn2").click(function () {
+          $("div").text("我是内容");
+        });
+      })
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://aecpm.alicdn.com/simba/img/TB1XotJXQfb_uJkSnhJSuvdDVXa.jpg" alt="图破了" title="对对对">
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+    //样式用css操作
+    //属性用attr操作
+    $(function () {
+      //设置单个属性
+      $("img").attr("alt", "你好呀");
+      $("img").attr("title", "错错错");
+      //设置多个属性
+      $("img").attr({
+        alt: "图好了",
+        title: "真的太好了",
+        //还可以设置自定义属性
+        aa: "haha"
+      })
+      //获取自定义属性
+      console.log($("img").attr("aa"));
+    });
+    </script>
+</body>
+</html>

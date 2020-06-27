@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <img src="http://img.daimg.com/uploads/allimg/160324/1-160324232117.jpg">
+    <img src="http://img.daimg.com/uploads/allimg/160318/1-16031P01P0.jpg">
+    <img src="http://img.daimg.com/uploads/allimg/160318/1-16031P01332.jpg">
+    <img src="http://img.daimg.com/uploads/allimg/160608/1-16060R35630.jpg" alt="">
+    <img src="http://img.daimg.com/uploads/allimg/160531/1-160531224303.jpg" alt="">
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+      window.onload = function () {
+        console.log("这是js入口函数");
+      }
+
+      $(document).ready(function () {
+        console.log("这是第一种入口函数");
+      })
+
+      $(function () {
+        console.log("这是第二种入口函数");
+      })
+
+        /*
+        * jquery的代码要比js执行的要快
+        * 因为jq的入口函数会等待页面的加载完成后才执行,但是不会等待图片加载完成
+        * js会等待页面加载完成,并且等待图片加载完成
+        *
+        *
+        * */
+    </script>
+</body>
+</html>

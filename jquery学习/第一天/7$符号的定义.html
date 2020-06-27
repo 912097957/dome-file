@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+    console.log(typeof $);//$是一个函数,使用$的时候记得跟小括号
+    //$的参数不同,功能就不同
+    //三种用法:
+    //1.参数是function-->就是一个入口函数
+    $(function () {
+
+    })
+
+    //2.如果是DOM对象,就是把这个DOM对象转换为jq对象
+    $(document).ready(function () {//这也是入口函数写法
+
+    });
+
+    // 3.参数是一个字符串,用来找对象
+    $("div")
+
+    </script>
+</body>
+</html>

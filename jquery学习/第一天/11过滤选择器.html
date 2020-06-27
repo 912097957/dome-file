@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>我是1</li>
+        <li>我是2</li>
+        <li>我是3</li>
+        <li>我是4</li>
+        <li>我是5</li>
+        <li>我是6</li>
+        <li>我是7</li>
+        <li>我是8</li>
+        <li>我是9</li>
+        <li>我是10</li>
+    </ul>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+    $(function () {
+      $("li:even").css("backgroundColor", "red");
+      $("li:odd").css("backgroundColor", "green");
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cloth">衣服</div>
+    <div>裤子</div>
+    <div>叉子</div>
+    <div>袜子</div>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+
+      $(function () {
+        //1.什么是DOM对象:使用js的方式获取到的js对象(DOM对象)
+        let cloth = document.getElementById("cloth");
+        cloth.style.backgroundColor = "red";
+
+        //2.什么是jq对象
+        let $div = $("div");//----jQuery对象
+        $div.text("我改变了内容");
+        console.log($div);//伪数组
+
+        //3.两个对象的区别
+        let dv = document.getElementsByTagName("div");
+        dv.text = "我们不能混用";
+
+        // $div.setAttribute("index", "呵呵");//不能调用js对象的方法
+        $div[0].setAttribute("index", "呵呵");//不能调用js对象的方法
+
+        //jq对象和js对象的联系(jq对象其实就是js对象的一个集合,伪数组,里面存放了一堆js对象)
+        //jq对象里面放了DOM对象
+
+
+        //DOM对象无法调用jq对象的方法:因为两个对象不是一个对象
+        //DOM对象调用jq的方法:需要把DOM对象转换成jq对象
+        let box = document.getElementById("cloth");
+        //DOM对象就变成了Jq对象
+        $(cloth).text("呵呵");
+
+
+        //jq对象怎么转换成DOM对象(取出来):伪数组--->通过下标
+        $div[1].style.backgroundColor = "green";
+        //第二种方法
+        $div.get(0)
+        $div.get(2).style.backgroundColor = "yellow";
+        console.log($div.get(0));
+      });
+    </script>
+</body>
+</html>

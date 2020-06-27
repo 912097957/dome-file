@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+    //mouseover----鼠标进入事件
+    //mouseout-----鼠标离开事件
+    $("#box").mouseenter(function () {
+      console.log("111");//触发一次
+    })
+
+    </script>
+</body>
+</html>

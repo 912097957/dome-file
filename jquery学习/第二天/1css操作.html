@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <ul>
+        <li>高原1</li>
+        <li>高原2</li>
+        <li>高原3</li>
+        <li>高原4</li>
+        <li>高原5</li>
+    </ul>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+    //css(name,value)  样式名---样式值
+    $(function () {
+      //设置单个样式
+      // $("li").css("backgroundColor", "pink")
+      //         .css("color", "yellow")
+      //         .css("fontSize", "15px");
+
+      //设置多个样式
+      //第二个用法:传入一个对象
+      $("li").css({
+        backgroundColor: "pink",
+        color: "black",
+        fontSize: "22px"
+      })
+
+      //获取样式方法
+      $("li").eq(1).css("fontSize", "15px");
+      $("li").eq(2).css("fontSize", "10px");
+      $("li").eq(3).css("fontSize", "44px");
+      console.log($("li").css("fontSize"));//22px
+
+      //内部发生了隐士迭代:
+      //设置操作的时候,会给jq内部所有的对象都设置上相同的值
+      //获取的时候,只会返回第一个元素对应的值
+
+
+
+
+    })
+    </script>
+</body>
+</html>  

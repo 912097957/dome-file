@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li id="four">4</li>
+        <li>5</li>
+        <li class="item">6</li>
+        <li class="item">7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+    //id选择器
+    $(function () {
+      $("li").css("color", "hotpink");//标签
+      $("#four").css("backgroundColor", "red");//id
+      $(".item").css("backgroundColor", "green");//类样式
+
+      //交集和并集选择器
+      $(".item,#four").text("我被选择了");
+      $("li.item").text("哈哈哈只有我变了");
+    })
+    </script>
+</body>
+</html>

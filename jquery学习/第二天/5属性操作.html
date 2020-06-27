@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="全选">
+    <input type="button" value="反选">
+    <input type="checkbox" class="btn">
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+    $(function () {
+      //对于布尔类型的属性,操作的时候不要用attr方法,使用prop方法
+      $("input").eq(0).click(function () {
+        $(".btn").prop("checked", true);
+      });
+      $("input").eq(1).click(function () {
+        $(".btn").prop("checked", false);
+      });
+    });
+    </script>
+</body>
+</html>

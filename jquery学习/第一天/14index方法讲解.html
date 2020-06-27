@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><a href="#">我是一个标签</a></li>
+        <li><a href="#">我是一个标签</a></li>
+        <li><a href="#">我是一个标签</a></li>
+        <li><a href="#">我是一个标签</a></li>
+        <li><a href="#">我是一个标签</a></li>
+        <li><a href="#">我是一个标签</a></li>
+        <li><a href="#">我是一个标签</a></li>
+        <li><a href="#">我是一个标签</a></li>
+        <li><a href="#">我是一个标签</a></li>
+        <li><a href="#">我是一个标签</a></li>
+    </ul>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+    $(function () {
+      //index会返回当前元素在所有兄弟中的索引
+      $("a").click(function () {
+        console.log($(this).index());
+      })
+    })
+    console.log($("*"));
+    </script>
+</body>
+</html>

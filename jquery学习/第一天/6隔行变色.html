@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <lI>我是1个li</lI>
+        <lI>我是2个li</lI>
+        <lI>我是3个li</lI>
+        <lI>我是4个li</lI>
+        <lI>我是5个li</lI>
+        <lI>我是6个li</lI>
+        <lI>我是7个li</lI>
+        <lI>我是8个li</lI>
+        <lI>我是9个li</lI>
+        <lI>我是10个li</lI>
+    </ul>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+    //原生
+    $(function () {
+      //原生
+      //let ll = document.getElementsByTagName("li");
+      let ll = $("li");//依然可以
+      for (let i = 0; i < ll.length; i++) {
+        if (i % 2 === 0) { //i取出来的是下标,是DOM元素
+          ll[i].style.backgroundColor = "red";
+        } else {
+          ll[i].style.backgroundColor = "yellow";
+        }
+      }
+    })
+    </script>
+</body>
+</html>

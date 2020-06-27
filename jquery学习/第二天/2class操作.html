@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .bade {
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+        }
+
+        .font {
+            font-size: 40px;
+        }
+
+        .index {
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="button" value="点击第一个类">
+    <input type="button" value="点击第二个类">
+    <input type="button" value="删除第二个类">
+    <input type="button" value="判断第二个类">
+    <input type="button" value="切换第二个类">
+    <ul>
+        <li class="index">hehehe</li>
+        <li class="index">hehehe</li>
+        <li class="index">hehehe</li>
+        <li class="index">hehehe</li>
+    </ul>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+    //addclass只会在原来的基础上添加另一个类,权重跟css也一样
+    $(function () {
+      $("input").eq(0).click(function () {
+        $("li").addClass("bade");
+      });
+      $("input").eq(1).click(function () {
+        $("li").addClass("font");
+      });
+      //移除类
+      $("input").eq(2).click(function () {
+        $("li").removeClass("font");
+      })
+
+      //判断类有没有,返回值是布尔类型
+      $("input").eq(3).click(function () {
+        console.log($("li").hasClass("font"));
+      })
+      //切换
+      $("input").eq(4).click(function () {
+        // if ($("li").hasClass("index")) {
+        //   $("li").removeClass("index");
+        // } else {
+        //   $("li").addClass("index")
+        // }
+        $("li").toggleClass("index");
+      })
+    })
+    </script>
+</body>
+</html>

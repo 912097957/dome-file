@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document</title>
+    <style>
+        div {
+            height: 100px;
+            background-color: red;
+            margin: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button>点击展示</button>
+    <button>点击设置</button>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        /*
+        * 原生js代码比较麻烦,需要遍历,可能好需要嵌套
+        * 找对象麻烦,方法少,方法长
+        * 会有兼容性问题
+        * js注册事件或覆盖,使用事件监听会有兼容性问题
+        *
+        * */
+
+      let btn = document.getElementsByTagName("button");
+      let div = document.getElementsByTagName("div");
+
+      btn[0].onclick = function () {
+        for (let i = 0; i < div.length; i++) {
+          div[i].style.display = "block";
+        }
+      };
+      btn[1].onclick = function () {
+        for (let i = 0; i < div.length; i++) {
+          div[i].innerText = "你们好呀";
+        }
+      }
+
+    </script>
+</body>
+</html>  
