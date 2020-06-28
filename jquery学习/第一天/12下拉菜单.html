@@ -82,11 +82,11 @@
     $(function () {
       let $ll = $(".wrap>ul>li");
       $ll.mouseenter(function () {
-        $(this).children("ul").show();
+        $(this).children("ul").stop().show();
       })
 
       $ll.mouseleave(function () {
-        $(this).children("ul").hide();
+        $(this).children("ul").stop().hide();
       })
     })
     </script>

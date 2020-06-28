@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">我是内容</div>
+    <p>我是p元素</p>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+    //创建一个jq对象
+    $(function () {
+      let $ll = $('<a href="www.baidu.com"></a>');
+      $("#box").append($ll);
+    })
+    </script>
+    <script>
+    //创建一个jq对象
+    $(function () {
+      // $("#box").append($("p"));//添加到最后面--->父元素添加子元素
+      // $("#box").prepend($("p"));//添加到最前面
+      // $("#box").appendTo($("p"));//子元素添加到父元素最后面--常用
+      // $("#box").prependTo($("p"));//子元素添加到父元素最前面
+
+      $("#box").before($("p"));//子元素添加到父元素最前面
+      $("#box").after($("p"));//子元素添加到父元素最后面
+
+
+
+
+    })
+    </script>
+</body>
+</html>

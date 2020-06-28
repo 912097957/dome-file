@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <P>123</P>
+        <P>456</P>
+    </div>
+    <p id="p">我是外面的元素</p>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+    $(function () {
+      //清空一个元素的内容
+      // $("div").html("");//会发生内存泄露,如果注册了事件,它不会把事件清除
+
+      // $("div").empty("");
+
+      // $("div").remove();//把自己删除
+      $("#p").clone().appendTo($("div"));//深度复制,里面的内容也复制了,但是不会复制他的事件
+    })
+    </script>
+</body>
+</html>

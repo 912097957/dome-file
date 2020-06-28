@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="你点我呀">
+    <input type="button" value="你再点我">
+    <div></div>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+    $(function () {
+      $("input").eq(0).click(function () {
+        $("div").slideDown(1000).slideUp(1000);
+      })
+      $("input").eq(1).click(function () {
+        //停止当前正在执行的动画
+        //两个参数:
+        //clearQueue:是否清除动画队列  ---> 布尔类型
+        $("div").stop(true, false);
+      })
+    })
+    </script>
+</body>
+</html>
